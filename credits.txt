@@ -1,0 +1,30 @@
+While making GEO Top Bar plugin, we used third-party plugins and resources, and want to thank their creators:
+
+Country Select JS - A jQuery plugin for selecting a country
+The MIT License - Copyright © 2011-2017 thoughtbot, inc.
+https://github.com/mrmarkfrench/country-select-js
+
+Flag Icon CSS - A collection of all country flags in SVG — plus the CSS for easier integration
+The MIT License - Copyright © 2014-2017 thoughtbot, inc.
+https://github.com/lipis/flag-icon-css
+
+jQuery Modal - A simple & lightweight method of displaying modal windows with jQuery
+The MIT License - Copyright © 2012-2017 thoughtbot, inc.
+https://github.com/kylefox/jquery-modal
+
+PHP GeoIPLocation Library - PHP file that will let you determine the country of location for any given IP address
+The IP Country data is from: http://Software77.net (A Webnet77.com Company)
+Creative Commons License: Attribution 2.5 - Copyright © 2005-2017 thoughtbot, inc.
+http://chir.ag/projects/geoiploc/
+
+Alpha Color Picker - RGBa color controller for the WordPress color picker
+The GPL License - Copyright © 2015-2017 thoughtbot, inc.
+https://github.com/BraadMartin/components/tree/master/alpha-color-picker
+
+Customizer Background Control - Registers a new custom customizer control for backgrounds
+The GPL License - Copyright © 2015-2017 thoughtbot, inc.
+https://github.com/devinsays/customizer-background-control
+
+WordPress Theme Customizer Custom Controls - A collection of custom controls you can use in your Wordpress theme customizer page
+The GPL License - Copyright © 2015-2017 thoughtbot, inc.
+https://github.com/paulund/wordpress-theme-customizer-custom-controls
