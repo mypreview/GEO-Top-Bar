@@ -12,63 +12,107 @@
  * https://github.com/kylefox/jquery-modal
  */
 !function(o){"object"==typeof module&&"object"==typeof module.exports?o(require("jquery"),window,document):o(jQuery,window,document)}(function(o,t,e,i){var s=[],l=function(){return s.length?s[s.length-1]:null},n=function(){var o,t=!1;for(o=s.length-1;o>=0;o--)s[o].$blocker&&(s[o].$blocker.toggleClass("current",!t).toggleClass("behind",t),t=!0)};o.modal=function(t,e){var i,n;if(this.$body=o("body"),this.options=o.extend({},o.modal.defaults,e),this.options.doFade=!isNaN(parseInt(this.options.fadeDuration,10)),this.$blocker=null,this.options.closeExisting)for(;o.modal.isActive();)o.modal.close();if(s.push(this),t.is("a"))if(n=t.attr("href"),/^#/.test(n)){if(this.$elm=o(n),1!==this.$elm.length)return null;this.$body.append(this.$elm),this.open()}else this.$elm=o("<div>"),this.$body.append(this.$elm),i=function(o,t){t.elm.remove()},this.showSpinner(),t.trigger(o.modal.AJAX_SEND),o.get(n).done(function(e){if(o.modal.isActive()){t.trigger(o.modal.AJAX_SUCCESS);var s=l();s.$elm.empty().append(e).on(o.modal.CLOSE,i),s.hideSpinner(),s.open(),t.trigger(o.modal.AJAX_COMPLETE)}}).fail(function(){t.trigger(o.modal.AJAX_FAIL);var e=l();e.hideSpinner(),s.pop(),t.trigger(o.modal.AJAX_COMPLETE)});else this.$elm=t,this.$body.append(this.$elm),this.open()},o.modal.prototype={constructor:o.modal,open:function(){var t=this;this.block(),this.options.doFade?setTimeout(function(){t.show()},this.options.fadeDuration*this.options.fadeDelay):this.show(),o(e).off("keydown.modal").on("keydown.modal",function(o){var t=l();27==o.which&&t.options.escapeClose&&t.close()}),this.options.clickClose&&this.$blocker.click(function(t){t.target==this&&o.modal.close()})},close:function(){s.pop(),this.unblock(),this.hide(),o.modal.isActive()||o(e).off("keydown.modal")},block:function(){this.$elm.trigger(o.modal.BEFORE_BLOCK,[this._ctx()]),this.$body.css("overflow","hidden"),this.$blocker=o('<div class="jquery-modal blocker current"></div>').appendTo(this.$body),n(),this.options.doFade&&this.$blocker.css("opacity",0).animate({opacity:1},this.options.fadeDuration),this.$elm.trigger(o.modal.BLOCK,[this._ctx()])},unblock:function(t){!t&&this.options.doFade?this.$blocker.fadeOut(this.options.fadeDuration,this.unblock.bind(this,!0)):(this.$blocker.children().appendTo(this.$body),this.$blocker.remove(),this.$blocker=null,n(),o.modal.isActive()||this.$body.css("overflow",""))},show:function(){this.$elm.trigger(o.modal.BEFORE_OPEN,[this._ctx()]),this.options.showClose&&(this.closeButton=o('<a href="#close-modal" rel="modal:close" class="close-modal '+this.options.closeClass+'">'+this.options.closeText+"</a>"),this.$elm.append(this.closeButton)),this.$elm.addClass(this.options.modalClass).appendTo(this.$blocker),this.options.doFade?this.$elm.css("opacity",0).show().animate({opacity:1},this.options.fadeDuration):this.$elm.show(),this.$elm.trigger(o.modal.OPEN,[this._ctx()])},hide:function(){this.$elm.trigger(o.modal.BEFORE_CLOSE,[this._ctx()]),this.closeButton&&this.closeButton.remove();var t=this;this.options.doFade?this.$elm.fadeOut(this.options.fadeDuration,function(){t.$elm.trigger(o.modal.AFTER_CLOSE,[t._ctx()])}):this.$elm.hide(0,function(){t.$elm.trigger(o.modal.AFTER_CLOSE,[t._ctx()])}),this.$elm.trigger(o.modal.CLOSE,[this._ctx()])},showSpinner:function(){this.options.showSpinner&&(this.spinner=this.spinner||o('<div class="'+this.options.modalClass+'-spinner"></div>').append(this.options.spinnerHtml),this.$body.append(this.spinner),this.spinner.show())},hideSpinner:function(){this.spinner&&this.spinner.remove()},_ctx:function(){return{elm:this.$elm,$blocker:this.$blocker,options:this.options}}},o.modal.close=function(t){if(o.modal.isActive()){t&&t.preventDefault();var e=l();return e.close(),e.$elm}},o.modal.isActive=function(){return s.length>0},o.modal.getCurrent=l,o.modal.defaults={closeExisting:!0,escapeClose:!0,clickClose:!0,closeText:"Close",closeClass:"",modalClass:"modal",spinnerHtml:null,showSpinner:!0,showClose:!0,fadeDuration:null,fadeDelay:1},o.modal.BEFORE_BLOCK="modal:before-block",o.modal.BLOCK="modal:block",o.modal.BEFORE_OPEN="modal:before-open",o.modal.OPEN="modal:open",o.modal.BEFORE_CLOSE="modal:before-close",o.modal.CLOSE="modal:close",o.modal.AFTER_CLOSE="modal:after-close",o.modal.AJAX_SEND="modal:ajax:send",o.modal.AJAX_SUCCESS="modal:ajax:success",o.modal.AJAX_FAIL="modal:ajax:fail",o.modal.AJAX_COMPLETE="modal:ajax:complete",o.fn.modal=function(t){return 1===this.length&&new o.modal(this,t),this},o(e).on("click.modal",'a[rel~="modal:close"]',o.modal.close),o(e).on("click.modal",'a[rel~="modal:open"]',function(t){t.preventDefault(),o(this).modal()})});
+/*
+ * Country Select JS
+ * https://github.com/mrmarkfrench/country-select-js
+ * Licensed under the MIT license
+ */
+!function(a){"function"==typeof define&&define.amd?define(["jquery"],function(b){a(b,window,document)}):a(jQuery,window,document)}(function(a,b,c,d){"use strict";function j(b,c){this.element=b,this.options=a.extend({},g,c),this._defaults=g,this.ns="."+e+f++,this._name=e,this.init()}var e="countrySelect",f=1,g={defaultCountry:"",defaultStyling:"inside",onlyCountries:[],preferredCountries:["us","gb"]},h={UP:38,DOWN:40,ENTER:13,ESC:27,PLUS:43,A:65,Z:90},i=!1;a(b).on('load',function(){i=!0}),j.prototype={init:function(){this._processCountryData(),this._generateMarkup(),this._setInitialState(),this._initListeners()},_processCountryData:function(){this._setInstanceCountryData(),this._setPreferredCountries()},_setInstanceCountryData:function(){var b=this;if(this.options.onlyCountries.length){var c=[];a.each(this.options.onlyCountries,function(a,d){var e=b._getCountryData(d,!0);e&&c.push(e)}),this.countries=c}else this.countries=k},_setPreferredCountries:function(){var b=this;this.preferredCountries=[],a.each(this.options.preferredCountries,function(a,c){var d=b._getCountryData(c,!1);d&&b.preferredCountries.push(d)})},_generateMarkup:function(){this.countryInput=a(this.element);var b="country-select";this.options.defaultStyling&&(b+=" "+this.options.defaultStyling),this.countryInput.wrap(a("<div>",{"class":b}));var c=a("<div>",{"class":"flag-dropdown"}).insertAfter(this.countryInput),d=a("<div>",{"class":"selected-flag"}).appendTo(c);this.selectedFlagInner=a("<div>",{"class":"flag"}).appendTo(d),a("<div>",{"class":"arrow"}).appendTo(this.selectedFlagInner),this.countryList=a("<ul>",{"class":"country-list v-hide"}).appendTo(c),this.preferredCountries.length&&(this._appendListItems(this.preferredCountries,"preferred"),a("<li>",{"class":"divider"}).appendTo(this.countryList)),this._appendListItems(this.countries,""),this.countryCodeInput=a("#"+this.countryInput.attr("id")+"_code"),this.countryCodeInput||(this.countryCodeInput=a('<input type="hidden" id="'+this.countryInput.attr("id")+'_code" name="'+this.countryInput.attr("name")+'_code" value="" />'),this.countryCodeInput.insertAfter(this.countryInput)),this.dropdownHeight=this.countryList.outerHeight(),this.countryList.removeClass("v-hide").addClass("hide"),this.countryListItems=this.countryList.children(".country")},_appendListItems:function(b,c){var d="";a.each(b,function(a,b){d+='<li class="country '+c+'" data-country-code="'+b.iso2+'">',d+='<div class="flag '+b.iso2+'"></div>',d+='<span class="country-name">'+b.name+"</span>",d+="</li>"}),this.countryList.append(d)},_setInitialState:function(){var a=!1;this.countryInput.val()&&(a=this._updateFlagFromInputVal());var b=this.countryCodeInput.val();if(b&&this.selectCountry(b),!a){var c;this.options.defaultCountry?(c=this._getCountryData(this.options.defaultCountry,!1),c||(c=this.preferredCountries.length?this.preferredCountries[0]:this.countries[0])):c=this.preferredCountries.length?this.preferredCountries[0]:this.countries[0],this.selectCountry(c.iso2)}},_initListeners:function(){var a=this;this.countryInput.on("keyup"+this.ns,function(){a._updateFlagFromInputVal()});var b=this.selectedFlagInner.parent();b.on("click"+this.ns,function(b){a.countryList.hasClass("hide")&&!a.countryInput.prop("disabled")&&a._showDropdown()}),this.countryInput.on("blur"+this.ns,function(){a.countryInput.val()!=a.getSelectedCountryData().name&&a.setCountry(a.countryInput.val()),a.countryInput.val(a.getSelectedCountryData().name)})},_focus:function(){this.countryInput.focus();var a=this.countryInput[0];if(a.setSelectionRange){var b=this.countryInput.val().length;a.setSelectionRange(b,b)}},_showDropdown:function(){this._setDropdownPosition();var a=this.countryList.children(".active");this._highlightListItem(a),this.countryList.removeClass("hide"),this._scrollTo(a),this._bindDropdownListeners(),this.selectedFlagInner.children(".arrow").addClass("up")},_setDropdownPosition:function(){var c=this.countryInput.offset().top,d=a(b).scrollTop(),e=c+this.countryInput.outerHeight()+this.dropdownHeight<d+a(b).height(),f=c-this.dropdownHeight>d,g=!e&&f?"-"+(this.dropdownHeight-1)+"px":"";this.countryList.css("top",g)},_bindDropdownListeners:function(){var b=this;this.countryList.on("mouseover"+this.ns,".country",function(c){b._highlightListItem(a(this))}),this.countryList.on("click"+this.ns,".country",function(c){b._selectListItem(a(this))});var d=!0;a("html").on("click"+this.ns,function(a){d||b._closeDropdown(),d=!1}),a(c).on("keydown"+this.ns,function(a){a.preventDefault(),a.which==h.UP||a.which==h.DOWN?b._handleUpDownKey(a.which):a.which==h.ENTER?b._handleEnterKey():a.which==h.ESC?b._closeDropdown():a.which>=h.A&&a.which<=h.Z&&b._handleLetterKey(a.which)})},_handleUpDownKey:function(a){var b=this.countryList.children(".highlight").first(),c=a==h.UP?b.prev():b.next();c.length&&(c.hasClass("divider")&&(c=a==h.UP?c.prev():c.next()),this._highlightListItem(c),this._scrollTo(c))},_handleEnterKey:function(){var a=this.countryList.children(".highlight").first();a.length&&this._selectListItem(a)},_handleLetterKey:function(b){var c=String.fromCharCode(b),d=this.countryListItems.filter(function(){return a(this).text().charAt(0)==c&&!a(this).hasClass("preferred")});if(d.length){var f,e=d.filter(".highlight").first();f=e&&e.next()&&e.next().text().charAt(0)==c?e.next():d.first(),this._highlightListItem(f),this._scrollTo(f)}},_updateFlagFromInputVal:function(){var b=this,c=this.countryInput.val().replace(/(?=[() ])/g,"\\");if(c){for(var d=[],e=new RegExp("^"+c,"i"),f=0;f<this.countries.length;f++)this.countries[f].name.match(e)&&d.push(this.countries[f].iso2);var g=!1;return a.each(d,function(a,c){b.selectedFlagInner.hasClass(c)&&(g=!0)}),g||(this._selectFlag(d[0]),this.countryCodeInput.val(d[0]).trigger("change")),!0}return!1},_highlightListItem:function(a){this.countryListItems.removeClass("highlight"),a.addClass("highlight")},_getCountryData:function(a,b){for(var c=b?k:this.countries,d=0;d<c.length;d++)if(c[d].iso2==a)return c[d];return null},_selectFlag:function(a){if(!a)return!1;this.selectedFlagInner.attr("class","flag "+a);var b=this._getCountryData(a);this.selectedFlagInner.parent().attr("title",b.name);var c=this.countryListItems.children(".flag."+a).first().parent();this.countryListItems.removeClass("active"),c.addClass("active")},_selectListItem:function(a){var b=a.attr("data-country-code");this._selectFlag(b),this._closeDropdown(),this._updateName(b),this.countryInput.trigger("change"),this.countryCodeInput.trigger("change"),this._focus()},_closeDropdown:function(){this.countryList.addClass("hide"),this.selectedFlagInner.children(".arrow").removeClass("up"),a(c).off("keydown"+this.ns),a("html").off("click"+this.ns),this.countryList.off(this.ns)},_scrollTo:function(a){if(a&&a.offset()){var b=this.countryList,c=b.height(),d=b.offset().top,e=d+c,f=a.outerHeight(),g=a.offset().top,h=g+f,i=g-d+b.scrollTop();if(d>g)b.scrollTop(i);else if(h>e){var j=c-f;b.scrollTop(i-j)}}},_updateName:function(a){this.countryCodeInput.val(a).trigger("change"),this.countryInput.val(this._getCountryData(a).name)},getSelectedCountryData:function(){var a=this.selectedFlagInner.attr("class").split(" ")[1];return this._getCountryData(a)},selectCountry:function(a){a=a.toLowerCase(),this.selectedFlagInner.hasClass(a)||(this._selectFlag(a),this._updateName(a))},setCountry:function(a){this.countryInput.val(a),this._updateFlagFromInputVal()},destroy:function(){this.countryInput.off(this.ns),this.selectedFlagInner.parent().off(this.ns);var a=this.countryInput.parent();a.before(this.countryInput).remove()}},a.fn[e]=function(b){var c=arguments;if(b===d||"object"==typeof b)return this.each(function(){a.data(this,"plugin_"+e)||a.data(this,"plugin_"+e,new j(this,b))});if("string"==typeof b&&"_"!==b[0]&&"init"!==b){var f;return this.each(function(){var d=a.data(this,"plugin_"+e);d instanceof j&&"function"==typeof d[b]&&(f=d[b].apply(d,Array.prototype.slice.call(c,1))),"destroy"===b&&a.data(this,"plugin_"+e,null)}),f!==d?f:this}},a.fn[e].getCountryData=function(){return k},a.fn[e].setCountryData=function(a){k=a};var k=a.each([{n:"Afghanistan (\u202b\u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646\u202c\u200e)",i:"af"},{n:"\xc5land Islands (\xc5land)",i:"ax"},{n:"Albania (Shqip\xebri)",i:"al"},{n:"Algeria (\u202b\u0627\u0644\u062c\u0632\u0627\u0626\u0631\u202c\u200e)",i:"dz"},{n:"American Samoa",i:"as"},{n:"Andorra",i:"ad"},{n:"Angola",i:"ao"},{n:"Anguilla",i:"ai"},{n:"Antigua and Barbuda",i:"ag"},{n:"Argentina",i:"ar"},{n:"Armenia (\u0540\u0561\u0575\u0561\u057d\u057f\u0561\u0576)",i:"am"},{n:"Aruba",i:"aw"},{n:"Australia",i:"au"},{n:"Austria (\xd6sterreich)",i:"at"},{n:"Azerbaijan (Az\u0259rbaycan)",i:"az"},{n:"Bahamas",i:"bs"},{n:"Bahrain (\u202b\u0627\u0644\u0628\u062d\u0631\u064a\u0646\u202c\u200e)",i:"bh"},{n:"Bangladesh (\u09ac\u09be\u0982\u09b2\u09be\u09a6\u09c7\u09b6)",i:"bd"},{n:"Barbados",i:"bb"},{n:"Belarus (\u0411\u0435\u043b\u0430\u0440\u0443\u0441\u044c)",i:"by"},{n:"Belgium (Belgi\xeb)",i:"be"},{n:"Belize",i:"bz"},{n:"Benin (B\xe9nin)",i:"bj"},{n:"Bermuda",i:"bm"},{n:"Bhutan (\u0f60\u0f56\u0fb2\u0f74\u0f42)",i:"bt"},{n:"Bolivia",i:"bo"},{n:"Bosnia and Herzegovina (\u0411\u043e\u0441\u043d\u0430 \u0438 \u0425\u0435\u0440\u0446\u0435\u0433\u043e\u0432\u0438\u043d\u0430)",i:"ba"},{n:"Botswana",i:"bw"},{n:"Brazil (Brasil)",i:"br"},{n:"British Indian Ocean Territory",i:"io"},{n:"British Virgin Islands",i:"vg"},{n:"Brunei",i:"bn"},{n:"Bulgaria (\u0411\u044a\u043b\u0433\u0430\u0440\u0438\u044f)",i:"bg"},{n:"Burkina Faso",i:"bf"},{n:"Burundi (Uburundi)",i:"bi"},{n:"Cambodia (\u1780\u1798\u17d2\u1796\u17bb\u1787\u17b6)",i:"kh"},{n:"Cameroon (Cameroun)",i:"cm"},{n:"Canada",i:"ca"},{n:"Cape Verde (Kabu Verdi)",i:"cv"},{n:"Caribbean Netherlands",i:"bq"},{n:"Cayman Islands",i:"ky"},{n:"Central African Republic (R\xe9publique Centrafricaine)",i:"cf"},{n:"Chad (Tchad)",i:"td"},{n:"Chile",i:"cl"},{n:"China (\u4e2d\u56fd)",i:"cn"},{n:"Christmas Island",i:"cx"},{n:"Cocos (Keeling) Islands (Kepulauan Cocos (Keeling))",i:"cc"},{n:"Colombia",i:"co"},{n:"Comoros (\u202b\u062c\u0632\u0631 \u0627\u0644\u0642\u0645\u0631\u202c\u200e)",i:"km"},{n:"Congo (DRC) (Jamhuri ya Kidemokrasia ya Kongo)",i:"cd"},{n:"Congo (Republic) (Congo-Brazzaville)",i:"cg"},{n:"Cook Islands",i:"ck"},{n:"Costa Rica",i:"cr"},{n:"C\xf4te d\u2019Ivoire",i:"ci"},{n:"Croatia (Hrvatska)",i:"hr"},{n:"Cuba",i:"cu"},{n:"Cura\xe7ao",i:"cw"},{n:"Cyprus (\u039a\u03cd\u03c0\u03c1\u03bf\u03c2)",i:"cy"},{n:"Czech Republic (\u010cesk\xe1 republika)",i:"cz"},{n:"Denmark (Danmark)",i:"dk"},{n:"Djibouti",i:"dj"},{n:"Dominica",i:"dm"},{n:"Dominican Republic (Rep\xfablica Dominicana)",i:"do"},{n:"Ecuador",i:"ec"},{n:"Egypt (\u202b\u0645\u0635\u0631\u202c\u200e)",i:"eg"},{n:"El Salvador",i:"sv"},{n:"Equatorial Guinea (Guinea Ecuatorial)",i:"gq"},{n:"Eritrea",i:"er"},{n:"Estonia (Eesti)",i:"ee"},{n:"Ethiopia",i:"et"},{n:"Falkland Islands (Islas Malvinas)",i:"fk"},{n:"Faroe Islands (F\xf8royar)",i:"fo"},{n:"Fiji",i:"fj"},{n:"Finland (Suomi)",i:"fi"},{n:"France",i:"fr"},{n:"French Guiana (Guyane fran\xe7aise)",i:"gf"},{n:"French Polynesia (Polyn\xe9sie fran\xe7aise)",i:"pf"},{n:"Gabon",i:"ga"},{n:"Gambia",i:"gm"},{n:"Georgia (\u10e1\u10d0\u10e5\u10d0\u10e0\u10d7\u10d5\u10d4\u10da\u10dd)",i:"ge"},{n:"Germany (Deutschland)",i:"de"},{n:"Ghana (Gaana)",i:"gh"},{n:"Gibraltar",i:"gi"},{n:"Greece (\u0395\u03bb\u03bb\u03ac\u03b4\u03b1)",i:"gr"},{n:"Greenland (Kalaallit Nunaat)",i:"gl"},{n:"Grenada",i:"gd"},{n:"Guadeloupe",i:"gp"},{n:"Guam",i:"gu"},{n:"Guatemala",i:"gt"},{n:"Guernsey",i:"gg"},{n:"Guinea (Guin\xe9e)",i:"gn"},{n:"Guinea-Bissau (Guin\xe9 Bissau)",i:"gw"},{n:"Guyana",i:"gy"},{n:"Haiti",i:"ht"},{n:"Honduras",i:"hn"},{n:"Hong Kong (\u9999\u6e2f)",i:"hk"},{n:"Hungary (Magyarorsz\xe1g)",i:"hu"},{n:"Iceland (\xcdsland)",i:"is"},{n:"India (\u092d\u093e\u0930\u0924)",i:"in"},{n:"Indonesia",i:"id"},{n:"Iran (\u202b\u0627\u06cc\u0631\u0627\u0646\u202c\u200e)",i:"ir"},{n:"Iraq (\u202b\u0627\u0644\u0639\u0631\u0627\u0642\u202c\u200e)",i:"iq"},{n:"Ireland",i:"ie"},{n:"Isle of Man",i:"im"},{n:"Israel (\u202b\u05d9\u05e9\u05e8\u05d0\u05dc\u202c\u200e)",i:"il"},{n:"Italy (Italia)",i:"it"},{n:"Jamaica",i:"jm"},{n:"Japan (\u65e5\u672c)",i:"jp"},{n:"Jersey",i:"je"},{n:"Jordan (\u202b\u0627\u0644\u0623\u0631\u062f\u0646\u202c\u200e)",i:"jo"},{n:"Kazakhstan (\u041a\u0430\u0437\u0430\u0445\u0441\u0442\u0430\u043d)",i:"kz"},{n:"Kenya",i:"ke"},{n:"Kiribati",i:"ki"},{n:"Kosovo (Kosov\xeb)",i:"xk"},{n:"Kuwait (\u202b\u0627\u0644\u0643\u0648\u064a\u062a\u202c\u200e)",i:"kw"},{n:"Kyrgyzstan (\u041a\u044b\u0440\u0433\u044b\u0437\u0441\u0442\u0430\u043d)",i:"kg"},{n:"Laos (\u0ea5\u0eb2\u0ea7)",i:"la"},{n:"Latvia (Latvija)",i:"lv"},{n:"Lebanon (\u202b\u0644\u0628\u0646\u0627\u0646\u202c\u200e)",i:"lb"},{n:"Lesotho",i:"ls"},{n:"Liberia",i:"lr"},{n:"Libya (\u202b\u0644\u064a\u0628\u064a\u0627\u202c\u200e)",i:"ly"},{n:"Liechtenstein",i:"li"},{n:"Lithuania (Lietuva)",i:"lt"},{n:"Luxembourg",i:"lu"},{n:"Macau (\u6fb3\u9580)",i:"mo"},{n:"Macedonia (FYROM) (\u041c\u0430\u043a\u0435\u0434\u043e\u043d\u0438\u0458\u0430)",i:"mk"},{n:"Madagascar (Madagasikara)",i:"mg"},{n:"Malawi",i:"mw"},{n:"Malaysia",i:"my"},{n:"Maldives",i:"mv"},{n:"Mali",i:"ml"},{n:"Malta",i:"mt"},{n:"Marshall Islands",i:"mh"},{n:"Martinique",i:"mq"},{n:"Mauritania (\u202b\u0645\u0648\u0631\u064a\u062a\u0627\u0646\u064a\u0627\u202c\u200e)",i:"mr"},{n:"Mauritius (Moris)",i:"mu"},{n:"Mayotte",i:"yt"},{n:"Mexico (M\xe9xico)",i:"mx"},{n:"Micronesia",i:"fm"},{n:"Moldova (Republica Moldova)",i:"md"},{n:"Monaco",i:"mc"},{n:"Mongolia (\u041c\u043e\u043d\u0433\u043e\u043b)",i:"mn"},{n:"Montenegro (Crna Gora)",i:"me"},{n:"Montserrat",i:"ms"},{n:"Morocco (\u202b\u0627\u0644\u0645\u063a\u0631\u0628\u202c\u200e)",i:"ma"},{n:"Mozambique (Mo\xe7ambique)",i:"mz"},{n:"Myanmar (Burma) (\u1019\u103c\u1014\u103a\u1019\u102c)",i:"mm"},{n:"Namibia (Namibi\xeb)",i:"na"},{n:"Nauru",i:"nr"},{n:"Nepal (\u0928\u0947\u092a\u093e\u0932)",i:"np"},{n:"Netherlands (Nederland)",i:"nl"},{n:"New Caledonia (Nouvelle-Cal\xe9donie)",i:"nc"},{n:"New Zealand",i:"nz"},{n:"Nicaragua",i:"ni"},{n:"Niger (Nijar)",i:"ne"},{n:"Nigeria",i:"ng"},{n:"Niue",i:"nu"},{n:"Norfolk Island",i:"nf"},{n:"North Korea (\uc870\uc120 \ubbfc\uc8fc\uc8fc\uc758 \uc778\ubbfc \uacf5\ud654\uad6d)",i:"kp"},{n:"Northern Mariana Islands",i:"mp"},{n:"Norway (Norge)",i:"no"},{n:"Oman (\u202b\u0639\u064f\u0645\u0627\u0646\u202c\u200e)",i:"om"},{n:"Pakistan (\u202b\u067e\u0627\u06a9\u0633\u062a\u0627\u0646\u202c\u200e)",i:"pk"},{n:"Palau",i:"pw"},{n:"Palestine (\u202b\u0641\u0644\u0633\u0637\u064a\u0646\u202c\u200e)",i:"ps"},{n:"Panama (Panam\xe1)",i:"pa"},{n:"Papua New Guinea",i:"pg"},{n:"Paraguay",i:"py"},{n:"Peru (Per\xfa)",i:"pe"},{n:"Philippines",i:"ph"},{n:"Pitcairn Islands",i:"pn"},{n:"Poland (Polska)",i:"pl"},{n:"Portugal",i:"pt"},{n:"Puerto Rico",i:"pr"},{n:"Qatar (\u202b\u0642\u0637\u0631\u202c\u200e)",i:"qa"},{n:"R\xe9union (La R\xe9union)",i:"re"},{n:"Romania (Rom\xe2nia)",i:"ro"},{n:"Russia (\u0420\u043e\u0441\u0441\u0438\u044f)",i:"ru"},{n:"Rwanda",i:"rw"},{n:"Saint Barth\xe9lemy (Saint-Barth\xe9lemy)",i:"bl"},{n:"Saint Helena",i:"sh"},{n:"Saint Kitts and Nevis",i:"kn"},{n:"Saint Lucia",i:"lc"},{n:"Saint Martin (Saint-Martin (partie fran\xe7aise))",i:"mf"},{n:"Saint Pierre and Miquelon (Saint-Pierre-et-Miquelon)",i:"pm"},{n:"Saint Vincent and the Grenadines",i:"vc"},{n:"Samoa",i:"ws"},{n:"San Marino",i:"sm"},{n:"S\xe3o Tom\xe9 and Pr\xedncipe (S\xe3o Tom\xe9 e Pr\xedncipe)",i:"st"},{n:"Saudi Arabia (\u202b\u0627\u0644\u0645\u0645\u0644\u0643\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629\u202c\u200e)",i:"sa"},{n:"Senegal (S\xe9n\xe9gal)",i:"sn"},{n:"Serbia (\u0421\u0440\u0431\u0438\u0458\u0430)",i:"rs"},{n:"Seychelles",i:"sc"},{n:"Sierra Leone",i:"sl"},{n:"Singapore",i:"sg"},{n:"Sint Maarten",i:"sx"},{n:"Slovakia (Slovensko)",i:"sk"},{n:"Slovenia (Slovenija)",i:"si"},{n:"Solomon Islands",i:"sb"},{n:"Somalia (Soomaaliya)",i:"so"},{n:"South Africa",i:"za"},{n:"South Georgia & South Sandwich Islands",i:"gs"},{n:"South Korea (\ub300\ud55c\ubbfc\uad6d)",i:"kr"},{n:"South Sudan (\u202b\u062c\u0646\u0648\u0628 \u0627\u0644\u0633\u0648\u062f\u0627\u0646\u202c\u200e)",i:"ss"},{n:"Spain (Espa\xf1a)",i:"es"},{n:"Sri Lanka (\u0dc1\u0dca\u200d\u0dbb\u0dd3 \u0dbd\u0d82\u0d9a\u0dcf\u0dc0)",i:"lk"},{n:"Sudan (\u202b\u0627\u0644\u0633\u0648\u062f\u0627\u0646\u202c\u200e)",i:"sd"},{n:"Suriname",i:"sr"},{n:"Svalbard and Jan Mayen (Svalbard og Jan Mayen)",i:"sj"},{n:"Swaziland",i:"sz"},{n:"Sweden (Sverige)",i:"se"},{n:"Switzerland (Schweiz)",i:"ch"},{n:"Syria (\u202b\u0633\u0648\u0631\u064a\u0627\u202c\u200e)",i:"sy"},{n:"Taiwan (\u53f0\u7063)",i:"tw"},{n:"Tajikistan",i:"tj"},{n:"Tanzania",i:"tz"},{n:"Thailand (\u0e44\u0e17\u0e22)",i:"th"},{n:"Timor-Leste",i:"tl"},{n:"Togo",i:"tg"},{n:"Tokelau",i:"tk"},{n:"Tonga",i:"to"},{n:"Trinidad and Tobago",i:"tt"},{n:"Tunisia (\u202b\u062a\u0648\u0646\u0633\u202c\u200e)",i:"tn"},{n:"Turkey (T\xfcrkiye)",i:"tr"},{n:"Turkmenistan",i:"tm"},{n:"Turks and Caicos Islands",i:"tc"},{n:"Tuvalu",i:"tv"},{n:"Uganda",i:"ug"},{n:"Ukraine (\u0423\u043a\u0440\u0430\u0457\u043d\u0430)",i:"ua"},{n:"United Arab Emirates (\u202b\u0627\u0644\u0625\u0645\u0627\u0631\u0627\u062a \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0627\u0644\u0645\u062a\u062d\u062f\u0629\u202c\u200e)",i:"ae"},{n:"United Kingdom",i:"gb"},{n:"United States",i:"us"},{n:"U.S. Minor Outlying Islands",i:"um"},{n:"U.S. Virgin Islands",i:"vi"},{n:"Uruguay",i:"uy"},{n:"Uzbekistan (O\u02bbzbekiston)",i:"uz"},{n:"Vanuatu",i:"vu"},{n:"Vatican City (Citt\xe0 del Vaticano)",i:"va"},{n:"Venezuela",i:"ve"},{n:"Vietnam (Vi\u1ec7t Nam)",i:"vn"},{n:"Wallis and Futuna",i:"wf"},{n:"Western Sahara (\u202b\u0627\u0644\u0635\u062d\u0631\u0627\u0621 \u0627\u0644\u063a\u0631\u0628\u064a\u0629\u202c\u200e)",i:"eh"},{n:"Yemen (\u202b\u0627\u0644\u064a\u0645\u0646\u202c\u200e)",i:"ye"},{n:"Zambia",i:"zm"},{n:"Zimbabwe",i:"zw"}],function(a,b){b.name=b.n,b.iso2=b.i,delete b.n,delete b.i})});
+
 (function($) {
     $(function() {
-    	'use strict';
-	    $.GEOTopbar = function(params) {
-	        var defaultValues = {
-	            message: '',
-	            country_code: '',
-	            slide_up: '1000',
-	            slide_down: '1000',
-	            button_text: '',
-	            button_url: '',
-	            button_float: 'right',
-	            flag_position: 'after'
-	        };
-	        var params = $.extend(defaultValues, params);
-	        var message = params.message,
-	            country_code = params.country_code,
-	            slide_up = params.slide_up,
-	            slide_down = params.slide_down,
-	            button_text = params.button_text,
-	            button_url = params.button_url,
-	            button_float = params.button_float,
-	            flag_position = params.flag_position,
-	            button_html = '',
-	            flag_html = '';
-	        if(typeof button_text != 'undefined' && button_text !== '') {
-	        	button_html = $('<a href="' + button_url + '" class="geo-top-bar-button">' + button_text + '</a>');
-	        }
-	       	if(typeof flag_position != 'undefined' && flag_position !== '') {
-	        	flag_html = $('<span class="flag-icon flag-icon-' + country_code + '"></span>');
-	        }
-	        var html = $('<div id="geo-top-bar-wrapper"><div class="geo-top-bar-content"><p class="geo-top-bar-message">' + message + '</p></div></div>');
-	        $('body').prepend(html);
-	        // Button Float
-	        if(typeof button_html != 'undefined' && button_html !== '' && button_float === 'right') {
-	        	$('#geo-top-bar-wrapper .geo-top-bar-message').append(button_html);
-	        }else if(typeof button_html != 'undefined' && button_html !== '' && button_float === 'left') {
-	        	$('#geo-top-bar-wrapper .geo-top-bar-message').prepend(button_html);
-	        }
-	        // Flag Position
-	        if(typeof flag_html != 'undefined' && flag_html !== '' && flag_position === 'after') {
-	        	$('#geo-top-bar-wrapper .geo-top-bar-content').append(flag_html);
-	        } else if(typeof flag_html != 'undefined' && flag_html !== '' && flag_position === 'before') {
-	        	$('#geo-top-bar-wrapper .geo-top-bar-content').prepend(flag_html);
-	        }
-	        // Display GEO Top Bar
-	        $('#geo-top-bar-wrapper').delay(slide_down).slideDown('slow');
-	    }
-	    $.GEOTopbar({
-	    	message: mypreview_geo_top_bar_vars.message,
-	        country_code: mypreview_geo_top_bar_vars.country_code,
-	        slide_up: mypreview_geo_top_bar_vars.slide_up,
-	        slide_down: mypreview_geo_top_bar_vars.slide_down,
-	        button_text: mypreview_geo_top_bar_vars.button_text,
-	        button_url: mypreview_geo_top_bar_vars.button_url,
-	        button_float: mypreview_geo_top_bar_vars.button_float,
-	        flag_position: mypreview_geo_top_bar_vars.flag_position
-	    });
+        'use strict';
+        $.MyPreviewGEOTopBar = function(params) {
+            var defaultValues = {
+                message: '',
+                country_code: '',
+                slide_down: '1000',
+                button_text: '',
+                button_url: '',
+                button_float: 'right',
+                flag_position: 'after',
+                test_mode: '',
+                visibility_classes: ''
+            };
+            var params = $.extend(defaultValues, params),
+            	message = params.message,
+                country_code = params.country_code,
+                slide_down = params.slide_down,
+                button_text = params.button_text,
+                button_url = params.button_url,
+                button_float = params.button_float,
+                flag_position = params.flag_position,
+                test_mode = params.test_mode,
+                visibility_classes = params.visibility_classes,
+                button_html = '',
+                flag_html = '';
+            // Set all responsivness classes
+            if (typeof visibility_classes !== 'undefined' && visibility_classes.length > 0) {
+            	visibility_classes = $.parseJSON(visibility_classes);
+            	visibility_classes = visibility_classes.join(' ');
+            }
+            if (typeof button_text !== 'undefined' && button_text !== '') {
+                button_html = $('<a href="' + button_url + '" class="geo-top-bar-button">' + button_text + '</a>');
+            }
+            if (typeof flag_position !== 'undefined' && flag_position !== '') {
+                if (test_mode === '') {
+                    flag_html = $('<a href="#geo-top-bar-modal" rel="modal:open"><span class="flag-icon flag-icon-' + country_code + '"></span></a>');
+                } else {
+                    flag_html = $('<span class="flag-icon flag-icon-' + country_code + '"></span>');
+                }
+            }
+            var html = $('<div id="geo-top-bar-wrapper" class="' + visibility_classes + '"><div class="geo-top-bar-content"><p class="geo-top-bar-message"><span>' + message + '</span></p></div><!-- /geo-top-bar-content --></div><!-- /geo-top-bar-wrapper -->');
+            $('body').prepend(html);
+            // Button Float
+            if (typeof button_html !== 'undefined' && button_html !== '' && button_float === 'right') {
+                $('#geo-top-bar-wrapper .geo-top-bar-message').append(button_html);
+            } else if (typeof button_html !== 'undefined' && button_html !== '' && button_float === 'left') {
+                $('#geo-top-bar-wrapper .geo-top-bar-message').prepend(button_html);
+            }
+            // Flag Position
+            if (typeof flag_html !== 'undefined' && flag_html !== '' && flag_position === 'after') {
+                $('#geo-top-bar-wrapper .geo-top-bar-content').append(flag_html);
+            } else if (typeof flag_html != 'undefined' && flag_html !== '' && flag_position === 'before') {
+                $('#geo-top-bar-wrapper .geo-top-bar-content').prepend(flag_html);
+            }
+            // Display GEO Top Bar
+            if(typeof slide_down !== 'undefined' && slide_down === '0'){
+            	$('#geo-top-bar-wrapper').delay(300).show();
+            }else {
+            	$('#geo-top-bar-wrapper').delay(slide_down).slideDown('slow');
+            }
+        }
+        $.MyPreviewGEOTopBar({
+            message: mypreview_geo_top_bar_vars.message,
+            country_code: mypreview_geo_top_bar_vars.country_code,
+            slide_down: mypreview_geo_top_bar_vars.slide_down,
+            button_text: mypreview_geo_top_bar_vars.button_text,
+            button_url: mypreview_geo_top_bar_vars.button_url,
+            button_float: mypreview_geo_top_bar_vars.button_float,
+            flag_position: mypreview_geo_top_bar_vars.flag_position,
+            test_mode: mypreview_geo_top_bar_vars.test_mode,
+            visibility_classes: mypreview_geo_top_bar_vars.visibility_classes
+        });
+        // Initialize country drop-down list
+        if ($('#geo_top_bar_default_country').length > 0) {
+            var all_defined_countries = mypreview_geo_top_bar_vars.all_defined_countries,
+                countryData = $.fn.countrySelect.getCountryData(),
+                only_countries = new Array();
+            if (typeof all_defined_countries !== 'undefined' && all_defined_countries.length > 0 && typeof countryData != 'undefined' && countryData !== '') {
+                all_defined_countries = $.parseJSON(all_defined_countries);
+                countryData.forEach(function(e) {
+                    $.each(all_defined_countries, function(index, value) {
+                        if (value == e.name) {
+                            only_countries.push(e.iso2);
+                        }
+                    });
+                });
+            }
+            $('#geo_top_bar_default_country').countrySelect({
+            	'preferredCountries' : [],
+                'onlyCountries': only_countries,
+                'responsiveDropdown': true
+            });
+        }
     }); // end of document ready
 })(jQuery); // end of jQuery name space
