@@ -1,0 +1,552 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: GEO Top Bar\n"
+"POT-Creation-Date: 2017-04-03 04:01+0400\n"
+"PO-Revision-Date: 2017-04-03 04:01+0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: mypreview-geo-top-bar.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:171
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:176
+msgid "Select Image"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:172
+msgid "Change Image"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:173
+msgid "Remove"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:174
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:229
+#: includes/class-mypreview-geo-top-bar-customizer-google-fonts.php:38
+msgid "Default"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:175
+msgid "No image selected"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:177
+msgid "Choose Image"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:190
+msgid "Background Repeat"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:191
+msgid "Background Size"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:192
+msgid "Background Position"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:193
+msgid "Background Attachment"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:206
+msgid "Set if/how a background image will be repeated."
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:207
+msgid "Specifie the size of the background image."
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:208
+msgid "Set the starting position of a background image."
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:209
+msgid ""
+"Set whether a background image is fixed or scrolls with the rest of the page."
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:223
+msgid "No Repeat"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:224
+msgid "Tile"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:225
+msgid "Tile Horizontally"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:226
+msgid "Tile Vertically"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:230
+msgid "Cover"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:231
+msgid "Contain"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:234
+msgid "Left Top"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:235
+msgid "Left Center"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:236
+msgid "Left Bottom"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:237
+msgid "Right Top"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:238
+msgid "Right Center"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:239
+msgid "Right Bottom"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:240
+msgid "Center Top"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:241
+msgid "Center Center"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:242
+msgid "Center Bottom"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:245
+msgid "Fixed"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-custom-background.php:246
+msgid "Scroll"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-message-bar-repeater.php:140
+msgid "Delete"
+msgstr ""
+
+#: includes/class-mypreview-geo-top-bar-customizer-message-bar-repeater.php:143
+msgid "Close"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:104
+msgid "Cloning instances of this class is forbidden."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:114
+msgid "Unserializing instances of this class is forbidden."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#: mypreview-geo-top-bar.php:140 mypreview-geo-top-bar.php:250
+msgid "GEO Top Bar"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:162
+msgid "Hide GEO Top Bar"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:164
+msgid "This checkbox will hide the GEO Top Bar from view."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:221
+#, php-format
+msgid "Plugin prefers message with max %s chars."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:222
+msgid "Plugin prefers to have a message to display in the bar."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:251
+msgid ""
+"Customise the appearance and content of the sleek GEO message bar that is "
+"displayed on your website."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:257
+msgid "Layout"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:262
+msgid "Typography"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:267
+msgid "Color Scheme"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:272
+msgid "Responsiveness"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:277 mypreview-geo-top-bar.php:1020
+msgid "Message Bars"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:282
+msgid "Test Mode"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:318 mypreview-geo-top-bar.php:706
+msgid "Bar Background"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:341
+msgid "Message Alignment"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:342
+msgid "Adjust the message text alignment."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:362
+msgid "Button Float"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:363
+msgid "Adjust the button float."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:382
+msgid "Flag Position"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:383
+msgid "Adjust the flag icon position."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:402
+msgid "Bar Spacing"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:403
+msgid "Set the top and bottom padding of message bar."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:423
+msgid "Bar Divider Thickness"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:424
+msgid "Set the width of the message bar divider."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:444
+msgid "Slide Down Speed"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:445
+msgid "Determine how long the animation will run."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:465
+msgid "Button Border Radius"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:466
+msgid "Adjust rounded corners of button."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:486
+msgid "Button Border Thickness"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:487
+msgid "Adjust thickness of button border."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:507
+msgid "Font Family"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:508
+msgid ""
+"This font-family will be applied to message bar content and button element "
+"on your website."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:522
+msgid "Message Font Size"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:523
+msgid "Adjust the message bar text font size."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:543 mypreview-geo-top-bar.php:635
+msgid "Message Font Weight"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:544
+msgid "Set how thick or thin characters in message text should be displayed."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:567 mypreview-geo-top-bar.php:659
+msgid "Message Font Style"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:568
+msgid "Specifie the font style for the message text."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:590
+msgid "Message Text Transform"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:591
+msgid "Specifie the capitalization of message text."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:614
+msgid "Button Font Size"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:615
+msgid "Adjust the message bar button font size."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:636
+msgid "Set how thick or thin characters in button text should be displayed."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:660
+msgid "Specifie the font style for the button text."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:682
+msgid "Button Text Transform"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:683
+msgid "Specifie the capitalization of button text."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:707
+msgid "Will apply to modal box background too!"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:731
+msgid "Bar Divider"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:755
+msgid "Message Text"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:756
+msgid "Will apply to modal box text too!"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:780 mypreview-geo-top-bar.php:1045
+#: mypreview-geo-top-bar.php:1123
+msgid "Button Text"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:781 mypreview-geo-top-bar.php:831
+msgid "Will apply to modal box button text too!"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:805
+msgid "Button Text Hover"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:806 mypreview-geo-top-bar.php:856
+#: mypreview-geo-top-bar.php:906
+msgid "Works on hover event only!"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:830
+msgid "Button Background"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:855
+msgid "Button Background Hover"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:880
+msgid "Button Border"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:881
+msgid "Will apply to modal box button border too!"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:905
+msgid "Button Border Hover"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:930
+msgid "Large Devices"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:931
+msgid "Desktops (≥1200px)"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:950
+msgid "Medium Devices"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:951
+msgid "Desktops (≥992px)"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:970
+msgid "Small Devices"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:971
+msgid "Desktops (≥768px)"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:990
+msgid "Extra Small Devices"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:991
+msgid "Phones (<768px)"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:1021
+msgid ""
+"The message bar repeater field allows you to create a set of different "
+"message bars based visitor's GEO location which can be repeated while "
+"editing content!"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:1025 mypreview-geo-top-bar.php:1035
+#: mypreview-geo-top-bar.php:1103
+msgid "Message"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:1026
+msgid "Add Message"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:1030
+msgid "Country"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:1031
+msgid ""
+"Start by typing 3 or more character into search field or select country from "
+"drop down list."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:1036
+msgid ""
+"Specify the text to be displayed in the message bar content area, including "
+"HTML."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:1040
+msgid "Hide Country Flag"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:1041
+msgid "Check this box if you want to hide the country flag."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:1046 mypreview-geo-top-bar.php:1124
+msgid ""
+"Specify the text displayed on the button in the top bar component. If this "
+"field is empty, no button will be displayed."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:1050 mypreview-geo-top-bar.php:1143
+msgid "Button URL"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:1051 mypreview-geo-top-bar.php:1144
+msgid "Specify the URL the button in the message bar links to."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:1055
+msgid "Message Status"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:1056
+msgid "Toggle the message display in the top bar component."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:1058
+msgid "ON"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:1059
+msgid "OFF"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:1076
+msgid "Enable Test Mode"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:1077
+msgid ""
+"Will allow you to customize the message bar without having to perform on the "
+"live website."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:1104
+msgid "Tweak the message text, including HTML."
+msgstr ""
+
+#: mypreview-geo-top-bar.php:1239
+msgid ""
+"Deployment fails, Remove the duplicate country and save the changes again!"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:1592
+msgid "Where are you from?"
+msgstr ""
+
+#: mypreview-geo-top-bar.php:1595
+msgid "Go"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://demo.mypreview.one/geo-top-bar"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Display a highly customizable sleek message bar on your website. An ideal "
+"choice for informing visitors from specific geo locations."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Mahdi Yazdani"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://codecanyon.net/user/mypreview"
+msgstr ""
