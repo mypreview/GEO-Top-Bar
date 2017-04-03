@@ -15,7 +15,7 @@
         wp.customize('mypreview_geo_top_bar_test_mode_message', function(setting) {
             setting.bind(function(value) {
                 var code = 'long_title';
-                var limit = 100;
+                var limit = 130;
                 if (value.length > limit) {
                     setting.notifications.add(code, new wp.customize.Notification(
                         code, {
