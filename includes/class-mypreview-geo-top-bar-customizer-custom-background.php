@@ -231,15 +231,15 @@ if (class_exists('WP_Customize_Control') && !class_exists('MyPreview_GEO_Top_Bar
 					'contain' => __('Contain', 'mypreview-geo-top-bar')
 				) ,
 				'position' => array(
-					'left-top' => __('Left Top', 'mypreview-geo-top-bar') ,
-					'left-center' => __('Left Center', 'mypreview-geo-top-bar') ,
-					'left-bottom' => __('Left Bottom', 'mypreview-geo-top-bar') ,
-					'right-top' => __('Right Top', 'mypreview-geo-top-bar') ,
-					'right-center' => __('Right Center', 'mypreview-geo-top-bar') ,
-					'right-bottom' => __('Right Bottom', 'mypreview-geo-top-bar') ,
-					'center-top' => __('Center Top', 'mypreview-geo-top-bar') ,
-					'center-center' => __('Center Center', 'mypreview-geo-top-bar') ,
-					'center-bottom' => __('Center Bottom', 'mypreview-geo-top-bar')
+					'left top' => __('Left Top', 'mypreview-geo-top-bar') ,
+					'left center' => __('Left Center', 'mypreview-geo-top-bar') ,
+					'left bottom' => __('Left Bottom', 'mypreview-geo-top-bar') ,
+					'right top' => __('Right Top', 'mypreview-geo-top-bar') ,
+					'right center' => __('Right Center', 'mypreview-geo-top-bar') ,
+					'right bottom' => __('Right Bottom', 'mypreview-geo-top-bar') ,
+					'center top' => __('Center Top', 'mypreview-geo-top-bar') ,
+					'center center' => __('Center Center', 'mypreview-geo-top-bar') ,
+					'center bottom' => __('Center Bottom', 'mypreview-geo-top-bar')
 				) ,
 				'attach' => array(
 					'fixed' => __('Fixed', 'mypreview-geo-top-bar') ,
