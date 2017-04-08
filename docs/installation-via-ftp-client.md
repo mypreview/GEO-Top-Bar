@@ -4,4 +4,5 @@
 
 <hr/>
 
-1. 
+1. Log to your hosting (server) file manager with using FTP client credentials.
+2. Browse to your folder located at ```wp-content/themes```
