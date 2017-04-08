@@ -2,7 +2,7 @@
 
 # GEO Top Bar <small>1.0</small>
 
-> A highly customizable sleek GEO message bar on your website.
+> A customizable sleek GEO message bar on your website.
 
 - Simple and lightweight
 - Simple and lightweight
