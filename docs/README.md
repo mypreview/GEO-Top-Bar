@@ -24,4 +24,4 @@ Check out the [Live Demo](https://demo.mypreview.one/hypermarket/) to visit GEO 
 
 ## Purchase this plugin
 
-This is item is only available to purchase from CodeCanyon. :moneybag:
+This is item is only available to purchase from [CodeCanyon](https://codecanyon.net/user/mypreview). :moneybag:
