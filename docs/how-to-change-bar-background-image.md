@@ -17,7 +17,7 @@ By default, a background image is repeated both vertically and horizontally.
 
 ### Property Values
 
-* No Repeat: Don't tile, just show the image once.
-* Tile: The background image will be repeated both vertically and horizontally. This is the default value.
-* Tile Horizontally: The background image will be repeated only horizontally.
-* Tile Vertically: The background image will be repeated only vertically.
+* ```No Repeat```: Don't tile, just show the image once.
+* ```Tile```: The background image will be repeated both vertically and horizontally. This is the default value.
+* ```Tile Horizontally```: The background image will be repeated only horizontally.
+* ```Tile Vertically```: The background image will be repeated only vertically.
