@@ -1,4 +1,4 @@
-# Plugin Installation via WordPress
+# Getting the plugin downloaded from Envato
 
 To download the installable plugin file, first, log into your [Envato](https://codecanyon.net) account.
 
