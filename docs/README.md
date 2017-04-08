@@ -18,10 +18,10 @@ See the [Quick start](quickstart.md) for more details.
 * Emoji support
 * Compatible with IE10+
 
-## Examples
+## Live Demo
 
-Check out the [Showcase](https://github.com/QingWei-Li/docsify/#showcase) to docsify in use.
+Check out the [Live Demo](https://demo.mypreview.one/hypermarket/) to visit GEO Top Bar in action.
 
-## Donate
+## Purchase this plugin
 
-Please consider donating if you think docsify is helpful to you or that my work is valuable. I am happy if you can help me [buy a cup of coffee](https://github.com/QingWei-Li/donate). :heart:
+This is item is only available to purchase from CodeCanyon. :moneybag:
