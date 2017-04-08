@@ -8,6 +8,8 @@ Adding or changing message bar background is incredibly comfortable in the GEO T
 Via the Customizer you can quickly and easily change or add any background image you wish in a second! 
 Simply navigate to **Appearance > Customize > GEO Top Bar > Layout** and here you will be able to locate the **"Bar Background"** option.
 
+<hr/>
+
 ## Background Repeat
 
 The background repeat property sets if/how a background image will be repeated.
