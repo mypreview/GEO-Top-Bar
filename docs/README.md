@@ -1,6 +1,6 @@
-## docsify
+## GEO Top Bar
 
-> A magical documentation site generator.
+> Display a highly customizable sleek message bar on your website. An ideal choice for informing visitors from specific geo locations.
 
 ## What is it
 
