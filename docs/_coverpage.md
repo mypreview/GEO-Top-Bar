@@ -1,14 +1,14 @@
 
 ![logo](_media/icon.svg)
 
-# docsify <small>3.5</small>
+# GEO Top Bar <small>1.0</small>
 
-> A magical documentation site generator.
+> A highly customizable GEO sleek message bar on your website.
 
 - Simple and lightweight (~16kB gzipped)
 - No statically built html files
 - Multiple themes
 
 
-[GitHub](https://github.com/QingWei-Li/docsify/)
-[Get Started](#docsify)
+[CodeCanyon](https://codecanyon.net/user/mypreview)
+[Get Started](#geo-top-bar)
