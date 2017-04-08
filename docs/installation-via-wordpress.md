@@ -7,6 +7,7 @@ From the drop down menu click on the **Installable WordPress file only** to down
 
 ?> All files and Documentation. This option will download a .zip file which will include the theme, all extensions, documentation and the licensing information.
 
+
 ?> Installable WordPress files only. This option will just download the theme in a .zip format to your WordPress site.
 
 Whenever you are downloading the plugin files from Envato, you will get an archive file within *.zip* extension.
