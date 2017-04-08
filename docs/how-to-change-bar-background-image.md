@@ -9,3 +9,5 @@ Via the Customizer you can quickly and easily change or add any background image
 Simply navigate to **Appearance > Customize > GEO Top Bar > Layout** and here you will be able to locate the **"Bar Background"** option.
 
 ## Background Repeat
+
+The background repeat property sets if/how a background image will be repeated.
