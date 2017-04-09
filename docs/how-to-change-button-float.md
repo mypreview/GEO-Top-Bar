@@ -1,6 +1,6 @@
 # How to Change Button Float?
 
-The button float property specifies that an element should be placed along the **left or right side** of the message bar content.
+The button float property specifies that the button should be placed along the **left or right side** of the message bar content.
 
 Navigate to **Appearance > Customize > GEO Top Bar > Layout** and here you will be able to locate the **"Button Float"** option.
 
