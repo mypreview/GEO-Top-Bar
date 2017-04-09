@@ -21,3 +21,13 @@ By default, a background image is repeated both vertically and horizontally.
 * ```Tile```: The background image will be repeated both vertically and horizontally. This is the **default** value.
 * ```Tile Horizontally```: The background image will be repeated only horizontally.
 * ```Tile Vertically```: The background image will be repeated only vertically.
+
+## Background Size
+
+The background size property in CSS is one of the most useful — and most complex — of the background properties.
+
+### Property Values
+
+* ```Auto```: **Default** value. Auto tells the browser to automatically calculate the size based on the actual size of the image and the aspect ratio.
+* ```Cover```: Cover tells the browser to make sure the image always covers the entire container, even if it has to stretch the image or cut a little bit off one of the edges.
+* ```Contain```: Contain, says to always show the whole image, even if that leaves a little space to the sides or bottom.
