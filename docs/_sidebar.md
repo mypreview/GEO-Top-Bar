@@ -6,6 +6,6 @@
   - [Change Bar Background Image](how-to-change-bar-background-image)
   - [Change Bar Content Alignment](how-to-change-bar-content-alignment)
   - [Change Button Float](how-to-change-button-float)
-  - [Change Flat Position](how-to-change-flag-position)
+  - [Change Flag Icon Position](how-to-change-flag-position)
 
 - [Changelog](changelog.md)
