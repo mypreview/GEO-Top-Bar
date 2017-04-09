@@ -1,6 +1,6 @@
-# How to Change Flag Position?
+# How to Change Flag Icon Position?
 
-The flag position property specifies that the country flag icon (SVG) should be placed **before or after** the message bar content.
+The flag position property specifies that the country flag icon *(SVG)* should be placed **before or after** the message bar content.
 
 Navigate to **Appearance > Customize > GEO Top Bar > Layout** and here you will be able to locate the **"Flag Position"** option.
 
