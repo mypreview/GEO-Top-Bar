@@ -2,7 +2,7 @@
 
 The message alignment property in layout section is used for aligning the inner content of a bar element.
 
-###Property Values
+### Property Values
 
 * ```Left```:  Content aligns along the left side.
 * ```Right```: Content aligns along the right side.
