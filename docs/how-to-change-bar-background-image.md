@@ -51,3 +51,10 @@ The first value is the **horizontal position** and the second value is the **ver
 * ```center bottom```
 
 ## Background Attachment
+
+The background attachment property in CSS specifies how to move the background relative to the viewport.
+
+### Property Values
+
+* ```Fixed```: stays fixed no matter what. It's kind of like a physical window: moving around the window changes your perspective, but it doesn't change where things are outside of the window.
+* ```Scroll```: It scrolls with the main view, but stays fixed inside the local view.
