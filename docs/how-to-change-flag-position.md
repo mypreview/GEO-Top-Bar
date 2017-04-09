@@ -7,4 +7,4 @@ Navigate to **Appearance > Customize > GEO Top Bar > Layout** and here you will 
 ### Property Values
 
 * ```After the message text```:  Flag icon aligns along the left side of the message bar content.
-* ```Before the message text```: **Default** value. Flag icon aligns along the right side of the message bar content.
+* ```Before the message text```: The **default** value. Flag icon aligns along the right side of the message bar content.
