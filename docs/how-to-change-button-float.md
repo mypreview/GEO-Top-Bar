@@ -7,4 +7,4 @@ Navigate to **Appearance > Customize > GEO Top Bar > Layout** and here you will 
 ### Property Values
 
 * ```Left```:  Button aligns along the left side of the message bar content.
-* ```Right```: **Default** value. Button aligns along the right side of the message bar content.
+* ```Right```: The **default** value. Button aligns along the right side of the message bar content.
