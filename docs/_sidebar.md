@@ -4,5 +4,6 @@
   - [Installation via FTP Client](installation-via-ftp-client.md)
 - Layout
   - [Change Bar Background Image](how-to-change-bar-background-image)
+  - [Change Bar Content Alignment](how-to-change-bar-content-alignment)
 
 - [Changelog](changelog.md)
