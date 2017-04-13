@@ -5,8 +5,17 @@
  * @package     GEO Top Bar
  * @since       1.0
  */
-.customize-control select {
-    width: 98%;
+#accordion-panel-mypreview_geo_top_bar_pnl h3.accordion-section-title {
+	padding-top: 12px;
+    padding-bottom: 12px;
+	padding-left: 9px;
+}
+#accordion-panel-mypreview_geo_top_bar_pnl h3.accordion-section-title:before {
+    content: "\f230";
+    font: 400 18px/1 dashicons;
+    color: #0085ba;
+    font-size: 23px;
+    vertical-align: middle;
 }
 .mypreview-geo-top-bar-background-image-fields li {
     margin: 12px 0;
@@ -114,25 +123,27 @@
     font: 400 18px/1 dashicons;
     vertical-align: middle;
 }
+#customize-control-mypreview_geo_top_bar_test_mode_message_control textarea,
 .mypreview-geo-top-bar-fields textarea {
     width: 100%;
     min-height: 100px;
+	border-radius: 4px;
+    box-shadow: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #32373c;
 }
 .mypreview-geo-top-bar-fields select {
     width: 100%;
     min-width: none;
 }
 .mypreview-geo-top-bar-fields ul.country-list {
-    width: 253px;
+    width: 246px;
     box-shadow: none;
     margin-top: 2px;
 }
 .mypreview-geo-top-bar-type-checkbox {
     margin-top: 10px;
-}
-.mypreview-geo-top-bar-type-checkbox input[type=checkbox] {
-    margin-right: 8px;
-    margin-left: -24px;
 }
 .mypreview-geo-top-bar-type-checkbox label {
     line-height: 20px;
@@ -189,13 +200,411 @@
     bottom: 0;
 }
 .mypreview-geo-top-bar-fields .onoffswitch-active .onoffswitch-switch {
-    background: #2EA2CC;
+    background: #2E86B9;
     left: 0;
 }
 .mypreview-geo-top-bar-fields .onoffswitch-inactive .onoffswitch-switch {
-    background: #7D7D7D;
+    background: #186EA0;
     right: 0;
 }
 .mypreview-geo-top-bar-fields .switch-on .onoffswitch-inner {
     margin-left: 0;
+}
+/* Titles */
+#sub-accordion-panel-mypreview_geo_top_bar_pnl h3, 
+#accordion-panel-mypreview_geo_top_bar_pnl h3 { 
+	text-decoration: none !important; 
+	font-style: normal !important; 
+	text-transform: none !important; 
+	letter-spacing: 0px !important; 
+	font-family: "Open Sans",sans-serif !important;
+}
+/* Accordion Section */
+.accordion-section-content#sub-accordion-section-mypreview_geo_top_bar_test_mode_sec,
+.accordion-section-content#sub-accordion-section-mypreview_geo_top_bar_message_bars_sec,
+.accordion-section-content#sub-accordion-section-mypreview_geo_top_bar_responsiveness_sec,
+.accordion-section-content#sub-accordion-section-mypreview_geo_top_bar_color_scheme_sec,
+.accordion-section-content#sub-accordion-section-mypreview_geo_top_bar_typography_sec,
+.accordion-section-content#sub-accordion-section-mypreview_geo_top_bar_layout_sec,
+.accordion-section-content#sub-accordion-section-mypreview_geo_top_bar_portability_sec {
+    padding: 20px;
+    background-color: #fff !important;
+    border-bottom: 1px solid #dddddd;
+}
+/* Scrollbar */
+.wp-full-overlay-sidebar-content::-webkit-scrollbar, 
+.et-pb-main-settings::-webkit-scrollbar, 
+ul.et_font_icon::-webkit-scrollbar, 
+.accordion-section-content::-webkit-scrollbar {
+    width: 5px !important;
+}
+.wp-full-overlay-sidebar-content::-webkit-scrollbar-thumb, 
+.et-pb-main-settings::-webkit-scrollbar-thumb, 
+ul.et_font_icon::-webkit-scrollbar-thumb, 
+.accordion-section-content::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0 !important;
+    border-radius: 0 !important;
+    background: #d8d8d8 !important;
+}
+.wp-full-overlay-sidebar-content::-webkit-scrollbar-track, 
+.et-pb-main-settings::-webkit-scrollbar-track, 
+ul.et_font_icon::-webkit-scrollbar-track, 
+.accordion-section-content::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0.3) !important;
+    width: 20px !important;
+}
+/* Customizer Controls */
+
+#sub-accordion-section-mypreview_geo_top_bar_test_mode_sec .customize-control,
+#sub-accordion-section-mypreview_geo_top_bar_message_bars_sec .customize-control,
+#sub-accordion-section-mypreview_geo_top_bar_responsiveness_sec .customize-control,
+#sub-accordion-section-mypreview_geo_top_bar_color_scheme_sec .customize-control,
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control,
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control,
+.customize-control {
+    margin-bottom: 0;
+}
+#sub-accordion-section-mypreview_geo_top_bar_test_mode_sec .customize-control-title,
+#sub-accordion-section-mypreview_geo_top_bar_message_bars_sec .customize-control-title,
+#sub-accordion-section-mypreview_geo_top_bar_responsiveness_sec .customize-control-title,
+#sub-accordion-section-mypreview_geo_top_bar_color_scheme_sec .customize-control-title,
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control-title,
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec  .customize-control-title {
+    margin-top: 15px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+/* Customizer Controls button */
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control button.remove-button,
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control .attachment-media-view .upload-button {
+    margin-bottom: 10px;
+	width: 48% !important;
+}
+#sub-accordion-section-mypreview_geo_top_bar_portability_sec .customize-control input.button,
+#sub-accordion-section-mypreview_geo_top_bar_test_mode_sec .customize-control button.button,
+#sub-accordion-section-mypreview_geo_top_bar_message_bars_sec .customize-control button.button,
+#sub-accordion-section-mypreview_geo_top_bar_responsiveness_sec .customize-control button.button,
+#sub-accordion-section-mypreview_geo_top_bar_color_scheme_sec .customize-control button.button,
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control button.button,
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control button.button {
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    background-color: #2E86B9;
+    color: #fff;
+    height: 30px;
+}
+#sub-accordion-section-mypreview_geo_top_bar_portability_sec .customize-control input.button:hover,
+#sub-accordion-section-mypreview_geo_top_bar_test_mode_sec .customize-control button.button:hover,
+#sub-accordion-section-mypreview_geo_top_bar_message_bars_sec .customize-control button.button:hover,
+#sub-accordion-section-mypreview_geo_top_bar_responsiveness_sec .customize-control button.button:hover,
+#sub-accordion-section-mypreview_geo_top_bar_color_scheme_sec .customize-control button.button:hover,
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control button.button:hover,
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control button.button:hover {
+    color: #fff;
+    background-color: #186EA0;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+/* Customizer Controls Select */
+#sub-accordion-section-mypreview_geo_top_bar_test_mode_sec .customize-control select,
+#sub-accordion-section-mypreview_geo_top_bar_message_bars_sec .customize-control select,
+#sub-accordion-section-mypreview_geo_top_bar_responsiveness_sec .customize-control select,
+#sub-accordion-section-mypreview_geo_top_bar_color_scheme_sec .customize-control select,
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control select,
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control select, 
+#sub-accordion-section-mypreview_geo_top_bar_message_bars_sec .customize-control-text input,
+#sub-accordion-section-mypreview_geo_top_bar_responsiveness_sec .customize-control-text input,
+#sub-accordion-section-mypreview_geo_top_bar_color_scheme_sec .customize-control-text input,
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control-text input,
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control-text input {
+    background: #FDFDFD;
+    border: 1px solid #eee;
+    height: 35px;
+	width: 98%;
+}
+#sub-accordion-section-mypreview_geo_top_bar_test_mode_sec .customize-control-text input {
+	width: 98%;
+}
+#sub-accordion-section-mypreview_geo_top_bar_test_mode_sec .customize-control input,
+#sub-accordion-section-mypreview_geo_top_bar_message_bars_sec .customize-control input,
+#sub-accordion-section-mypreview_geo_top_bar_responsiveness_sec .customize-control input,
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control input,
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control input, 
+#sub-accordion-section-mypreview_geo_top_bar_test_mode_sec .customize-control select,
+#sub-accordion-section-mypreview_geo_top_bar_message_bars_sec .customize-control select,
+#sub-accordion-section-mypreview_geo_top_bar_responsiveness_sec .customize-control select,
+#sub-accordion-section-mypreview_geo_top_bar_color_scheme_sec .customize-control select,
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control select,
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control select, 
+#sub-accordion-section-mypreview_geo_top_bar_test_mode_sec .customize-control input[type=checkbox],
+#sub-accordion-section-mypreview_geo_top_bar_message_bars_sec .customize-control input[type=checkbox],
+#sub-accordion-section-mypreview_geo_top_bar_responsiveness_sec .customize-control input[type=checkbox],
+#sub-accordion-section-mypreview_geo_top_bar_color_scheme_sec .customize-control input[type=checkbox],
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control input[type=checkbox],
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control input[type=checkbox], 
+#sub-accordion-section-mypreview_geo_top_bar_test_mode_sec .customize-control input[type=text],
+#sub-accordion-section-mypreview_geo_top_bar_message_bars_sec .customize-control input[type=text],
+#sub-accordion-section-mypreview_geo_top_bar_responsiveness_sec .customize-control input[type=text],
+#sub-accordion-section-mypreview_geo_top_bar_color_scheme_sec .customize-control input[type=text],
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control input[type=text],
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control input[type=text] {
+    margin-left: 0;
+    border-radius: 4px;
+    box-shadow: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #32373c;
+}
+#sub-accordion-section-mypreview_geo_top_bar_color_scheme_sec .customize-control input {
+    border-radius: 4px;
+    box-shadow: none;
+    color: #32373c;
+}
+#sub-accordion-section-mypreview_geo_top_bar_message_bars_sec .country-select input[type=text] {
+	padding-left: 44px !important;
+}
+/* Customizer Controls Range */
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control-range .customize-control-title,
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control-range .customize-control-title {
+    margin-bottom: -8px;
+}
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control-range input[type=range],
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control-range input[type=range] {
+    -webkit-transition: background .5s;
+    -moz-transition: background .5s;
+    transition: background .5s;
+    -webkit-appearance: none;
+    background-color: #f4f4f4;
+    height: 5px;
+    width: 165px;
+    padding: 0;
+}
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control-range input[type="range"]:focus, 
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control-range input[type="range"]:focus { 
+	box-shadow: none !important; 
+	outline: none !important; 
+}
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control-range input[type="range"]:hover,
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control-range input[type="range"]:hover { 
+	background-color: #CAEBFF; 
+}
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control-range input[type="range"]::-webkit-slider-thumb, 
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control-range input[type="range"]::-webkit-slider-thumb { 
+	-webkit-appearance: none; 
+	background-color: #2e86b9; 
+	width: 15px; 
+	height: 15px; 
+	border-radius: 15px; 
+	-webkit-border-radius: 15px; 
+}
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control-range input[type="range"]::-moz-range-track, 
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control-range input[type="range"]::-moz-range-track { 
+	border: inherit; 
+	background: transparent; 
+}
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control-range input[type="range"]::-ms-track, 
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control-range input[type="range"]::-ms-track { 
+	border: inherit; 
+	color: transparent; 
+	background: transparent; 
+}
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control-range input[type="range"]::-ms-fill-lower,
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control-range input[type="range"]::-ms-fill-upper,
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control-range input[type="range"]::-ms-fill-lower,
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control-range input[type="range"]::-ms-fill-upper { 
+	background: transparent; 
+}
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control-range input[type="range"]::-ms-tooltip, 
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control-range input[type="range"]::-ms-tooltip { 
+	display: none; 
+}
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control-range input[type="range"]::-webkit-slider-thumb,
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control-range input[type="range"]::-webkit-slider-thumb { 
+	-webkit-appearance: none; 
+	width: 15px; 
+	height: 15px; 
+	border: none; 
+	border-radius: 15px; 
+	background-color: #2e86b9;
+}
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control-range input[type="range"]::-moz-range-thumb, 
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control-range input[type="range"]::-moz-range-thumb { 
+	width: 15px; 
+	height: 15px; 
+	border: none; 
+	border-radius: 15px; 
+	background-color: #2e86b9; 
+}
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control-range input[type="range"]::-ms-thumb, 
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control-range input[type="range"]::-ms-thumb { 
+	width: 15px; 
+	height: 15px; 
+	border-radius: 15px; 
+	border: 0; 
+	background-color: #2e86b9; 
+}
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control input.et-pb-range-input, 
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control input.et-pb-range-input { 
+	width: 60px; 
+	text-align: center; 
+	margin-left: 4px; 
+	border-radius: 4px; 
+	border: none; 
+	box-shadow: none; 
+	background: #F4F4F4; 
+	padding: 3px; 
+	font-size: 11px; 
+	font-weight: 800; 
+	color: #555; 
+	-moz-appearance:textfield; 
+}
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control input.et-pb-range-input:hover,
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control input.et-pb-range-input:focus,
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control input.et-pb-range-input:hover,
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control input.et-pb-range-input:focus { 
+	background: #eaeaea; 
+	transition: background .5s; 
+}
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control-range input.et-pb-range-input::-webkit-outer-spin-button,
+#sub-accordion-section-mypreview_geo_top_bar_typography_sec .customize-control-range input.et-pb-range-input::-webkit-inner-spin-button
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control-range input.et-pb-range-input::-webkit-outer-spin-button,
+#sub-accordion-section-mypreview_geo_top_bar_layout_sec .customize-control-range input.et-pb-range-input::-webkit-inner-spin-button { 
+	-webkit-appearance: none; 
+	margin: 0; 
+}
+/* Customizer Controls Color Picker */
+#sub-accordion-section-mypreview_geo_top_bar_color_scheme_sec .customize-control-alpha-color  .wp-picker-container, 
+#sub-accordion-section-mypreview_geo_top_bar_color_scheme_sec .customize-control-alpha-color  .wp-picker-input-wrap {
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+}
+#sub-accordion-section-mypreview_geo_top_bar_color_scheme_sec .customize-control-alpha-color .wp-color-result {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 0 0 40px;
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,.5) !important;
+    border: none;
+    height: 30px;
+    border-radius: 4px;
+    margin: 0;
+}
+#sub-accordion-section-mypreview_geo_top_bar_color_scheme_sec .customize-control-alpha-color .wp-color-result:after {
+    background-color: rgba(0,0,0,.2);
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    border: none;
+    box-shadow: none;
+    font-size: 12px;
+    border-radius: 0 4px 4px 0;
+    padding: 0 15px;
+}
+#sub-accordion-section-mypreview_geo_top_bar_color_scheme_sec .customize-control-alpha-color .wp-picker-container input[type=text].wp-color-picker, 
+#sub-accordion-section-mypreview_geo_top_bar_color_scheme_sec .customize-control-alpha-color .wp-picker-container input[type=text].wp-color-picker + .wp-picker-default,  
+#sub-accordion-section-mypreview_geo_top_bar_color_scheme_sec .wp-core-ui .wp-picker-clear {
+    width: 45% !important;
+    vertical-align: bottom;
+    margin-top: 10px;
+}
+#sub-accordion-section-mypreview_geo_top_bar_color_scheme_sec .customize-control-alpha-color .wp-picker-container .iris-picker {
+    margin: 15px 0 0 0;
+}
+#sub-accordion-section-mypreview_geo_top_bar_color_scheme_sec .customize-control-alpha-color .wp-picker-container .iris-square, 
+#sub-accordion-section-mypreview_geo_top_bar_color_scheme_sec .customize-control-alpha-color .wp-picker-container .iris-palette-container {
+    margin-left: -1px;
+}
+/* Country Select */
+#sub-accordion-section-mypreview_geo_top_bar_message_bars_sec .customize-control .country-select input {
+	border: none;
+	background: #f4f4f4;
+}
+/* CheckBox */
+.mypreview-geo-top-bar-type-checkbox input[type=checkbox] {
+    margin-top: 0;
+    width: 25px;
+	border: none;
+    background: #f4f4f4;
+    height: 25px;
+	margin-right: 8px;
+    margin-left: -24px !important;
+}
+#customize-control-mypreview_geo_top_bar_test_mode_toggle_control.customize-control-checkbox {
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: 1px solid #EEEEEE;
+    background-color: #FDFDFD;
+    margin-bottom: -1px;
+    padding: 6px 10px;
+    border-radius: 2px;
+    -webkit-box-sizing: border-box;
+}
+#customize-control-mypreview_geo_top_bar_test_mode_toggle_control.customize-control-checkbox input[type=checkbox] {
+	background: #f4f4f4;
+	border: none;
+	margin-right: 10px;
+    margin-top: 0;
+    width: 25px;
+    height: 25px;
+}
+#customize-control-mypreview_geo_top_bar_test_mode_toggle_control.customize-control-checkbox label {
+	padding: 0;
+    margin-left: 0;
+}
+#customize-control-mypreview_geo_top_bar_test_mode_toggle_control input[type=checkbox]:checked:before,
+#sub-accordion-section-mypreview_geo_top_bar_message_bars_sec input[type=checkbox]:checked:before {
+    color: #2E86B9;
+    float: none;
+	margin: -5px 0 0 -6px;
+}
+/* Portability */
+#customize-control-mypreview_geo_top_bar_portability_settings_control .customize-control-title,
+#customize-control-mypreview_geo_top_bar_portability_settings_control .customize-control-description {
+	font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    border: 1px solid #EEEEEE;
+    background-color: #FDFDFD;
+    margin-bottom: -1px;
+    padding: 6px 10px;
+    border-radius: 2px;
+    -webkit-box-sizing: border-box;
+}
+#customize-control-mypreview_geo_top_bar_portability_settings_control input[name=mypreview-geo-top-bar-export-button] {
+	margin-top: 15px !important;
+}
+.mypreview-geo-top-bar-form {
+    position: absolute;
+    left: -99999px;
+}
+.mypreview-geo-top-bar-hr {
+    margin: 20px 0px 10px;
+}
+input[type=file].mypreview-geo-top-bar-import-file {
+    width: 100%;
+    margin: 10px 0;
+    font-size: 12px;
+	color: #B1B7BD;
+    border: 2px dashed #E0E5EA;
+    padding: 10px 8px;
+	cursor: pointer;
+}
+.mypreview-geo-top-bar-import-file::-webkit-file-upload-button {
+	visibility: hidden;
+	width: 0;
+}
+.button::before {
+	
+}
+.mypreview-geo-top-bar-import-images {
+    display: block;
+    margin-bottom: 10px;
+}
+.mypreview-geo-top-bar-uploading {
+    display: none;
+    margin: 10px 0;
+    padding: 10px;
 }
