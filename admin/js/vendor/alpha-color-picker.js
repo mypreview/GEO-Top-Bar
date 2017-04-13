@@ -1,5 +1,7 @@
-/**
- * Alpha Color Picker JS
+/*
+ * Alpha Color Picker
+ * https://github.com/BraadMartin/components/tree/master/alpha-color-picker
+ * Licensed under the GPL license
  */
 
 ( function( $ ) {

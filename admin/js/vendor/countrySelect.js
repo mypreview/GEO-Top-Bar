@@ -1,4 +1,8 @@
-// wrap in UMD - see https://github.com/umdjs/umd/blob/master/jqueryPlugin.js
+/*
+ * Country Select JS
+ * https://github.com/mrmarkfrench/country-select-js
+ * Licensed under the MIT license
+ */
 (function(factory) {
 	if (typeof define === "function" && define.amd) {
 		define([ "jquery" ], function($) {

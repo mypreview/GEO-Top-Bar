@@ -1,12 +1,9 @@
-/**
- * Custom Background Control.
- * Inspired by Customizer Background Control by devinsays.
- *
- * @link        https://github.com/devinsays/customizer-background-control
- * @author      Mahdi Yazdani
- * @package     GEO Top Bar
- * @since       1.0
+/*
+ * Customizer Background Control
+ * https://github.com/devinsays/customizer-background-control
+ * Licensed under the GPL license
  */
+
 (function(api) {
 
     /**
