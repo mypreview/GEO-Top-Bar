@@ -7,5 +7,6 @@
   - [Change Bar Content Alignment](how-to-change-bar-content-alignment)
   - [Change Button Float](how-to-change-button-float)
   - [Change Flag Icon Position](how-to-change-flag-icon-position)
+  - [Change Flag Icon Size](how-to-change-flag-icon-size)
 
 - [Changelog](changelog.md)
