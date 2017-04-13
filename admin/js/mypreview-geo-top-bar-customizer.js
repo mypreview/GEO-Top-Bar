@@ -20,7 +20,7 @@
                     setting.notifications.add(code, new wp.customize.Notification(
                         code, {
                             type: 'warning',
-                            message: mypreview_geo_top_bar_customizer_vars.msgBarMaxChar.replace('%s', limit)
+                            message: mypreview_geo_top_bar_customizer_vars.msg_bar_max_char.replace('%s', limit)
                         }
                     ));
                 } else {
@@ -31,7 +31,7 @@
                     setting.notifications.add(code, new wp.customize.Notification(
                         code, {
                             type: 'info',
-                            message: mypreview_geo_top_bar_customizer_vars.msgBarContentReq
+                            message: mypreview_geo_top_bar_customizer_vars.msg_bar_content_req
                         }
                     ));
                 } else {
@@ -120,6 +120,11 @@
                         $(this).val(defaultValue);
                     });
 
+                    field.find("select[data-name]").each(function(){
+                        var defaultValue = $(this).attr('data-default');
+                        $(this).val(defaultValue);
+                    });
+
                     field.find('.onoffswitch').each(function() {
                         var defaultValue = $(this).next('input[data-name]').attr('data-default');
                         $(this).next('input[data-name]').val(defaultValue);
@@ -169,7 +174,7 @@
         });
         /**
          * Handling on checkbox event changed - Message Bar(s)
-         * 
+         *
          * @since 1.0
          */
         $('#customize-theme-controls').on('change', 'input[type="checkbox"][data-name]', function() {
@@ -183,7 +188,7 @@
         });
         /**
          * Handling on switch event changed - Message Bar(s)
-         * 
+         *
          * @since 1.0
          */
         $('body').on('click', '.onoffswitch', function() {
@@ -196,6 +201,39 @@
                 $this.next('input').val('on').trigger('change')
             }
         });
+        /**
+         * Export all available options - Portability
+         *
+         * @since 1.0
+         */
+        $('input[name=mypreview-geo-top-bar-export-button]').click(function() {
+            var customizer_url = mypreview_geo_top_bar_customizer_vars.customizer_url,
+                export_nonce = mypreview_geo_top_bar_customizer_vars.export_nonce;
 
+            window.location.href = customizer_url + '?mypreview_geo_top_bar_export_security=' + export_nonce;
+        });
+        /**
+         * Import all available options - Portability
+         *
+         * @since 1.0
+         */
+        $('input[name=mypreview-geo-top-bar-import-button]').click(function() {
+            var win = $(window),
+                body = $('body'),
+                form = $('<form class="mypreview-geo-top-bar-form" method="POST" enctype="multipart/form-data"></form>'),
+                controls = $('.mypreview-geo-top-bar-import-controls'),
+                file = $('input[name=mypreview-geo-top-bar-import-file]'),
+                message = $('.mypreview-geo-top-bar-uploading'),
+                msg_import_file_req = mypreview_geo_top_bar_customizer_vars.msg_import_file_req;
+            if ('' == file.val()) {
+                alert(msg_import_file_req);
+            } else {
+                win.off('beforeunload');
+                body.append(form);
+                form.append(controls);
+                message.show();
+                form.submit();
+            }
+        });
     }); // end of document ready
 })(jQuery); // end of jQuery name space
