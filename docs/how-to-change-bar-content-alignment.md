@@ -1,8 +1,10 @@
-# How to Change Bar Message Alignment?
+# How to Change Bar Content Alignment?
 
 The message alignment property in layout section is used for aligning the inner content of a bar element.
 
 Navigate to **Appearance > Customize > GEO Top Bar > Layout** and here you will be able to locate the **"Message Alignment"** option.
+
+![Message Alignment](https://dl.dropboxusercontent.com/1/view/bs8plkql48t56kh/Envato/Geo%20top%20bar%20-doc/message-bar-alignment.gif)
 
 ### Property Values
 
