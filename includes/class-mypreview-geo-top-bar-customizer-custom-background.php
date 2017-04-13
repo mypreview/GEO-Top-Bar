@@ -1,7 +1,7 @@
 <?php
 /**
  * A class to create a custom background control.
- * Inspired by Customizer Background Control by devinsays.
+ * Inspired by Customizer Background Control.
  *
  * @link 		https://github.com/devinsays/customizer-background-control
  * @author      Mahdi Yazdani
@@ -11,7 +11,7 @@
 // Prevent direct file access
 defined('ABSPATH') or exit;
 if (class_exists('WP_Customize_Control') && !class_exists('MyPreview_GEO_Top_Bar_Customizer_Custom_Background')):
-	class MyPreview_GEO_Top_Bar_Customizer_Custom_Background extends WP_Customize_Upload_Control
+	final class MyPreview_GEO_Top_Bar_Customizer_Custom_Background extends WP_Customize_Upload_Control
 
 	{
 		public $type = 'background-image';
