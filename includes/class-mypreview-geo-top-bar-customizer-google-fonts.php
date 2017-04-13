@@ -1,7 +1,7 @@
 <?php
 /**
  * A class to create a dropdown for Google Fonts.
- * Inspired by WordPress Theme Customizer Custom Controls by paulund.
+ * Inspired by WordPress Theme Customizer Custom Controls.
  *
  * @link        https://github.com/paulund/wordpress-theme-customizer-custom-controls
  * @author      Mahdi Yazdani
@@ -11,7 +11,7 @@
 // Prevent direct file access
 defined('ABSPATH') or exit;
 if (class_exists('WP_Customize_Control') && !class_exists('MyPreview_GEO_Top_Bar_Customizer_Google_Fonts')):
-    class MyPreview_GEO_Top_Bar_Customizer_Google_Fonts extends WP_Customize_Control
+    final class MyPreview_GEO_Top_Bar_Customizer_Google_Fonts extends WP_Customize_Control
 
     {
         private $fonts = false;
@@ -22,7 +22,7 @@ if (class_exists('WP_Customize_Control') && !class_exists('MyPreview_GEO_Top_Bar
             parent::__construct($manager, $id, $args);
         }
         /**
-         * Render the content of the category dropdown
+         * Render the content of the Google fonts dropdown
          *
          * @since 1.0
          */
@@ -55,24 +55,27 @@ if (class_exists('WP_Customize_Control') && !class_exists('MyPreview_GEO_Top_Bar
 
         {
             $amount = apply_filters('mypreview_geo_top_bar_google_fonts_limit', 30);
-            $fontFile = plugin_dir_path(__FILE__) . 'cache/google-web-fonts.txt';
-            $apiKey = 'AIzaSyCPv3MqlmrV-GSaRPA3s-Q0NREVbmQf7wo';
+            $font_file = plugin_dir_path(__FILE__) . 'cache/google-web-fonts.txt';
+            // You can optionally replace your own API key with this value.
+            $api_key = apply_filters('mypreview_geo_top_bar_google_fonts_api', 'AIzaSyCPv3MqlmrV-GSaRPA3s-Q0NREVbmQf7wo');
             // Total time the file will be cached in seconds, set to a week
-            $cachetime = 86400 * 7;
-            if (file_exists($fontFile) && $cachetime < filemtime($fontFile)):
-                $content = json_decode(file_get_contents($fontFile));
+            $cache_time = 86400 * 7;
+            if (file_exists($font_file) && $cache_time < filemtime($font_file)):
+                $content = json_decode(file_get_contents($font_file));
             else:
-                $googleApi = 'https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=' . $apiKey;
+                $googleApi = 'https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=' . $api_key;
                 $fontContent = wp_remote_get($googleApi, array(
                     'sslverify' => false
                 ));
-                $fp = fopen($fontFile, 'w');
+                $fp = fopen($font_file, 'w');
                 fwrite($fp, $fontContent['body']);
                 fclose($fp);
                 $content = json_decode($fontContent['body']);
             endif;
+            // Load all available Google fonts
             if ($amount == 'all'):
                 return $content->items;
+            // Load slice of available Google fonts
             else:
                 return array_slice($content->items, 0, $amount);
             endif;
