@@ -15,6 +15,8 @@ Simply navigate to **Appearance > Customize > GEO Top Bar > Layout** and here yo
 The background repeat property sets if/how a background image will be repeated.
 By default, a background image is repeated both vertically and horizontally.
 
+![Background Repeat](https://dl.dropboxusercontent.com/1/view/jotknnf0k816g4a/Envato/Geo%20top%20bar%20-doc/background-repeat.png)
+
 ### Property Values
 
 * ```No Repeat```: Don't tile, just show the image once.
