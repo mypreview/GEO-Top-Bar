@@ -1,8 +1,7 @@
 /**
  * The simplest possible modal for jQuery
- *
- * Licensed under the MIT license
  * https://github.com/kylefox/jquery-modal
+ * Licensed under the MIT license
  */
 .blocker {
   position: fixed;
