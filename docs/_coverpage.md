@@ -4,9 +4,9 @@
 
 > A customizable sleek GEO message bar on your website.
 
-- Simple and lightweight
-- Simple and lightweight
-- Simple and lightweight
+- Supports more than +240 countries
+- Inform visitors from specific GEO locations
+- No third-party connection to IP location database
 
 
 [CodeCanyon](https://codecanyon.net/user/mypreview)
