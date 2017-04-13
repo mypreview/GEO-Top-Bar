@@ -28,6 +28,8 @@ By default, a background image is repeated both vertically and horizontally.
 
 The background size property in CSS is one of the most useful — and most complex — of the background properties.
 
+![Background Size](https://dl.dropboxusercontent.com/1/view/vszokwgscpp704b/Envato/Geo%20top%20bar%20-doc/background-size.png)
+
 ### Property Values
 
 * ```Auto```: **Default** value. Auto tells the browser to automatically calculate the size based on the actual size of the image and the aspect ratio.
@@ -39,6 +41,8 @@ The background size property in CSS is one of the most useful — and most compl
 The background position property allows you to move a background image around within its container and it sets the starting position of a background image too.
 
 The first value is the **horizontal position** and the second value is the **vertical**. The **top left** corner is **0% 0%**. The **right bottom** corner is **100% 100%**. Default value is: **0% 0%** &mdash; **center center**
+
+![Background Position](https://dl.dropboxusercontent.com/1/view/bdp4fswzgwlq8mt/Envato/Geo%20top%20bar%20-doc/background-position.png)
 
 ### Property Values
 
@@ -56,6 +60,8 @@ The first value is the **horizontal position** and the second value is the **ver
 
 The background attachment property in CSS specifies how to move the background relative to the viewport.
 Interestingly, you can also configure your background image to **fixed**. This essentially gives your background image a parallax effect.
+
+![Background Attachment](https://dl.dropboxusercontent.com/1/view/zoa8l3s9syl20y2/Envato/Geo%20top%20bar%20-doc/background-attachment.png)
 
 ### Property Values
 
