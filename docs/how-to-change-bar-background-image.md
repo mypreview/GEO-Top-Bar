@@ -53,7 +53,7 @@ The first value is the **horizontal position** and the second value is the **ver
 ## Background Attachment
 
 The background attachment property in CSS specifies how to move the background relative to the viewport.
-Interestingly, you can also configure your background image to **scroll**. This essentially gives your background image a parallax effect.
+Interestingly, you can also configure your background image to **fixed**. This essentially gives your background image a parallax effect.
 
 ### Property Values
 
