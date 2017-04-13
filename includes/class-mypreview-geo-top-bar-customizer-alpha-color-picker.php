@@ -1,7 +1,9 @@
 <?php
 /**
  * Creating a custom Alpha Color Picker control to output RGBa value(s).
+ * Inspired by Customizer Alpha Color Picker Control.
  *
+ * @link 		https://github.com/BraadMartin/components/tree/master/alpha-color-picker
  * @author      Mahdi Yazdani
  * @package     GEO Top Bar
  * @since       1.0
@@ -9,7 +11,7 @@
 // Prevent direct file access
 defined('ABSPATH') or exit;
 if (class_exists('WP_Customize_Control') && !class_exists('MyPreview_GEO_Top_Bar_Customizer_Alpha_Color_Picker')):
-	class MyPreview_GEO_Top_Bar_Customizer_Alpha_Color_Picker extends WP_Customize_Control
+	final class MyPreview_GEO_Top_Bar_Customizer_Alpha_Color_Picker extends WP_Customize_Control
 
 	{
 		/**
