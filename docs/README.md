@@ -6,7 +6,7 @@
 
 GEO Top Bar WordPress plugin is extremely useful in driving organic traffic to your expected page or website which can increase the revenue of your site. In addition to that, you can easily use these message bars to promote discount offers or special service availability for a particular type of visitors based on their GEO location so that users don’t miss the opportunity to grab useful products or services.
 
-See the [Quick start](quickstart.md) for more details.
+See the [Getting plugin to start](getting-the-plugin-downloaded-from-envato) for more details.
 
 ## Main Features
 
