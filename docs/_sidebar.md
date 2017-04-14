@@ -10,5 +10,6 @@
   - [Flag Icon Size](how-to-change-flag-icon-size)
   - [Space Around Content](how-to-generate-space-around-content)
   - [Bar Divider Thickness](how-to-change-bar-divider-thickness.md)
+  - [Slide Down Animation](how-to-determine-slide-down-animation-delay.md)
 
 - [Changelog](changelog.md)
