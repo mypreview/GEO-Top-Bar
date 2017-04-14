@@ -6,7 +6,7 @@ We often want the elements to butt up against each other. In the case of navigat
 
 Navigate to **Appearance > Customize > GEO Top Bar > Layout** and here you will be able to locate the **"Bar Top Spacing"** and **"Bar Bottom Spacing"** options.
 
-![Bar Top and Bottom Spacing](http://res.cloudinary.com/mypreview/image/upload/v1492119233/change-flag-icon-size_wktpau.gif)
+![Bar Top and Bottom Spacing](http://res.cloudinary.com/mypreview/image/upload/v1492167828/bar-spacing_yl6yle.gif)
 
 ### Usage
 
