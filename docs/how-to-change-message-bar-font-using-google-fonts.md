@@ -45,7 +45,7 @@ add_filter('mypreview_geo_top_bar_google_fonts_limit', 'prefix_load_slice_of_geo
 
 API keys are unique passphrases that allow websites on your domain to connect to an application interface to make use of its features. Not all APIs require keys, but some do to handle authentication or to keep their platforms safe from being compromised. You can setup your own Google API Key for use with any Google application, including Google Web Fonts.
 
-!> Note that this step is completely optional, but you may or may not need to setup your own Google API key.
+!> Note that this step is entirely optional, but you may or may not need to setup your own Google API key..
 
 ?> Follow these steps to get an API Key from the [Google API Console](https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key)
 
