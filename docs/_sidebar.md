@@ -4,6 +4,7 @@
   - [Installation via FTP Client](installation-via-ftp-client.md)
 - Layout
   - [Bar Background Image](how-to-change-bar-background-image)
+  - [Hide Bar on Scroll](auto-hiding-message-bar-on-scroll.md)
   - [Bar Content Alignment](how-to-change-bar-content-alignment)
   - [Button Float](how-to-change-button-float)
   - [Flag Icon Position](how-to-change-flag-icon-position)
