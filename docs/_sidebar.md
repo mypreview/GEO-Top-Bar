@@ -15,4 +15,5 @@
   - [Button Border Radius](how-to-change-bar-button-radius)
   - [Button Border Thickness](how-to-change-bar-button-border-thickness.md)
 
+- [Credits](credits.md)
 - [Changelog](changelog.md)
