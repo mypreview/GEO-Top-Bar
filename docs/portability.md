@@ -10,7 +10,7 @@ Navigate to **Appearance > Customize > GEO Top Bar > Portability** and here you 
 
 Clicking this button will begin exporting your entire GEO Top Bar plugin settings. 
 
-!> Exporting large amount of data / collections, especially those that contain lots of message bars for different countries, can take some extra time.
+!> Exporting large amount of data and settings, especially those that contain lots of message bars for different countries, can take some extra time.
 
 After the export process has completed, **your browser will automatically download a .JSON file**. This file can be used to import your exported items onto a new website using the **Import Settings** controller inside the portability section.
 
