@@ -13,16 +13,31 @@ Navigate to **Appearance > Customize > GEO Top Bar > Typography** and here you w
 * ```Default```:  The **default** value.
 * ```Any Google Web Fonts```: Select from a list of Google Fonts, the best free fonts available.
 
-### Property Values
+## Load all available Google fonts
 
-By default only a limited number of fonts are available with the font family drop-down list. While all fonts collected and selected carefully from the most popular and legible fonts, the plugin allows you to directly communicate with the Google Web Fonts Directory to select from any of the available fonts and stay up to date with the list of published fonts at any time.
+By default only a limited number (30) of fonts are available with the font family drop-down list. While all fonts collected and selected carefully from the most popular and legible fonts, the plugin allows you to directly communicate with the Google Web Fonts Directory to select from any of the available fonts and stay up to date with the list of published fonts at any time.
+
+!> You can place PHP snippets at the bottom of your child theme ```functions.php``` file.
 
 ```php
-if (!function_exists('prefix_load_all_google_fonts')):
-    function prefix_load_all_google_fonts()
+if (!function_exists('prefix_load_all_geo_top_bar_google_fonts')):
+    function prefix_load_all_geo_top_bar_google_fonts()
     {
         return 'all';
     }
 endif;
-add_filter('mypreview_geo_top_bar_google_fonts_limit', 'prefix_load_all_google_fonts', 10);
+add_filter('mypreview_geo_top_bar_google_fonts_limit', 'prefix_load_all_geo_top_bar_google_fonts', 10);
+```
+that’s easy right?, In case you want to return a slice of available Google fonts, use this snippet inside of your child theme to return any number of Google fonts that you want.
+
+## Load slice of available Google fonts
+
+```php
+if (!function_exists('prefix_load_slice_of_geo_top_bar_google_fonts')):
+    function prefix_load_slice_of_geo_top_bar_google_fonts()
+    {
+        return 50;
+    }
+endif;
+add_filter('mypreview_geo_top_bar_google_fonts_limit', 'prefix_load_slice_of_geo_top_bar_google_fonts', 10);
 ```
