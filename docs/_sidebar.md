@@ -19,6 +19,7 @@
   - [Message Font Size](how-to-change-bar-content-font-size.md)
   - [Message Font Weight](how-to-change-bar-content-font-weight.md)
   - [Message Font Style](how-to-change-bar-content-font-style.md)
+  - [Message Text Transform](how-to-change-bar-content-text-transform.md)
 - [Portability](portability.md)
 - [Credits](credits.md)
 - [License](license.md)
