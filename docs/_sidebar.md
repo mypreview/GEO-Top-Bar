@@ -9,5 +9,6 @@
   - [Flag Icon Position](how-to-change-flag-icon-position)
   - [Flag Icon Size](how-to-change-flag-icon-size)
   - [Space Around Content](how-to-generate-space-around-content)
+  - [Bar Divider Thickness](how-to-change-bar-divider-thickness.md)
 
 - [Changelog](changelog.md)
