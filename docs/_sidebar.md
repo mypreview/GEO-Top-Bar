@@ -16,4 +16,5 @@
   - [Button Border Thickness](how-to-change-bar-button-border-thickness.md)
 
 - [Credits](credits.md)
+- [License](license.md)
 - [Changelog](changelog.md)
