@@ -10,7 +10,7 @@ Navigate to **Appearance > Customize > GEO Top Bar > Typography** and here you w
 
 ### Property Values
 
-* ```Default```:  The **default** value.
+* ```Default```:  The **default** value. With selecting this, the plugin will inherit default font family of your theme.
 * ```Any Google Web Fonts```: Select from a list of Google Fonts, the best free fonts available.
 
 ## Load all available Google fonts
@@ -28,7 +28,7 @@ if (!function_exists('prefix_load_all_geo_top_bar_google_fonts')):
 endif;
 add_filter('mypreview_geo_top_bar_google_fonts_limit', 'prefix_load_all_geo_top_bar_google_fonts', 10);
 ```
-that’s easy right?, In case you want to return a slice of available Google fonts, use this snippet inside of your child theme to return any number of Google fonts that you want.
+that’s easy right?, In case you want to return a slice of available Google fonts, use this snippet inside of your child theme to return any number of Google fonts that you may need.
 
 ## Load slice of available Google fonts
 
@@ -40,4 +40,19 @@ if (!function_exists('prefix_load_slice_of_geo_top_bar_google_fonts')):
     }
 endif;
 add_filter('mypreview_geo_top_bar_google_fonts_limit', 'prefix_load_slice_of_geo_top_bar_google_fonts', 10);
+```
+## Setup Your Google API Key
+
+API keys are unique passphrases that allow websites on your domain to connect to an application interface to make use of its features. Not all APIs require keys, but some do to handle authentication or to keep their platforms safe from being compromised. You can setup your own Google API Key for use with any Google application, including Google Web Fonts.
+
+!> Note that this step is optional, but you may or may not need to setup your own Google API key.
+
+```php
+if (!function_exists('prefix_custom_api_geo_top_bar_google_fonts')):
+    function prefix_custom_api_geo_top_bar_google_fonts()
+    {
+        return 'your-api-key-here';
+    }
+endif;
+add_filter('mypreview_geo_top_bar_google_fonts_api', 'prefix_custom_api_geo_top_bar_google_fonts', 10);
 ```
