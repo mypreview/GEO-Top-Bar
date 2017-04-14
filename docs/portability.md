@@ -20,7 +20,7 @@ After the export process has completed, **your browser will automatically downlo
 
 Navigate to **Appearance > Customize > GEO Top Bar > Portability** and here you will be able to locate the **"Import Settings"** option.
 
-Once you have exported a GEO Top Bar settings, you can import it onto a new website. You will be using the same portability section to do this. This time you will need to click the "Import" tab to reveal the import options.
+?> Once you have exported a GEO Top Bar settings, you can import it onto a new website. You will be using the same portability section to do this.
 
 Inside the Portability section, click the **Choose File** area and locate the **.JSON** file that you previously exported. Once you have selected the file, click the blue **Import** button to begin importing. Once the import process has completed, you will notice that the GEO Top Bar plugin configuration and settings have been added to your WordPress customizer area.
 
