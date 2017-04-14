@@ -1,4 +1,4 @@
-# How to Change Bar Content Font Size?
+# How to Change Bar Button Font Size?
 
 The font size property specifies the size, or height, of the message bar button font.
 
