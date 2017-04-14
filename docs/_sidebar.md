@@ -11,5 +11,6 @@
   - [Space Around Content](how-to-generate-space-around-content)
   - [Bar Divider Thickness](how-to-change-bar-divider-thickness.md)
   - [Slide Down Animation](how-to-determine-slide-down-animation-delay.md)
+  - [Button Border Radius](how-to-change-bar-button-radius)
 
 - [Changelog](changelog.md)
