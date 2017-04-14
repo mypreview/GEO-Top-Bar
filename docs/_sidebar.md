@@ -3,10 +3,10 @@
   - [Installation via WordPress](installation-via-wordpress.md)
   - [Installation via FTP Client](installation-via-ftp-client.md)
 - Layout
-  - [Change Bar Background Image](how-to-change-bar-background-image)
-  - [Change Bar Content Alignment](how-to-change-bar-content-alignment)
-  - [Change Button Float](how-to-change-button-float)
-  - [Change Flag Icon Position](how-to-change-flag-icon-position)
-  - [Change Flag Icon Size](how-to-change-flag-icon-size)
+  - [Bar Background Image](how-to-change-bar-background-image)
+  - [Bar Content Alignment](how-to-change-bar-content-alignment)
+  - [Button Float](how-to-change-button-float)
+  - [Flag Icon Position](how-to-change-flag-icon-position)
+  - [Flag Icon Size](how-to-change-flag-icon-size)
 
 - [Changelog](changelog.md)
