@@ -8,5 +8,6 @@
   - [Button Float](how-to-change-button-float)
   - [Flag Icon Position](how-to-change-flag-icon-position)
   - [Flag Icon Size](how-to-change-flag-icon-size)
+  - [Generate Space Around Content](how-to-generate-space-around-content)
 
 - [Changelog](changelog.md)
