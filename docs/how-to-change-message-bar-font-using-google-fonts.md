@@ -6,7 +6,7 @@ GEO Top Bar provides you with easy access to any fonts you want from Google Font
 
 Navigate to **Appearance > Customize > GEO Top Bar > Typography** and here you will be able to locate the **"Font Family"** option.
 
-![Google Font Family](http://res.cloudinary.com/mypreview/image/upload/v1492119235/button-float_hmdop7.gif)
+![Google Font Family](http://res.cloudinary.com/mypreview/image/upload/v1492202359/change-google-web-fonts_smqck5.gif)
 
 ### Property Values
 
