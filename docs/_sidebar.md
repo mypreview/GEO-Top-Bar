@@ -12,5 +12,6 @@
   - [Bar Divider Thickness](how-to-change-bar-divider-thickness.md)
   - [Slide Down Animation](how-to-determine-slide-down-animation-delay.md)
   - [Button Border Radius](how-to-change-bar-button-radius)
+  - [Button Border Thickness](how-to-change-bar-button-border-thickness.md)
 
 - [Changelog](changelog.md)
