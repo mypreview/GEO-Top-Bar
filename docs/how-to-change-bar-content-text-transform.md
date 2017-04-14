@@ -15,4 +15,4 @@ Navigate to **Appearance > Customize > GEO Top Bar > Typography** and here you w
 * ```Initial```: Sets this property to its default value.
 * ```Inherit```: Inherits this property from its parent element.
 
-?> Capitalize will capitalize words that appear inside single or double quotes, and the first letter after a hyphen. It won't capitalize the first letter after a number, so dates like "February 4th, 2015" won't transform into "February 4Th, 2015"..
+?> Capitalize will capitalize words that appear inside single or double quotes, and the first letter after a hyphen. It won't capitalize the first letter after a number, so dates like "February 4th, 2015" won't transform into "February 4Th, 2015".
