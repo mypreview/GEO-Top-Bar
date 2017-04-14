@@ -16,6 +16,7 @@
   - [Button Border Thickness](how-to-change-bar-button-border-thickness.md)
 - Typography
   - [Google Font Family](how-to-change-message-bar-font-using-google-fonts.md)
+  - [Message Font Size](how-to-change-bar-content-font-size.md)
 - [Portability](portability.md)
 - [Credits](credits.md)
 - [License](license.md)
