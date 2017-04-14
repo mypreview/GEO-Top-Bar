@@ -1,4 +1,4 @@
-# How to Change Bar Spacing?
+# How to Generate Space Around the Bar Content?
 
 We often want the elements to butt up against each other. In the case of navigation or top bar, that means it avoids the awkward little unclickable or unviewable gaps; The spacing range slider properties are used to generate blank space around the message bar content.
 
