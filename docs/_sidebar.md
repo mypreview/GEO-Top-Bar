@@ -17,6 +17,7 @@
 - Typography
   - [Google Font Family](how-to-change-message-bar-font-using-google-fonts.md)
   - [Message Font Size](how-to-change-bar-content-font-size.md)
+  - [Message Font Weight](how-to-change-bar-content-font-weight.md)
 - [Portability](portability.md)
 - [Credits](credits.md)
 - [License](license.md)
