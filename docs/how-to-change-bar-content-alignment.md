@@ -4,7 +4,7 @@ The message alignment property in layout section is used for aligning the inner 
 
 Navigate to **Appearance > Customize > GEO Top Bar > Layout** and here you will be able to locate the **"Message Alignment"** option.
 
-![Message Alignment](https://dl.dropboxusercontent.com/1/view/bs8plkql48t56kh/Envato/Geo%20top%20bar%20-doc/message-bar-alignment.gif)
+![Message Alignment](http://res.cloudinary.com/mypreview/image/upload/v1492119234/message-bar-alignment_mao4vz.gif)
 
 ### Property Values
 
