@@ -14,7 +14,8 @@
   - [Slide Down Animation](how-to-determine-slide-down-animation-delay.md)
   - [Button Border Radius](how-to-change-bar-button-radius)
   - [Button Border Thickness](how-to-change-bar-button-border-thickness.md)
-
+- Typography
+  - [Google Font Family](how-to-change-message-bar-font-using-google-fonts.md)
 - [Portability](portability.md)
 - [Credits](credits.md)
 - [License](license.md)
