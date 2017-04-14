@@ -47,6 +47,8 @@ API keys are unique passphrases that allow websites on your domain to connect to
 
 !> Note that this step is optional, but you may or may not need to setup your own Google API key.
 
+?> Follow these steps to get an API Key from the [Google API Console](https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key)
+
 ```php
 if (!function_exists('prefix_custom_api_geo_top_bar_google_fonts')):
     function prefix_custom_api_geo_top_bar_google_fonts()
