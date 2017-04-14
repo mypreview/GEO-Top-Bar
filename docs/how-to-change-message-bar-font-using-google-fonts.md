@@ -50,11 +50,11 @@ API keys are unique passphrases that allow websites on your domain to connect to
 ?> Follow these steps to get an API Browser Key from the [Google API Console](https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key)
 
 ```php
-if (!function_exists('prefix_custom_api_geo_top_bar_google_fonts')):
-    function prefix_custom_api_geo_top_bar_google_fonts()
+if (!function_exists('prefix_custom_geo_top_bar_google_fonts_api')):
+    function prefix_custom_geo_top_bar_google_fonts_api()
     {
         return 'your-api-key-here';
     }
 endif;
-add_filter('mypreview_geo_top_bar_google_fonts_api', 'prefix_custom_api_geo_top_bar_google_fonts', 10);
+add_filter('mypreview_geo_top_bar_google_fonts_api', 'prefix_custom_geo_top_bar_google_fonts_api', 10);
 ```
