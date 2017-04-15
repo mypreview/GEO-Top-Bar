@@ -10,11 +10,13 @@ GEO Top Bar comes with a **Test Mode** which enables you to test your message ba
 
 Navigate to **Appearance > Customize > GEO Top Bar > Test Mode** and here you will be able to locate the **"Enable Test Mode"** option.
 
-### Notes
-
 *Checking **Enable Test Mode** checkbox will put your plugin in test mode.*
 
 ![Enable Test Mode](http://res.cloudinary.com/mypreview/image/upload/v1492286605/enable-test-mode_zkpqi4.gif)
+
+!> Plugin prefers to have a message to display in the bar.
+
+
 
 ### Default Country Modal
 
