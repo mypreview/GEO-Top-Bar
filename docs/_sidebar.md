@@ -24,6 +24,8 @@
   - [Button Font Weight](how-to-change-bar-content-button-font-weight.md)
   - [Button Font Style](how-to-change-bar-content-button-font-style.md)
   - [Button Text Transform](how-to-change-bar-content-button-text-transform.md)
+- Color Scheme
+  - [Bar Background Color](how-to-change-message-bar-background-color.md)
 - [Responsiveness](responsiveness.md)
 - [Portability](portability.md)
 - [Credits](credits.md)
