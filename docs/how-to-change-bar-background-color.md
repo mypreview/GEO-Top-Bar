@@ -21,6 +21,7 @@ Navigate to **Appearance > Customize > GEO Top Bar > Color Scheme** and here you
 ### RGBa Color Picker
 
 WordPress uses the [Iris](http://automattic.github.io/Iris/) Color Picker as a tool which you can select a color for an input field in the WordPress customizer, out of the box you can only add a hex color and not an Alpha RGBa color type that supports transparency.
+
 ?> Since GEO Top Bar plugin extends existing ```wp-color-picker``` control you will be able to use and enter opacity or alpha value too!
 
 ### Default Country Modal
