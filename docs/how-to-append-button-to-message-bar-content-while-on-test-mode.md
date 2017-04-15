@@ -1,4 +1,4 @@
-## How to Append a Button to Message Bar Content While on Test Mode?
+## How to Append a Button to the Message Bar Content While on Test Mode?
 
 Specifying any text as button text will display a button in the top bar component. If this field is empty, no button will be displayed.
 
