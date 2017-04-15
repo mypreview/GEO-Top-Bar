@@ -32,6 +32,7 @@
   - [Button Background](how-to-change-message-bar-button-background-color.md)
   - [Button Border](how-to-change-message-bar-button-border-color.md)
 - [Responsiveness](responsiveness.md)
+- [Test Mode](test-mode.md)
 - [Portability](portability.md)
 - [Credits](credits.md)
 - [License](license.md)
