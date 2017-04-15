@@ -16,7 +16,11 @@ Navigate to **Appearance > Customize > GEO Top Bar > Test Mode** and here you wi
 
 !> Plugin prefers to have a message to display in the bar.
 
+## Tweaking Message
 
+Add any custom message, including HTML.
+
+![Adding Message on Test Mode](http://res.cloudinary.com/mypreview/image/upload/v1492287493/adding-message-on-test-mode_m6ktre.gif)
 
 ### Default Country Modal
 
