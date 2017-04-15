@@ -12,13 +12,13 @@ Navigate to **Appearance > Customize > GEO Top Bar > Test Mode** and here you wi
 
 *Checking **Enable Test Mode** checkbox will put your plugin in test mode.*
 
-!> Note that using the plugin in test mode always and only shows your current GEO country flag.
-
 ![Enable Test Mode](http://res.cloudinary.com/mypreview/image/upload/v1492286605/enable-test-mode_zkpqi4.gif)
 
 ## Tweaking Message
 
 Add any custom message, including HTML.
+
+!> Note that using the plugin in test mode always and only shows your current GEO country flag.
 
 Navigate to **Appearance > Customize > GEO Top Bar > Test Mode** and here you will be able to locate the **"Message"** option.
 
