@@ -12,8 +12,6 @@ Navigate to **Appearance > Customize > GEO Top Bar > Test Mode** and here you wi
 
 *Checking **Enable Test Mode** checkbox will put your plugin in test mode.*
 
-!> Plugin prefers to have a message to display in the bar.
-
 ![Enable Test Mode](http://res.cloudinary.com/mypreview/image/upload/v1492286605/enable-test-mode_zkpqi4.gif)
 
 ## Tweaking Message
@@ -37,6 +35,18 @@ Navigate to **Appearance > Customize > GEO Top Bar > Test Mode** and here you wi
 *Unchecking **Disable Test Mode** checkbox will deactivate your plugin in test mode.*
 
 ![Disable Test Mode](http://res.cloudinary.com/mypreview/image/upload/v1492289067/disable-test-mode_tehpsc.gif)
+
+## Notes
+
+Possible system messages that you may face while tweaking the message bar component in test mode.
+
+!> Plugin prefers to have a message to display in the bar.
+
+?> To display message bar component on your website, you need to add some content into message text area field, if you leave this field empty, no message bar will be displayed.
+
+!> Plugin prefers to have a message to display in the bar.
+
+?> This message doesn't mean you restricted in any way! Feel free to add more than suggested characters and save & publish your message.
 
 ### Default Country Modal
 
