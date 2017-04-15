@@ -26,4 +26,4 @@ WordPress uses the [Iris](http://automattic.github.io/Iris/) Color Picker as a t
 
 ### Default Country Modal
 
-!> Note that opening the default country modal window while using the plugin in test mode is not possible.
+!> Note that opening the default country modal window while using the plugin on test mode is not possible.
