@@ -24,6 +24,12 @@ Navigate to **Appearance > Customize > GEO Top Bar > Test Mode** and here you wi
 
 ![Adding Message on Test Mode](http://res.cloudinary.com/mypreview/image/upload/v1492287493/adding-message-on-test-mode_m6ktre.gif)
 
+## Appending Button
+
+Specifying a text will display a button in the top bar component. If this field is empty, no button will be displayed.
+
+![Appending Button to Message Bar](http://res.cloudinary.com/mypreview/image/upload/v1492288085/appending-button-to-message-bar_ofswkx.gif)
+
 ### Default Country Modal
 
 !> Note that opening the default country modal window while using the plugin in test mode is not possible.
