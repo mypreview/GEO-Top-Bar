@@ -2,10 +2,6 @@
 
 The bar divider color property sets the color of the message bar bottom border.
 
-!> Unlike hex codes, these values allow for transparency (alpha), which can be super useful.
-
-?> There is a clickable zone on the right and left sides of the slider to make it easier to get to **alpha values of 0 or 100**.
-
 Navigate to **Appearance > Customize > GEO Top Bar > Color Scheme** and here you will be able to locate the **"Bar Divider"** option.
 
 ![Bar Divider Color](http://res.cloudinary.com/mypreview/image/upload/v1492221919/bar-divider-color_hzgwni.gif)
@@ -15,6 +11,10 @@ Navigate to **Appearance > Customize > GEO Top Bar > Color Scheme** and here you
 * ```A HEX value```: ```#ff0000```
 * ```An RGB value```: ```rgb(255, 0, 0)```
 * ```An RGBa value```: ```rgba(0, 0, 0, 0.8)```
+
+!> Unlike hex codes, these values allow for transparency (alpha), which can be super useful.
+
+?> There is a clickable zone on the right and left sides of the slider to make it easier to get to **alpha values of 0 or 100**.
 
 ### RGBa Color Picker
 
