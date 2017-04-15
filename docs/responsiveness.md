@@ -10,3 +10,7 @@ Breakpoints are the point a which your site's content will respond to provide th
 
 * ```Visible```:  The **default** value. This option indicates the element will be **visible** in a selected viewport.
 * ```Hidden```: This option indicates the element will be **hidden** in a selected viewport.
+
+## Test cases
+
+Resize your browser or load on different devices to test the responsive utility classes.
