@@ -27,6 +27,7 @@
 - Color Scheme
   - [Bar Background](how-to-change-bar-background-color.md)
   - [Bar Divider](how-to-change-bar-divider-color.md)
+  - [Message Text](how-to-change-bar-message-content-color.md)
 - [Responsiveness](responsiveness.md)
 - [Portability](portability.md)
 - [Credits](credits.md)
