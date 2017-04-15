@@ -4,7 +4,7 @@ GEO Top Bar comes with a **Test Mode** which enables you to test your message ba
 
 ## User Permission
 
-?> Tweaking plugin settings and enabling it on test mode is only available for **logged in users** with **[theme option edit](https://codex.wordpress.org/Roles_and_Capabilities#edit_theme_options)** capability.
+?> Tweaking plugin settings and enabling test mode is only available for **logged in users** with **[theme option edit](https://codex.wordpress.org/Roles_and_Capabilities#edit_theme_options)** capability.
 
 ## Enable Test Mode
 
