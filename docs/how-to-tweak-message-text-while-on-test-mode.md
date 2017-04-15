@@ -1,6 +1,6 @@
 # How to Tweak Message Text While on Test Mode?
 
-Add any custom message, including HTML.
+Optionally enter any custom message, including HTML in the Message Text field.
 
 !> Note that using the plugin in test mode always and only shows your current GEO country flag.
 
