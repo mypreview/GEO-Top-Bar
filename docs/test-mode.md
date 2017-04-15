@@ -32,7 +32,7 @@ Specifying a text will display a button in the top bar component. If this field 
 
 Navigate to **Appearance > Customize > GEO Top Bar > Test Mode** and here you will be able to locate the **"Enable Test Mode"** option.
 
-*Unchecking **Disable Test Mode** checkbox will deactivate your plugin in test mode.*
+*Unchecking **Enable Test Mode** checkbox will deactivate test mode.*
 
 ![Disable Test Mode](http://res.cloudinary.com/mypreview/image/upload/v1492289067/disable-test-mode_tehpsc.gif)
 
