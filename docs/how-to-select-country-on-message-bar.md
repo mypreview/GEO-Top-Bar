@@ -1,6 +1,8 @@
 # How to Select a Country?
 
-Start by typing 3 or more character into search field or select country from drop down list.
+Start by typing 3 or more character into the search field or select country from drop down list.
+
+?> Country input field automatically selects and updates the country as the user types also you can optionally navigate the country dropdown by typing a country's name, or using up/down keys.
 
 Navigate to **Appearance > Customize > GEO Top Bar > Message Bars** and here you will be able to locate the **"Country"** option.
 
