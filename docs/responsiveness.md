@@ -5,3 +5,8 @@ Breakpoints are the point a which your site's content will respond to provide th
 ?> For faster mobile and tablet friendly approach, you can optionally use these drop-down utility classes for showing and hiding message bar by a device via media query.
 
 ![Responsiveness](http://res.cloudinary.com/mypreview/image/upload/v1492218667/responsiveness_xoygbg.gif)
+
+### Property Values
+
+* ```Visible```:  The **default** value. This option indicates the element will be **visible** in a selected viewport.
+* ```Hidden```: This option indicates the element will be **hidden** in a selected viewport.
