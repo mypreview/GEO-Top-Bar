@@ -23,6 +23,7 @@
   - [Button Font Size](how-to-change-bar-content-button-size.md)
   - [Button Font Weight](how-to-change-bar-content-button-font-weight.md)
   - [Button Font Style](how-to-change-bar-content-button-font-style.md)
+  - [Button Text Transform](how-to-change-bar-content-button-text-transform.md)
 - [Portability](portability.md)
 - [Credits](credits.md)
 - [License](license.md)
