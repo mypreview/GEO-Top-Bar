@@ -22,6 +22,7 @@
   - [Message Text Transform](how-to-change-bar-content-text-transform.md)
   - [Button Font Size](how-to-change-bar-content-button-size.md)
   - [Button Font Weight](how-to-change-bar-content-button-font-weight.md)
+  - [Button Font Style](how-to-change-bar-content-button-font-style.md)
 - [Portability](portability.md)
 - [Credits](credits.md)
 - [License](license.md)
