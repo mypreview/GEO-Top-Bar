@@ -1,6 +1,6 @@
 # Message Bars
 
-The message bar repeater field allows you to create a set of different message bars based on visitor's GEO location which can be repeated while editing content!
+The message bar repeater field allows you to create a set of different message bars based on visitor's GEO location which can be repeated while editing content.
 
 ![Message Bars](http://res.cloudinary.com/mypreview/image/upload/v1492297167/message-bar-countries_wljsnx.gif)
 
