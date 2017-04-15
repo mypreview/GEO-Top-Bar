@@ -1,4 +1,4 @@
-## How to Put GEO Top Bar Component on Test Mode?
+# How to Put GEO Top Bar Component on Test Mode?
 
 Navigate to **Appearance > Customize > GEO Top Bar > Test Mode** and here you will be able to locate the **"Enable Test Mode"** option.
 
