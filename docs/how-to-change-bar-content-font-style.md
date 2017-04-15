@@ -1,6 +1,6 @@
-# How to Change Bar Button Font Style?
+# How to Change Bar Content Font Style?
 
-The font style property allows you to make message bar button text appear italicized (i.e. sloped, or slanted)
+The font style property allows you to make message bar content text appear italicized (i.e. sloped, or slanted)
 
 !> If a given font family has an italic or oblique face embedded, the browser will select that face.
 
