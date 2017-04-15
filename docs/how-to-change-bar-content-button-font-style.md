@@ -1,4 +1,4 @@
-# How to Change Bar Content Font Style?
+# How to Change Bar Button Font Style?
 
 The font style property allows you to make message bar content text appear italicized (i.e. sloped, or slanted)
 
