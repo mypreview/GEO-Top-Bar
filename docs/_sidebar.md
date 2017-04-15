@@ -39,6 +39,8 @@
   - [Disable Test Mode](how-to-disable-test-mode.md)
   - [Possible System Messages](possible-system-messages-on-test-mode.md)
 - [Portability](portability.md)
+  - [Export Settings](how-to-export-plugin-settings.md)
+  - [Import Settings](how-to-import-plugin-settings.md)
 - [Credits](credits.md)
 - [License](license.md)
 - [Changelog](changelog.md)
