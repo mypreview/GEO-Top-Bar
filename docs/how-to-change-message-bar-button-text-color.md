@@ -1,6 +1,6 @@
 # How to Change Button Text Color?
 
-The button text color property applies solid colors to the message bar and default country modal window button text content.
+The button text color property applies solid colors to the message bar and default country modal window button text.
 
 !> Unlike hex codes, these values allow for transparency (alpha), which can be super useful.
 
@@ -12,7 +12,7 @@ Navigate to **Appearance > Customize > GEO Top Bar > Color Scheme** and here you
 
 ### How to Change Button Text Hover Color?
 
-The button text hover color property applies solid colors to the message bar button text and default country modal window button content when you mouse over them.
+The button text hover color property applies solid colors to the message bar and default country modal window button text when you mouse over them.
 
 Navigate to **Appearance > Customize > GEO Top Bar > Color Scheme** and here you will be able to locate the **"Button Text Hover"** option.
 
