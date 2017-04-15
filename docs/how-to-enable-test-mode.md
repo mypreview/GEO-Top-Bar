@@ -5,3 +5,7 @@ Navigate to **Appearance > Customize > GEO Top Bar > Test Mode** and here you wi
 *Checking **Enable Test Mode** checkbox will put your plugin in test mode.*
 
 ![Enable Test Mode](http://res.cloudinary.com/mypreview/image/upload/v1492286605/enable-test-mode_zkpqi4.gif)
+
+### Default Country Modal
+
+!> Note that opening the default country modal window while using the plugin in test mode is not possible.
