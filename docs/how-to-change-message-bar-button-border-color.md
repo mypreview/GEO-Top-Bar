@@ -4,10 +4,6 @@ The button border color property applies solid colors to the message bar and def
 
 ?> This border color will be applied to all 4 corners of the button.
 
-!> Unlike hex codes, these values allow for transparency (alpha), which can be super useful.
-
-?> There is a clickable zone on the right and left sides of the slider to make it easier to get to **alpha values of 0 or 100**.
-
 Navigate to **Appearance > Customize > GEO Top Bar > Color Scheme** and here you will be able to locate the **"Button Border"** option.
 
 ![Button Border Color](http://res.cloudinary.com/mypreview/image/upload/v1492230037/button-border-color_y1jc4w.gif)
@@ -27,6 +23,10 @@ Navigate to **Appearance > Customize > GEO Top Bar > Color Scheme** and here you
 * ```A HEX value```: ```#ff0000```
 * ```An RGB value```: ```rgb(255, 0, 0)```
 * ```An RGBa value```: ```rgba(0, 0, 0, 0.8)```
+
+!> Unlike hex codes, these values allow for transparency (alpha), which can be super useful.
+
+?> There is a clickable zone on the right and left sides of the slider to make it easier to get to **alpha values of 0 or 100**.
 
 ### RGBa Color Picker
 
