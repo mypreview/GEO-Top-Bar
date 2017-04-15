@@ -29,6 +29,7 @@
   - [Bar Divider](how-to-change-bar-divider-color.md)
   - [Message Text](how-to-change-message-bar-content-text-color.md)
   - [Button Text](how-to-change-message-bar-button-text-color.md)
+  - [Button Background](how-to-change-message-bar-button-background-color.md)
 - [Responsiveness](responsiveness.md)
 - [Portability](portability.md)
 - [Credits](credits.md)
