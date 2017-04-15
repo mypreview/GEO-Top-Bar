@@ -10,7 +10,7 @@ Navigate to **Appearance > Customize > GEO Top Bar > Color Scheme** and here you
 
 ![Button Text Color](http://res.cloudinary.com/mypreview/image/upload/v1492223475/message-text-color_x8t4c3.gif)
 
-## How to Change Button Text Hover Color?
+### How to Change Button Text Hover Color?
 
 The button text hover color property applies solid colors to the message bar button text and default country modal window button content when you mouse over them.
 
