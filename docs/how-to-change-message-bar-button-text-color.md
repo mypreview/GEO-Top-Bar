@@ -1,6 +1,6 @@
 # How to Change Button Text Color?
 
-The button text color property applies solid colors to the message bar button text and default country modal window button content.
+The button text color property applies solid colors to the message bar and default country modal window button text content.
 
 !> Unlike hex codes, these values allow for transparency (alpha), which can be super useful.
 
