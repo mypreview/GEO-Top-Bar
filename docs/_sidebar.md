@@ -25,7 +25,8 @@
   - [Button Font Style](how-to-change-bar-content-button-font-style.md)
   - [Button Text Transform](how-to-change-bar-content-button-text-transform.md)
 - Color Scheme
-  - [Bar Background Color](how-to-change-bar-background-color.md)
+  - [Bar Background](how-to-change-bar-background-color.md)
+  - [Bar Divider](how-to-change-bar-divider-color.md)
 - [Responsiveness](responsiveness.md)
 - [Portability](portability.md)
 - [Credits](credits.md)
