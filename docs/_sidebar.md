@@ -35,7 +35,7 @@
 - [Test Mode](test-mode.md)
   - [Enable Test Mode](how-to-enable-test-mode.md)
   - [Tweak Message](how-to-tweak-message-text-while-on-test-mode.md)
-  - [Append a Button](how-to-append-button-to-message-content-while-on-test-mode.md)
+  - [Append a Button](how-to-append-button-to-message-bar-content-while-on-test-mode.md)
   - [Disable Test Mode](how-to-disable-test-mode.md)
   - [Possible System Messages](possible-system-messages-on-test-mode.md)
 - [Portability](portability.md)
