@@ -1,6 +1,6 @@
 # How to Change Button Background Color?
 
-The button border color property applies solid colors to the message bar and default country modal window button border background.
+The button border color property applies solid colors to the message bar and default country modal window button border.
 
 ?> This border color will be applied to all 4 corners of the button.
 
@@ -12,9 +12,9 @@ Navigate to **Appearance > Customize > GEO Top Bar > Color Scheme** and here you
 
 ![Button Border Color](http://res.cloudinary.com/mypreview/image/upload/v1492230037/button-border-color_y1jc4w.gif)
 
-### How to Change Button Background Hover Color?
+### How to Change Button Border Hover Color?
 
-The button background hover color property applies solid colors to the message bar and default country modal window button background when you mouse over them.
+The button border hover color property applies solid colors to the message bar and default country modal window button border when you mouse over them.
 
 ?> This border hover color will be applied to all 4 corners of the button.
 
