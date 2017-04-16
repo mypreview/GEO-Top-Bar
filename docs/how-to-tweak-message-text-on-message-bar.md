@@ -1,7 +1,7 @@
 # How to Tweak Message Text?
 
-Checking **Hide Country Flag** checkbox will remove the country flag from the view.
+Optionally enter any custom message, including HTML in the Message Text field.
 
-Navigate to **Appearance > Customize > GEO Top Bar > Message Bars** and here you will be able to locate the **"Hide Country Flag"** option.
+Navigate to **Appearance > Customize > GEO Top Bar > Message Bars** and here you will be able to locate the **"Message"** option.
 
-![Hide Country Flag](http://res.cloudinary.com/mypreview/image/upload/v1492314071/hide-country-flag_i5frnd.gif)
+![Tweak Message Text](http://res.cloudinary.com/mypreview/image/upload/v1492313016/message-bar-text_pbor4s.gif)
