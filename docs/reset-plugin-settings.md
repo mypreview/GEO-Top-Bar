@@ -1,1 +1,0 @@
-# Reset Plugin Settings
