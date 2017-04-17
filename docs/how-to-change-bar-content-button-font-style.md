@@ -4,7 +4,7 @@ The font style property allows you to make message bar button text appear italic
 
 !> If a given font family has an italic or oblique face embedded, the browser will select that face.
 
-Navigate to **Appearance > Customize > GEO Top Bar > Typography** and here you will be able to locate the **"Message Font Style"** option.
+Navigate to **Appearance > Customize > GEO Top Bar > Typography** and here you will be able to locate the **"Button Font Style"** option.
 
 ![Message Font Style](http://res.cloudinary.com/mypreview/image/upload/v1492215699/button-font-style_piieua.gif)
 
