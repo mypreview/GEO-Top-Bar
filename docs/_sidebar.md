@@ -50,7 +50,7 @@
 - [Portability](portability.md)
   - [Export Settings](how-to-export-plugin-settings.md)
   - [Import Settings](how-to-import-plugin-settings.md)
-- [Toggle GEO Top Bar](toggle-geo-top-bar-display.md)
+- [Hide GEO Top Bar](hide-geo-top-bar.md)
 - [Credits](credits.md)
 - [License](license.md)
 - [Changelog](changelog.md)
