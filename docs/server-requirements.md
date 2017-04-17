@@ -11,4 +11,4 @@ To run GEO Top Bar plugin we recommend your host supports:
 
 ### Moving Hosts
 
-!> Need a new host? Check out [dedicated WordPress web hosts listed here](https://wordpress.org/hosting).
+!> Need a new host? Check out [Envato Hosted](https://themeforest.net/wordpress/hosted) OR [dedicated WordPress web hosts listed here](https://wordpress.org/hosting).
