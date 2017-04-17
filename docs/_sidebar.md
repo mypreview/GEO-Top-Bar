@@ -50,6 +50,7 @@
 - [Portability](portability.md)
   - [Export Settings](how-to-export-plugin-settings.md)
   - [Import Settings](how-to-import-plugin-settings.md)
+- [Change Default Country](change-default-country.md)
 - [Hide GEO Top Bar](hide-geo-top-bar.md)
 - [Reset Plugin Settings](how-to-reset-plugin-settings.md)
 - [Server Requirements](server-requirements.md)
