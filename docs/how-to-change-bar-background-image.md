@@ -20,7 +20,7 @@ By default, a background image is repeated both vertically and horizontally.
 ### Property Values
 
 * ```No Repeat```: Don't tile, just show the image once.
-* ```Tile```: The background image will be repeated both vertically and horizontally. This is the **default** value.
+* ```Tile```: The **default** value. The background image will be repeated both vertically and horizontally.
 * ```Tile Horizontally```: The background image will be repeated only horizontally.
 * ```Tile Vertically```: The background image will be repeated only vertically.
 
@@ -32,7 +32,7 @@ The background size property in CSS is one of the most useful — and most compl
 
 ### Property Values
 
-* ```Auto```: **Default** value. Auto tells the browser to automatically calculate the size based on the actual size of the image and the aspect ratio.
+* ```Default```: The **default** value. Default tells the browser to automatically calculate the size based on the actual size of the image and the aspect ratio.
 * ```Cover```: Cover tells the browser to make sure the image always covers the entire container, even if it has to stretch the image or cut a little bit off one of the edges.
 * ```Contain```: Contain, says to always show the whole image, even if that leaves a little space to the sides or bottom.
 
@@ -53,7 +53,7 @@ The first value is the **horizontal position** and the second value is the **ver
 * ```right center```
 * ```right bottom```
 * ```center top```
-* ```center center```
+* ```center center``` The **default** value.
 * ```center bottom```
 
 ## Background Attachment
@@ -66,4 +66,4 @@ Interestingly, you can also configure your background image to **fixed**. This e
 ### Property Values
 
 * ```Fixed```: stays fixed no matter what. It's kind of like a physical window: moving around the window changes your perspective, but it doesn't change where things are outside of the window.
-* ```Scroll```: It scrolls with the main view, but stays fixed inside the local view.
+* ```Scroll```: The **default** value. It scrolls with the main view, but stays fixed inside the local view.
