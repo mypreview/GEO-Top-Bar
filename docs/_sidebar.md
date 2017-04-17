@@ -38,7 +38,7 @@
   - [Hide Country Flag](how-to-hide-country-flag-on-message-bar.md)
   - [Append a Button](how-to-append-button-to-message-bar.md)
   - [Message Status](how-to-change-message-bar-status.md)
-  - [Add Message Bar](how-to-add-message-bar.md)
+  - [Add Message Bar](how-to-add-new-message-bar.md)
   - [Delete Message Bar](how-to-delete-message-bar.md)
   - [Possible System Messages](possible-system-messages-on-message-bars.md)
 - [Test Mode](test-mode.md)
