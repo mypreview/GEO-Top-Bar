@@ -40,7 +40,7 @@ The background size property in CSS is one of the most useful — and most compl
 
 The background position property allows you to move a background image around within its container and it sets the starting position of a background image too.
 
-The first value is the **horizontal position** and the second value is the **vertical**. The **top left** corner is **0% 0%**. The **right bottom** corner is **100% 100%**. Default value is: **0% 0%** &mdash; **center center**
+The first value is the **horizontal position** and the second value is the **vertical**. The **top left** corner is **0% 0%**. The **right bottom** corner is **100% 100%**. Default value is: **50% 50%** &mdash; **center center**
 
 ![Background Position](http://res.cloudinary.com/mypreview/image/upload/v1492119298/background-position_lcsv9n.png)
 
@@ -53,7 +53,7 @@ The first value is the **horizontal position** and the second value is the **ver
 * ```right center```
 * ```right bottom```
 * ```center top```
-* ```center center``` The **default** value.
+* ```center center```
 * ```center bottom```
 
 ## Background Attachment
