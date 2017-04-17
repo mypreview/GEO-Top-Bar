@@ -7,3 +7,7 @@ To run GEO Top Bar plugin we recommend your host supports:
 * WP Memory limit of 64 MB or greater (128 MB or higher is preferred)
 
 ?> PHP 5.4 reached [end of life](http://php.net/supported-versions.php) and is no longer maintained.
+
+### Moving Hosts
+
+!> Need a new host? Check out [dedicated WordPress web hosts listed here](https://wordpress.org/hosting).
