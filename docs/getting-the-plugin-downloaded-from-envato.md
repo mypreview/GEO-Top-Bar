@@ -5,10 +5,10 @@ To download the installable plugin file, first, log into your [Envato](https://c
 Navigate to the Downloads section of your profile and find the [**GEO Top Bar Plugin**](https://codecanyon.net/user/mypreview) then click on the **Download** (green) button. This will trigger a dropdown list for you to choose which files you want to download.
 
 
-?> All files and Documentation. This option will download a .zip file which will include the theme, all extensions, documentation and the licensing information.
+?> All files and Documentation. This option will download a .zip file which will include the plugin, documentation access, dummy data and the licensing information.
 
 
-?> Installable WordPress files only. This option will just download the theme in a .zip format to your WordPress site.]
+?> Installable WordPress files only. This option will just download the plugin in a .zip format to your WordPress site.
 
 
 !> From the drop down menu click on the **Installable WordPress file only** to download the ready to install plugin only and the download will start automatically.
