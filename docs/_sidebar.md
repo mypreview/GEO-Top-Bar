@@ -51,6 +51,7 @@
   - [Export Settings](how-to-export-plugin-settings.md)
   - [Import Settings](how-to-import-plugin-settings.md)
 - [Hide GEO Top Bar](hide-geo-top-bar.md)
+- [Reset Plugin Settings](reset-plugin-settings.md)
 - [Server Requirements](server-requirements.md)
 - [Credits](credits.md)
 - [License](license.md)
