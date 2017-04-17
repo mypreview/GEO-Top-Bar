@@ -20,5 +20,5 @@ Navigate to **Appearance > Customize > GEO Top Bar > Message Bars** and here you
 
 ### Property Values
 
-* ```Same frame as it was clicked```
+* ```Same frame as it was clicked``` The **default** value. 
 * ```Open in a new window or tab```
