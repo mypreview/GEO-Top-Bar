@@ -2,7 +2,7 @@
 /*
 Plugin Name: 	GEO Top Bar
 Plugin URI:  	https://demo.mypreview.one/geo-top-bar
-Description: 	Display a highly customizable sleek message bar on your website. An ideal choice for informing visitors from specific geo locations.
+Description: 	Display a highly customizable sleek message bar on your website. An ideal choice for informing visitors from specific GEO locations.
 Version:     	1.0
 Author:      	Mahdi Yazdani
 Author URI:  	https://codecanyon.net/user/mypreview
@@ -31,6 +31,7 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 	{
 		private $file;
 		private $dir;
+		private $wp_customize;
 		private $public_assets_url;
 		private $admin_assets_url;
 		private $customizer_hijacked = false;
@@ -74,9 +75,9 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 				$this,
 				'save_meta_box'
 			) , 1, 2);
-			add_action('customize_controls_enqueue_scripts', array(
+			add_action('customize_controls_print_scripts', array(
 				$this,
-				'customize_preview_init'
+				'customizer_enqueue'
 			) , 99);
 			add_action('customize_preview_init', array(
 				$this,
@@ -110,6 +111,14 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 				$this,
 				'init_portability'
 			) , 999999);
+			add_action('wp_ajax_preview_country', array(
+				$this,
+				'ajax_preview_country'
+			) , 10);
+			add_action('wp_ajax_reset_plugin_settings', array(
+				$this,
+				'ajax_reset_plugin_settings'
+			) , 10);
 			add_filter('plugin_action_links_' . plugin_basename($this->file) , array(
 				$this,
 				'settings_link'
@@ -237,7 +246,7 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 		 *
 		 * @since 1.0
 		 */
-		public function customize_preview_init()
+		public function customizer_enqueue()
 
 		{
 			wp_enqueue_style('geo-top-bar-country-select-style', $this->admin_assets_url . 'css/mypreview-geo-top-bar-country-select.min.css', array() , GEO_TOP_BAR_VERSION, 'all');
@@ -248,11 +257,17 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 			wp_enqueue_script('geo-top-bar-custom-background-js', $this->admin_assets_url . 'js/mypreview-geo-top-bar-custom-background.min.js', array() , GEO_TOP_BAR_VERSION, true);
 			wp_register_script('geo-top-bar-customizer-js', $this->admin_assets_url . 'js/mypreview-geo-top-bar-customizer.js', array() , GEO_TOP_BAR_VERSION, true);
 			wp_localize_script('geo-top-bar-customizer-js', 'mypreview_geo_top_bar_customizer_vars', array(
-				'customizer_url' => esc_url(admin_url('customize.php')) ,
+				'customizer_url' => esc_url(wp_customize_url()) ,
+				'customizer_autofocus_pnl_url' => $this->customizer_url('panel', 'mypreview_geo_top_bar_pnl') ,
 				'export_nonce' => wp_create_nonce('mypreview_geo_top_bar_export_nonce') ,
-				'msg_bar_max_char' => __('Plugin prefers message with max %s chars.', 'mypreview-geo-top-bar') ,
-				'msg_bar_content_req' => __('Plugin prefers to have a message to display in the bar.', 'mypreview-geo-top-bar') ,
-				'msg_import_file_req' => __('Invalid File format. You should be uploading a JSON file.', 'mypreview-geo-top-bar')
+				'test_msg_bar_max_char' => __('Plugin prefers message with max %s chars.', 'mypreview-geo-top-bar') ,
+				'test_msg_bar_content_req' => __('Plugin prefers to have a message to display in the bar.', 'mypreview-geo-top-bar') ,
+				'msg_bars_content_req' => __('Plugin prefers to have a message to display in the bar. %country_name%', 'mypreview-geo-top-bar') ,
+				'msg_import_file_req' => __('Invalid File format. You should be uploading a JSON file.', 'mypreview-geo-top-bar') ,
+				'preview_nonce' => wp_create_nonce('mypreview_geo_top_bar_preview_country_nonce') ,
+				'reset_btn' => __('Reset', 'mypreview-geo-top-bar') ,
+				'reset_confirmation' => __('WARNING! Are you sure you wish to remove all settings?', 'mypreview-geo-top-bar') ,
+				'reset_nonce' => wp_create_nonce('mypreview_geo_top_bar_reset_nonce')
 			));
 			wp_enqueue_script('geo-top-bar-customizer-js');
 		}
@@ -264,7 +279,29 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 		public function customizer_live_preview()
 
 		{
-			wp_enqueue_script('geo-top-bar-customizer-live-preview', $this->admin_assets_url . 'js/geo-top-bar-customizer-live-preview.js', array('jquery', 'customize-preview') , GEO_TOP_BAR_VERSION, true);
+			// Check to see if default country modified and passed by cookies
+			if ($this->is_cookied('geo_top_bar_preview_country') && $this->is_cookied('geo_top_bar_preview_country_code')):
+				$country_code = strtolower(trim($this->get_cookie('geo_top_bar_preview_country')));
+				$country_name = strtolower(trim($this->get_cookie('geo_top_bar_preview_country_code')));
+			// Get user's currect country code
+			else:
+				$country_code = esc_html(strtolower(trim(getCountryFromIP($this->get_ipaddress() , 'code'))));
+				$country_name = esc_html(strtolower(trim(getCountryFromIP($this->get_ipaddress() , 'NamE'))));
+			endif;
+			wp_register_script('geo-top-bar-customizer-live-preview', $this->admin_assets_url . 'js/geo-top-bar-customizer-live-preview.js', array(
+				'jquery',
+				'customize-preview'
+			) , GEO_TOP_BAR_VERSION, true);
+			wp_localize_script('geo-top-bar-customizer-live-preview', 'mypreview_geo_top_bar_customizer_live_vars', array(
+				'current_country_name' => $country_code ,
+				'current_country_code' => $country_name ,
+				'slide_down' => absint(get_option('mypreview_geo_top_bar_layout_slide_down_speed', 1000)) ,
+				'button_float' => esc_attr(get_option('mypreview_geo_top_bar_layout_button_float', 'right')) ,
+				'flag_position' => esc_attr(get_option('mypreview_geo_top_bar_layout_flag_position', 'before')) ,
+				'test_mode' => esc_attr(get_option('mypreview_geo_top_bar_test_mode_toggle', false)) ,
+				'visibility_classes' => $this->get_responsive_classes()
+			));
+			wp_enqueue_script('geo-top-bar-customizer-live-preview');
 		}
 		/**
 		 * Add copyright section to WordPress customizer.
@@ -274,6 +311,8 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 		public function customize_register($wp_customize)
 
 		{
+			// Store a reference to "WP_Customize_Manager" instance
+			$this->wp_customize = $wp_customize;
 			/**
 			 * Custom customizer control classes.
 			 *
@@ -1192,13 +1231,14 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 					)
 				))) ,
 				'type' => 'option',
+				'transport' => 'postMessage',
 				'capability' => 'edit_theme_options',
 				'sanitize_callback' => array($this, 'sanitize_repeater') ,
 				'validate_callback' => array($this, 'validate_repeater')
 			));
 			$wp_customize->add_control(new MyPreview_GEO_Top_Bar_Customizer_Message_Bars_Repeater($wp_customize, 'mypreview_geo_top_bar_message_bars_repeater_control', array(
 				'label' => __('Message Bars', 'mypreview-geo-top-bar') ,
-				'description' => __('The message bar repeater field allows you to create a set of different message bars based visitor\'s GEO location which can be repeated while editing content!', 'mypreview-geo-top-bar') ,
+				'description' => __('The message bar repeater field allows you to create a set of different message bars based on visitor\'s GEO location which can be repeated while editing content!', 'mypreview-geo-top-bar') ,
 				'section' => 'mypreview_geo_top_bar_message_bars_sec',
 				'settings' => 'mypreview_geo_top_bar_message_bars_repeater',
 				'priority' => 10,
@@ -1208,7 +1248,7 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 				'country' => array(
 					'type' => 'text',
 					'label' => __('Country', 'mypreview-geo-top-bar') ,
-					'description' => __('Start by typing 3 or more character into search field or select country from drop down list.', 'mypreview-geo-top-bar')
+					'description' => __('Start by typing 3 or more character into the search field or select country from drop down list.', 'mypreview-geo-top-bar')
 				) ,
 				'message' => array(
 					'type' => 'textarea',
@@ -1249,6 +1289,22 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 					) ,
 					'default' => 'on'
 				)
+			)));
+			/**
+			 * Fake Refresh - Message Bars
+			 */
+			$wp_customize->add_setting('mypreview_geo_top_bar_message_bars_fake_refresh', array(
+				'capability' => 'edit_theme_options',
+				'sanitize_callback' => array(
+					$this,
+					'sanitize_checkbox'
+				)
+			));
+			$wp_customize->add_control(new WP_Customize_Control($wp_customize, 'mypreview_geo_top_bar_message_bars_fake_refresh_control', array(
+				'section' => 'mypreview_geo_top_bar_message_bars_sec',
+				'settings' => 'mypreview_geo_top_bar_message_bars_fake_refresh',
+				'type' => 'checkbox',
+				'priority' => 20
 			)));
 			/**
 			 * Enable Test Mode - Test Mode
@@ -1442,7 +1498,7 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 				endforeach;
 				// Bail out, If the array has duplicates
 				if(count(array_unique($countries)) < count($countries)):
-					$validity->add('required', __('Deployment fails, Remove the duplicate country and save the changes again!', 'mypreview-geo-top-bar') );
+					$validity->add('required', __('Deployment failed, Remove the duplicate country and save the changes again!', 'mypreview-geo-top-bar') );
 				endif;
 			endif;
 		    return $validity;
@@ -1473,7 +1529,7 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 		public function is_customizer_hijacked($wp_customize)
 
 		{
-			$geo_top_bar_pnl = $wp_customize->get_panel( 'mypreview_geo_top_bar_pnl' );
+			$geo_top_bar_pnl = $wp_customize->get_panel('mypreview_geo_top_bar_pnl');
 		    if ($geo_top_bar_pnl):
 		        $this->customizer_hijacked = true;
 		    endif;
@@ -1535,9 +1591,15 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 				endif;
 				$default_country_name = '';
 				$default_country_code = '';
-				if ($this->is_cookied('geo_top_bar_default_country') && $this->is_cookied('geo_top_bar_default_country_code')):
+				// Check to see if default country modified and passed by cookies
+				if ($this->is_cookied('geo_top_bar_default_country') && $this->is_cookied('geo_top_bar_default_country_code') && !isset($wp_customize)):
 					$default_country_name = strtolower(trim($this->get_cookie('geo_top_bar_default_country')));
 					$default_country_code = strtolower(trim($this->get_cookie('geo_top_bar_default_country_code')));
+				endif;
+				// Set preview cookie if previewing throughout the customizer
+				if ($this->is_cookied('geo_top_bar_preview_country') && $this->is_cookied('geo_top_bar_preview_country_code') && isset($wp_customize)):
+					$default_country_name = strtolower(trim($this->get_cookie('geo_top_bar_preview_country')));
+					$default_country_code = strtolower(trim($this->get_cookie('geo_top_bar_preview_country_code')));
 				endif;
 				// Display top bar based on visitor's location
 				if (empty($default_country_name) && empty($default_country_code)):
@@ -1609,13 +1671,6 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 			// If user can manage theme options and plugin isn't in test mode
 			elseif(current_user_can('edit_theme_options') && !$is_test_mode_enabled):
 				$all_defined_countries = $this->get_all_defined_countries();
-			endif;
-			// Check if we need to send any visibility classes
-			array_filter($visibility_classes);
-			if(!empty($visibility_classes) && is_array($visibility_classes) && count($visibility_classes) > 0):
-				$visibility_classes = json_encode($visibility_classes);
-			else:
-				$visibility_classes = '';
 			endif;
 			// Print inline stylesheet before closing </head> tag
 			$this->add_inline_style();
@@ -1751,9 +1806,10 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 			$message_bars = json_decode(get_option('mypreview_geo_top_bar_message_bars_repeater'));
 			if (is_array($message_bars) || is_object($message_bars)):
 				foreach($message_bars as $message_bar):
+					$message = (!empty($message_bar->message) ? wp_kses_post($message_bar->message) : '');
 					$current_status = esc_html(strtolower(trim($message_bar->enable)));
 					// Exclude countries with "OFF" status from the array.
-					if ($current_status !== 'off'):
+					if ($current_status !== 'off' && !empty($message)):
 						$all_defined_countries[] = esc_html(trim($message_bar->country));
 					endif;
 				endforeach;
@@ -1790,6 +1846,13 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 			if(isset($responsiveness_extra_small_devices) && !empty($responsiveness_extra_small_devices)):
 				$visibility_classes[] = $responsiveness_extra_small_devices;
 			endif;
+			// Check if we need to send any visibility classes
+			array_filter($visibility_classes);
+			if(!empty($visibility_classes) && is_array($visibility_classes) && count($visibility_classes) > 0):
+				$visibility_classes = json_encode($visibility_classes);
+			else:
+				$visibility_classes = '';
+			endif;
 			return $visibility_classes;
 		}
 		/**
@@ -1815,7 +1878,7 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 			endif;
 			?>
 			<div id="geo-top-bar-modal" style="display:none;">
-				<form name="geo-top-bar-select-default-country-form" id="geo-top-bar-select-default-country-form" method="POST">
+				<form name="geo-top-bar-select-default-country-form" id="geo-top-bar-select-default-country-form" method="POST" onkeypress="return event.keyCode != 13;">
 					<div class="geo-top-bar-fields">
 						<label for="geo_top_bar_default_country"><?php esc_html_e('Where are you from?', 'mypreview-geo-top-bar'); ?></label>
 						<div class="geo-top-bar-input-fields">
@@ -1840,8 +1903,8 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 			if (isset($_POST['geo_top_bar_default_country'], $_POST['geo_top_bar_default_country_code']) && !empty($_POST['geo_top_bar_default_country']) && !empty($_POST['geo_top_bar_default_country_code'])):
 				$default_country = sanitize_text_field($_POST['geo_top_bar_default_country']);
 				$default_country_code = sanitize_text_field($_POST['geo_top_bar_default_country_code']);
-				setcookie($this->get_cookie_country_name() , $default_country, time() + 86400 , COOKIEPATH, COOKIE_DOMAIN, false);
-				setcookie($this->get_cookie_country_code() , $default_country_code, time() + 86400 , COOKIEPATH, COOKIE_DOMAIN, false);
+				$this->set_cookie($this->get_cookie_country_name() , $default_country, time() + 86400);
+				$this->set_cookie($this->get_cookie_country_code() , $default_country_code, time() + 86400);
 				// Now refresh so the header changes get captured
 				header('Refresh:0');
 				exit;
@@ -1868,6 +1931,26 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 			return esc_attr('geo_top_bar_default_country_code');
 		}
 		/**
+		 * Country (preview) name cookie handle
+		 *
+		 * @since 1.0
+		 */
+		private function get_cookie_preview_country_name()
+
+		{
+			return esc_attr('geo_top_bar_preview_country');
+		}
+		/**
+		 * Country (preview) code (ISO2) cookie handle
+		 *
+		 * @since 1.0
+		 */
+		private function get_cookie_preview_country_code()
+
+		{
+			return esc_attr('geo_top_bar_preview_country_code');
+		}
+		/**
 		 * Get cookie value
 		 *
 		 * @since 1.0
@@ -1876,6 +1959,16 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 
 		{
 			return esc_attr($_COOKIE[$cookie_name]);
+		}
+		/**
+		 * Set cookie value
+		 *
+		 * @since 1.0
+		 */
+		private function set_cookie($cookie_name, $cookie_value, $cookie_life)
+
+		{
+			setcookie($cookie_name, $cookie_value, $cookie_life, COOKIEPATH, COOKIE_DOMAIN, false);
 		}
 		/**
 		 * Check if cookie already exists
@@ -1933,59 +2026,59 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 			if (!wp_verify_nonce($_REQUEST['mypreview_geo_top_bar_export_security'], 'mypreview_geo_top_bar_export_nonce')):
 				return;
 			endif;
-			$plugin = 'mypreview-geo-top-bar';
+			$plugin = apply_filters('mypreview_geo_top_bar_export_filename', 'mypreview-geo-top-bar');
 			$charset = get_option('blog_charset');
 			$data = array(
 				'options' => array()
 			);
 			$option_keys = apply_filters('mypreview_geo_top_bar_option_keys', array(
-				'mypreview_geo_top_bar_layout_bar_background_image_url',
-				'mypreview_geo_top_bar_layout_bar_background_image_id',
-				'mypreview_geo_top_bar_layout_bar_background_repeat',
-				'mypreview_geo_top_bar_layout_bar_background_size',
-				'mypreview_geo_top_bar_layout_bar_background_position',
-				'mypreview_geo_top_bar_layout_bar_background_attach',
-				'mypreview_geo_top_bar_layout_hide_on_scroll',
-				'mypreview_geo_top_bar_layout_message_alignment',
-				'mypreview_geo_top_bar_layout_button_float',
-				'mypreview_geo_top_bar_layout_flag_position',
-				'mypreview_geo_top_bar_layout_flag_size',
-				'mypreview_geo_top_bar_layout_bar_top_spacing',
-				'mypreview_geo_top_bar_layout_bar_bottom_spacing',
-				'mypreview_geo_top_bar_layout_bar_divider_thickness',
-				'mypreview_geo_top_bar_layout_slide_down_speed',
-				'mypreview_geo_top_bar_layout_button_border_radius',
-				'mypreview_geo_top_bar_layout_button_border_thickness',
-				'mypreview_geo_top_bar_typography_font_family',
-				'mypreview_geo_top_bar_typography_message_font_size',
-				'mypreview_geo_top_bar_typography_message_font_weight',
-				'mypreview_geo_top_bar_typography_message_font_style',
-				'mypreview_geo_top_bar_typography_message_text_transform',
-				'mypreview_geo_top_bar_typography_button_font_size',
-				'mypreview_geo_top_bar_typography_button_font_weight',
-				'mypreview_geo_top_bar_typography_button_font_style',
-				'mypreview_geo_top_bar_typography_button_text_transform',
-				'mypreview_geo_top_bar_color_scheme_bar_background',
-				'mypreview_geo_top_bar_color_scheme_bar_divider',
-				'mypreview_geo_top_bar_color_scheme_message_text',
-				'mypreview_geo_top_bar_color_scheme_button_text',
-				'mypreview_geo_top_bar_color_scheme_button_text_hover',
-				'mypreview_geo_top_bar_color_scheme_button_background',
-				'mypreview_geo_top_bar_color_scheme_button_background_hover',
-				'mypreview_geo_top_bar_color_scheme_button_border',
-				'mypreview_geo_top_bar_color_scheme_button_border_hover',
-				'mypreview_geo_top_bar_responsiveness_large_devices',
-				'mypreview_geo_top_bar_responsiveness_medium_devices',
-				'mypreview_geo_top_bar_responsiveness_small_devices',
-				'mypreview_geo_top_bar_responsiveness_extra_small_devices',
-				'mypreview_geo_top_bar_message_bars_repeater',
-				'mypreview_geo_top_bar_test_mode_toggle',
-				'mypreview_geo_top_bar_test_mode_message',
-				'mypreview_geo_top_bar_test_mode_btn_text',
-				'mypreview_geo_top_bar_test_mode_btn_url'
+				'mypreview_geo_top_bar_layout_bar_background_image_url' => '',
+				'mypreview_geo_top_bar_layout_bar_background_image_id' => '',
+				'mypreview_geo_top_bar_layout_bar_background_repeat' => apply_filters('mypreview_geo_top_bar_layout_bar_background_repeat_default', 'repeat') ,
+				'mypreview_geo_top_bar_layout_bar_background_size' => apply_filters('mypreview_geo_top_bar_layout_bar_background_size_default', 'auto') ,
+				'mypreview_geo_top_bar_layout_bar_background_position' => apply_filters('mypreview_geo_top_bar_layout_bar_background_position_default', 'center center') ,
+				'mypreview_geo_top_bar_layout_bar_background_attach' => apply_filters('mypreview_geo_top_bar_layout_bar_background_attach_default', 'scroll') ,
+				'mypreview_geo_top_bar_layout_hide_on_scroll' => apply_filters('mypreview_geo_top_bar_layout_hide_on_scroll_default', '') ,
+				'mypreview_geo_top_bar_layout_message_alignment' => apply_filters('mypreview_geo_top_bar_layout_message_alignment_default', 'center') ,
+				'mypreview_geo_top_bar_layout_button_float' => apply_filters('mypreview_geo_top_bar_layout_button_float_default', 'right') ,
+				'mypreview_geo_top_bar_layout_flag_position' => apply_filters('mypreview_geo_top_bar_layout_flag_position_default', 'before') ,
+				'mypreview_geo_top_bar_layout_flag_size' => apply_filters('mypreview_geo_top_bar_layout_flag_size_default', 24) ,
+				'mypreview_geo_top_bar_layout_bar_top_spacing' => apply_filters('mypreview_geo_top_bar_layout_bar_top_spacing_default', 16) ,
+				'mypreview_geo_top_bar_layout_bar_bottom_spacing' => apply_filters('mypreview_geo_top_bar_layout_bar_bottom_spacing_default', 16) ,
+				'mypreview_geo_top_bar_layout_bar_divider_thickness' => apply_filters('mypreview_geo_top_bar_layout_bar_divider_thickness_default', 1) ,
+				'mypreview_geo_top_bar_layout_slide_down_speed' => apply_filters('mypreview_geo_top_bar_layout_slide_down_speed_default', 1000) ,
+				'mypreview_geo_top_bar_layout_button_border_radius' => apply_filters('mypreview_geo_top_bar_layout_button_border_radius_default', 4) ,
+				'mypreview_geo_top_bar_layout_button_border_thickness' => apply_filters('mypreview_geo_top_bar_layout_button_border_thickness_default', 1) ,
+				'mypreview_geo_top_bar_typography_font_family' => apply_filters('mypreview_geo_top_bar_typography_font_family_default', 'inherit') ,
+				'mypreview_geo_top_bar_typography_message_font_size' => apply_filters('mypreview_geo_top_bar_typography_message_font_size_default', 14) ,
+				'mypreview_geo_top_bar_typography_message_font_weight' => apply_filters('mypreview_geo_top_bar_typography_message_font_weight_default', 'bold') ,
+				'mypreview_geo_top_bar_typography_message_font_style' => apply_filters('mypreview_geo_top_bar_typography_message_font_style_default', 'italic') ,
+				'mypreview_geo_top_bar_typography_message_text_transform' => apply_filters('mypreview_geo_top_bar_typography_message_text_transform_default', 'uppercase') ,
+				'mypreview_geo_top_bar_typography_button_font_size' => apply_filters('mypreview_geo_top_bar_typography_button_font_default', 14) ,
+				'mypreview_geo_top_bar_typography_button_font_weight' => apply_filters('mypreview_geo_top_bar_typography_button_font_weight_default', 'bolder') ,
+				'mypreview_geo_top_bar_typography_button_font_style' => apply_filters('mypreview_geo_top_bar_typography_button_font_style_default', 'normal') ,
+				'mypreview_geo_top_bar_typography_button_text_transform' => apply_filters('mypreview_geo_top_bar_typography_button_text_transform_default', 'uppercase') ,
+				'mypreview_geo_top_bar_color_scheme_bar_background' => apply_filters('mypreview_geo_top_bar_color_scheme_bar_background_default', '#F5F5F5') ,
+				'mypreview_geo_top_bar_color_scheme_bar_divider' => apply_filters('mypreview_geo_top_bar_color_scheme_bar_divider_default', '#EFEFEF') ,
+				'mypreview_geo_top_bar_color_scheme_message_text' => apply_filters('mypreview_geo_top_bar_color_scheme_message_text_default', '#606060') ,
+				'mypreview_geo_top_bar_color_scheme_button_text' => apply_filters('mypreview_geo_top_bar_color_scheme_button_text_default', '#FFFFFF') ,
+				'mypreview_geo_top_bar_color_scheme_button_text_hover' => apply_filters('mypreview_geo_top_bar_color_scheme_button_text_hover_default', '#FFFFFF') ,
+				'mypreview_geo_top_bar_color_scheme_button_background' => apply_filters('mypreview_geo_top_bar_color_scheme_button_background_default', '#77CDE3') ,
+				'mypreview_geo_top_bar_color_scheme_button_background_hover' => apply_filters('mypreview_geo_top_bar_color_scheme_button_background_hover_default', '#51BFDB') ,
+				'mypreview_geo_top_bar_color_scheme_button_border' => apply_filters('mypreview_geo_top_bar_color_scheme_button_border_default', '#77CDE3') ,
+				'mypreview_geo_top_bar_color_scheme_button_border_hover' => apply_filters('mypreview_geo_top_bar_color_scheme_button_border_hover_default', '#51BFDB') ,
+				'mypreview_geo_top_bar_responsiveness_large_devices' => apply_filters('mypreview_geo_top_bar_responsiveness_large_devices_default', '') ,
+				'mypreview_geo_top_bar_responsiveness_medium_devices' => apply_filters('mypreview_geo_top_bar_responsiveness_medium_devices_default', '') ,
+				'mypreview_geo_top_bar_responsiveness_small_devices' => apply_filters('mypreview_geo_top_bar_responsiveness_small_devices_default', '') ,
+				'mypreview_geo_top_bar_responsiveness_extra_small_devices' => apply_filters('mypreview_geo_top_bar_responsiveness_extra_small_devices_default', '') ,
+				'mypreview_geo_top_bar_message_bars_repeater' => '',
+				'mypreview_geo_top_bar_test_mode_toggle' => apply_filters('mypreview_geo_top_bar_test_mode_toggle_default', false) ,
+				'mypreview_geo_top_bar_test_mode_message' => apply_filters('mypreview_geo_top_bar_test_mode_message_default', '') ,
+				'mypreview_geo_top_bar_test_mode_btn_text' => apply_filters('mypreview_geo_top_bar_test_mode_btn_text_default', '') ,
+				'mypreview_geo_top_bar_test_mode_btn_url' => apply_filters('mypreview_geo_top_bar_test_mode_btn_url_default', '')
 			));
-			foreach($option_keys as $option_key):
-				$option_value = get_option($option_key);
+			foreach($option_keys as $option_key => $option_default):
+				$option_value = get_option($option_key, $option_default);
 				if ($option_value):
 					$data['options'][$option_key] = $option_value;
 				endif;
@@ -1994,7 +2087,7 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 			ksort($data);
 			if (function_exists('json_encode')):
 				// Set the download headers
-				header('Content-disposition: attachment; filename=mypreview-geo-top-bar-export.json');
+				header('Content-disposition: attachment; filename=' . $plugin . '.json');
 				header('Content-Type: application/json; charset=' . $charset);
 				// Pretty print only available in newer php versions
 				if (version_compare(PHP_VERSION, '5.4.0') >= 0):
@@ -2021,11 +2114,9 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 			// Make sure WordPress upload support is loaded.
 			if (!function_exists('wp_handle_upload')):
 				require_once (ABSPATH . 'wp-admin/includes/file.php');
-
 			endif;
 			// Load the import & export option class.
 			require_once ($this->dir . '/includes/class-mypreview-geo-top-bar-customizer-load-import-export.php');
-
 			// Setup global variables.
 			global $wp_customize;
 			global $mypreview_geo_top_bar_error;
@@ -2033,10 +2124,7 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 			$mypreview_geo_top_bar_error = false;
 			$overrides = array(
 				'test_form' => false,
-				'test_type' => false,
-				'mimes' => array(
-					'dat' => 'text/plain'
-				)
+				'test_type' => false
 			);
 			if (function_exists('json_decode')):
 				$overrides['mimes']['json'] = 'application/json';
@@ -2079,10 +2167,158 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 				// Call the "customize_save_" dynamic action.
 				do_action('customize_save_' . $key, $wp_customize);
 				// Save the option.
-				set_theme_mod($key, $val);
+				update_option($key, $val);
 			endforeach;
 			// Call the "customize_save_after" to finish the importing process.
 			do_action('customize_save_after', $wp_customize);
+		}
+		/**
+		 * Set cookies to preview the country message bar
+		 *
+		 * @since 1.0
+		 */
+		public function ajax_preview_country()
+
+		{
+			// Bail out, If we are not in live preview.
+			if (!$this->wp_customize->is_preview()):
+				wp_send_json_error('not_preview');
+			endif;
+			// Bail out, If nonce check fails.
+			if (!check_ajax_referer('mypreview_geo_top_bar_preview_country_nonce', 'security', false)):
+				wp_send_json_error('invalid_nonce');
+			endif;
+			// Get method name to process delete_option method.
+			if (isset($_REQUEST['country_name'], $_REQUEST['country_code']) && !empty($_REQUEST['country_name'])  && !empty($_REQUEST['country_code'])):
+				$preview_country = esc_html($_REQUEST['country_name']);
+				$preview_country_code = esc_html($_REQUEST['country_code']);
+			endif;
+			$this->set_cookie($this->get_cookie_preview_country_name() , $preview_country, time() + 86400);
+			$this->set_cookie($this->get_cookie_preview_country_code() , $preview_country_code, time() + 86400);
+			wp_send_json_success();
+			wp_die();
+		}
+		/**
+		 * Reset plugin options.
+		 *
+		 * @since 1.0
+		 */
+		public function ajax_reset_plugin_settings()
+
+		{
+			// Bail out, If we are not in live preview.
+			if (!$this->wp_customize->is_preview()):
+				wp_send_json_error('not_preview');
+			endif;
+			// Bail out, If nonce check fails.
+			if (!check_ajax_referer('mypreview_geo_top_bar_reset_nonce', 'security', false)):
+				wp_send_json_error('invalid_nonce');
+			endif;
+			// Get method name to process delete_option method.
+			if (isset($_REQUEST['reset_method']) && !empty($_REQUEST['reset_method'])):
+				$rest_method = esc_html($_REQUEST['reset_method']);
+				$this->delete_plugin_settings($rest_method);
+			endif;
+			wp_send_json_success();
+			wp_die();
+		}
+		/**
+		 * Conditionally delete plugin options, according to requested method name.
+		 *
+		 * @since 1.0
+		 */
+		private function delete_plugin_settings($rest_method)
+		
+		{
+			switch ($rest_method):
+				// Delete all settings in "Layout" section.
+			case 'reset_layout': {
+				delete_option('mypreview_geo_top_bar_layout_bar_background_image_url');
+				delete_option('mypreview_geo_top_bar_layout_bar_background_image_id');
+				delete_option('mypreview_geo_top_bar_layout_bar_background_repeat');
+				delete_option('mypreview_geo_top_bar_layout_bar_background_size');
+				delete_option('mypreview_geo_top_bar_layout_bar_background_position');
+				delete_option('mypreview_geo_top_bar_layout_bar_background_attach');
+				delete_option('mypreview_geo_top_bar_layout_hide_on_scroll');
+				delete_option('mypreview_geo_top_bar_layout_message_alignment');
+				delete_option('mypreview_geo_top_bar_layout_button_float');
+				delete_option('mypreview_geo_top_bar_layout_flag_position');
+				delete_option('mypreview_geo_top_bar_layout_flag_size');
+				delete_option('mypreview_geo_top_bar_layout_bar_top_spacing');
+				delete_option('mypreview_geo_top_bar_layout_bar_bottom_spacing');
+				delete_option('mypreview_geo_top_bar_layout_bar_divider_thickness');
+				delete_option('mypreview_geo_top_bar_layout_slide_down_speed');
+				delete_option('mypreview_geo_top_bar_layout_button_border_radius');
+				delete_option('mypreview_geo_top_bar_layout_button_border_thickness');
+			}
+				break;
+				// Delete all settings in "Typography" section.
+			case 'reset_typography': {
+				delete_option('mypreview_geo_top_bar_typography_font_family');
+				delete_option('mypreview_geo_top_bar_typography_message_font_size');
+				delete_option('mypreview_geo_top_bar_typography_message_font_weight');
+				delete_option('mypreview_geo_top_bar_typography_message_font_style');
+				delete_option('mypreview_geo_top_bar_typography_message_text_transform');
+				delete_option('mypreview_geo_top_bar_typography_button_font_size');
+				delete_option('mypreview_geo_top_bar_typography_button_font_weight');
+				delete_option('mypreview_geo_top_bar_typography_button_font_style');
+				delete_option('mypreview_geo_top_bar_typography_button_text_transform');
+			}
+				break;
+				// Delete all settings in "Color Scheme" section.
+			case 'reset_color_scheme': {
+				delete_option('mypreview_geo_top_bar_color_scheme_bar_background');
+				delete_option('mypreview_geo_top_bar_color_scheme_bar_divider');
+				delete_option('mypreview_geo_top_bar_color_scheme_message_text');
+				delete_option('mypreview_geo_top_bar_color_scheme_button_text');
+				delete_option('mypreview_geo_top_bar_color_scheme_button_text_hover');
+				delete_option('mypreview_geo_top_bar_color_scheme_button_background');
+				delete_option('mypreview_geo_top_bar_color_scheme_button_background_hover');
+				delete_option('mypreview_geo_top_bar_color_scheme_button_border');
+				delete_option('mypreview_geo_top_bar_color_scheme_button_border_hover');
+			}
+				break;
+				// Delete all settings in "Responsiveness" section.
+			case 'reset_responsiveness': {
+				delete_option('mypreview_geo_top_bar_responsiveness_large_devices');
+				delete_option('mypreview_geo_top_bar_responsiveness_medium_devices');
+				delete_option('mypreview_geo_top_bar_responsiveness_small_devices');
+				delete_option('mypreview_geo_top_bar_responsiveness_extra_small_devices');
+			}
+				break;
+				// Delete all settings in "Message Bars" section.
+			case 'reset_message_bars':
+				delete_option('mypreview_geo_top_bar_message_bars_repeater');
+				break;
+				// Delete all settings in "Test Mode" section.
+			case 'reset_test_mode': {
+				delete_option('mypreview_geo_top_bar_test_mode_toggle');
+				delete_option('mypreview_geo_top_bar_test_mode_message');
+				delete_option('mypreview_geo_top_bar_test_mode_btn_text');
+				delete_option('mypreview_geo_top_bar_test_mode_btn_url');
+			}
+				break;
+
+			default:
+				break;
+			endswitch;
+		}
+		/**
+		 * Create the customizer URL.
+		 *
+		 * @since 1.0
+		 */
+		private function customizer_url($autofocus, $autofocus_key, $return_url = null)
+
+		{
+			$url = '';
+			// Getting customizer URL
+			$url = esc_url(wp_customize_url());
+			$url = add_query_arg('autofocus[' . $autofocus . ']', $autofocus_key, $url);
+			if(null !== $return_url):
+				$url = add_query_arg('return', urlencode(admin_url() . $return_url) , $url);
+			endif;
+			return $url;
 		}
 		/**
 		 * Display plugin settings, docs and support links in plugins table page.
@@ -2092,12 +2328,10 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 		public function settings_link($links)
 
 		{
-			$url = '';
-			$url = esc_url(admin_url()) . 'customize.php?';
-			$url.= '&return=' . urlencode(admin_url() . 'plugins.php');
+			$url = $this->customizer_url('panel', 'mypreview_geo_top_bar_pnl', 'plugins.php');
 			$plugin_links = array();
-			$plugin_links[] = sprintf(__('<a href="%s" target="_blank">Support</a>', 'mypreview-geo-top-bar') , esc_url('https://support.mypreview.one'));
-			$plugin_links[] = sprintf(__('<a href="%s" target="_blank">Docs</a>', 'mypreview-geo-top-bar') , esc_url('https://docs.mypreview.one'));
+			$plugin_links[] = sprintf(__('<a href="%s" target="_blank">Support</a>', 'mypreview-geo-top-bar') , esc_url('https://codecanyon.net/user/mypreview#contact'));
+			$plugin_links[] = sprintf(__('<a href="%s" target="_blank">Docs</a>', 'mypreview-geo-top-bar') , esc_url('https://mahdiyazdani.github.io/geo-top-bar'));
 			$plugin_links[] = sprintf(__('<a href="%s" target="_self">Settings</a>', 'mypreview-geo-top-bar') , esc_url($url));
 			return array_merge($plugin_links, $links);
 		}
@@ -2112,9 +2346,7 @@ if (!class_exists('MyPreview_GEO_Top_Bar')):
 			// Check if notice value stored in database or not?
 			// If nothing found, register notice value into database and display plugin activation notice
 			if (true != get_option('mypreview_geo_top_bar_notice_once')):
-				$url = '';
-				$url = esc_url(admin_url()) . 'customize.php?';
-				$url.= '&return=' . urlencode(admin_url() . 'plugins.php');
+				$url = $this->customizer_url('panel', 'mypreview_geo_top_bar_pnl', 'plugins.php');
 				$message = sprintf(__('Thanks for installing the GEO Top Bar plugin. To get started, visit the %1$sCustomizer%2$s.', 'mypreview-geo-top-bar') , '<a href="' . $url . '" target="_self">', '</a>');
 				printf('<div class="notice notice-info is-dismissible"><p>%s</p></div>', $message);
 				add_option('mypreview_geo_top_bar_notice_once', true);
@@ -2148,12 +2380,3 @@ if (!function_exists('mypreview_geo_top_bar_initialization')):
 	}
 	mypreview_geo_top_bar_initialization();
 endif;
-
-
-function my_export_option_keys( $keys ) {
-	$keys[] = 'mypreview_geo_top_bar_color_scheme_bar_background';
-	$keys[] = 'mypreview_geo_top_bar_color_scheme_bar_divider';
-	return $keys;
-}
-
-add_filter( 'cei_export_option_keys', 'my_export_option_keys' );
