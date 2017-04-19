@@ -7,6 +7,7 @@
  */
 (function($) {
     $(function() {
+        'use strict';
     	/**
     	 * Bar Background Repeat - Layout
     	 * 
@@ -324,6 +325,119 @@
                     el.replaceWith( style );
                 } else {
                     $('head').append( style );
+                }
+            });
+        });
+        /**
+         * Message Bar(s) - Message Bars
+         * 
+         * @since 1.0
+         */
+        wp.customize('mypreview_geo_top_bar_message_bars_repeater', function( value ) {
+            value.bind(function(to) {
+                // Retrieve all parameters passed by "geo-top-bar-customizer-live-preview"
+                var current_country_name = mypreview_geo_top_bar_customizer_live_vars.current_country_name.trim().toLowerCase(),
+                    current_country_code = mypreview_geo_top_bar_customizer_live_vars.current_country_code.trim().toLowerCase(),
+                    slide_down = mypreview_geo_top_bar_customizer_live_vars.slide_down,
+                    button_float = mypreview_geo_top_bar_customizer_live_vars.button_float,
+                    flag_position = mypreview_geo_top_bar_customizer_live_vars.flag_position,
+                    test_mode = mypreview_geo_top_bar_customizer_live_vars.test_mode,
+                    visibility_classes = mypreview_geo_top_bar_customizer_live_vars.visibility_classes,
+                    current_country_selected = false,
+                    flag_html = '',
+                    button_html = '',
+                    obj = JSON.parse(to);
+                if (typeof visibility_classes !== 'undefined' && visibility_classes.length > 0) {
+                    visibility_classes = $.parseJSON(visibility_classes);
+                    visibility_classes = visibility_classes.join(' ');
+                }
+                // Fetch all submitted values
+                obj.forEach(function(item) {
+                    var country = item.country.trim().toLowerCase(),
+                        message = (item.message) ? item.message : '',
+                        display_flag = (item.display_flag) ? item.display_flag : '',
+                        button_text = (item.button_text !== '') ? item.button_text : '',
+                        button_url = (item.button_url !== '') ? item.button_url : '#',
+                        button_target = (item.button_target !== '') ? item.button_target : '_self',
+                        enable = (item.enable) ? item.enable : 'on';
+                    // Current country selected
+                    if (country.indexOf(current_country_name) > -1) {
+                        // Need to load GEO Top Bar HTML markup
+                        if ($('#geo-top-bar-wrapper').length === 0) {
+                            wp.customize.preview.send('refresh');
+                        }
+                        // Current country already selected
+                        current_country_selected = true;
+                        // If message bar already exists
+                        if ($('#geo-top-bar-wrapper').length > 0) {
+                            // Update message bar content
+                            if ($('#geo-top-bar-wrapper .geo-top-bar-message').length > 0) {
+                                if (message !== '') {
+                                    if ($('#geo-top-bar-wrapper').css('display') === 'none' && enable !== 'off' && enable !== '') {
+                                        $('#geo-top-bar-wrapper').slideDown(slide_down);
+                                    }
+                                    $('#geo-top-bar-wrapper .geo-top-bar-message span').html(message);
+                                } else {
+                                    $('#geo-top-bar-wrapper').slideUp(slide_down);
+                                }
+                            }
+                            // Update OR Create flag icon markup
+                            if ($('#geo-top-bar-wrapper .geo-top-bar-content span.flag-icon').length > 0) {
+                                if (display_flag === 'yes' && display_flag !== '') {
+                                    $('#geo-top-bar-wrapper .geo-top-bar-content span.flag-icon').hide();
+                                } else {
+                                    $('#geo-top-bar-wrapper .geo-top-bar-content span.flag-icon').show();
+                                }
+                            } else {
+                                if (test_mode === '') {
+                                    flag_html = $('<a href="#geo-top-bar-modal" rel="modal:open"><span class="flag-icon flag-icon-' + current_country_code + '"></span></a>');
+                                } else {
+                                    flag_html = $('<span class="flag-icon flag-icon-' + current_country_code + '"></span>');
+                                }
+                                if (typeof flag_html !== 'undefined' && flag_html !== '' && flag_position === 'after') {
+                                    $('#geo-top-bar-wrapper .geo-top-bar-content').append(flag_html);
+                                } else if (typeof flag_html != 'undefined' && flag_html !== '' && flag_position === 'before') {
+                                    $('#geo-top-bar-wrapper .geo-top-bar-content').prepend(flag_html);
+                                }
+                                if (display_flag === 'yes' && display_flag !== '') {
+                                    $('#geo-top-bar-wrapper .geo-top-bar-content span.flag-icon').hide();
+                                } else {
+                                    $('#geo-top-bar-wrapper .geo-top-bar-content span.flag-icon').show();
+                                }
+                            }
+                            // Update OR Create button markup
+                            if ($('#geo-top-bar-wrapper a.geo-top-bar-button').length > 0) {
+                                if (button_text !== '') {
+                                    if ($('#geo-top-bar-wrapper a.geo-top-bar-button').css('display') === 'none') {
+                                        $('#geo-top-bar-wrapper a.geo-top-bar-button').show();
+                                    }
+                                    $('#geo-top-bar-wrapper a.geo-top-bar-button').text(button_text);
+                                    $('#geo-top-bar-wrapper a.geo-top-bar-button').attr('href', button_url);
+                                    $('#geo-top-bar-wrapper a.geo-top-bar-button').attr('target', button_target);
+                                    $('#geo-top-bar-wrapper a.geo-top-bar-button').attr('disabled', 'disabled');
+                                } else {
+                                    $('#geo-top-bar-wrapper a.geo-top-bar-button').hide();
+                                }
+                            } else {
+                                button_html = $('<a href="' + button_url + '" class="geo-top-bar-button" target="' + button_target + '" disabled="disabled">' + button_text + '</a>');
+                                if (typeof button_html !== 'undefined' && button_html !== '' && button_text !== '' && button_float === 'right') {
+                                    $('#geo-top-bar-wrapper .geo-top-bar-message').append(button_html);
+                                } else if (typeof button_html !== 'undefined' && button_html !== '' && button_float === 'left') {
+                                    $('#geo-top-bar-wrapper .geo-top-bar-message').prepend(button_html);
+                                }
+                            }
+                            // Update message bar status
+                            if (enable === 'off' && enable !== '') {
+                                $('#geo-top-bar-wrapper').slideUp(slide_down);
+                            } else if (enable === 'on' && enable !== '' && message !== '') {
+                                $('#geo-top-bar-wrapper').slideDown(slide_down);
+                            }
+                        }
+                    }
+                });
+                // Hide message bar if there is no match for current country.
+                if ($('#geo-top-bar-wrapper').length > 0 && current_country_selected === false) {
+                    $('#geo-top-bar-wrapper').slideUp(slide_down);
                 }
             });
         });
