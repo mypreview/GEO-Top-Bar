@@ -40,6 +40,7 @@
   - [Message Status](how-to-change-message-bar-status.md)
   - [Add Message Bar](how-to-add-new-message-bar.md)
   - [Delete Message Bar](how-to-delete-message-bar.md)
+  - [Preview Message Bar](how-to-preview-message-bar.md)
   - [Possible System Messages](possible-system-messages-on-message-bars.md)
 - [Test Mode](test-mode.md)
   - [Enable Test Mode](how-to-enable-test-mode.md)
