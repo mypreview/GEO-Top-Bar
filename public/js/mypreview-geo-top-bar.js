@@ -83,7 +83,7 @@
                     $('#geo-top-bar-wrapper').delay(parseInt(slide_down)).slideDown('slow');
                 }
             }
-        // Retrieve the passed parameters from "geo-top-bar-js"
+        // Retrieve all parameters passed by "geo-top-bar-js"
         $.MyPreviewGEOTopBar({
             message: mypreview_geo_top_bar_vars.message,
             country_code: mypreview_geo_top_bar_vars.country_code,
@@ -101,15 +101,15 @@
             // Get list of all registered countries in message bar(s)
             var all_defined_countries = mypreview_geo_top_bar_vars.all_defined_countries,
                 // Get all available countries data
-                countryData = $.fn.countrySelect.getCountryData(),
+                country_data = $.fn.countrySelect.getCountryData(),
                 only_countries = new Array();
-            if (typeof all_defined_countries !== 'undefined' && all_defined_countries.length > 0 && typeof countryData != 'undefined' && countryData !== '') {
+            if (typeof all_defined_countries !== 'undefined' && all_defined_countries.length > 0 && typeof country_data != 'undefined' && country_data !== '') {
                 all_defined_countries = $.parseJSON(all_defined_countries);
                 // Evaluate and fill the array with submitted countries data only
-                countryData.forEach(function(e) {
+                country_data.forEach(function(item) {
                     $.each(all_defined_countries, function(index, value) {
-                        if (value == e.name) {
-                            only_countries.push(e.iso2);
+                        if (value == item.name) {
+                            only_countries.push(item.iso2);
                         }
                     });
                 });
