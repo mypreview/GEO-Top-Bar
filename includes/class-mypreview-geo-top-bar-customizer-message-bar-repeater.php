@@ -79,6 +79,9 @@ if (class_exists('WP_Customize_Control') && !class_exists('MyPreview_GEO_Top_Bar
 					<li class="mypreview-geo-top-bar-repeater-field-control">
 						<h3 class="mypreview-geo-top-bar-repeater-field-title"><?php echo esc_html($this->repeater_label); ?></h3>
 						<div class="mypreview-geo-top-bar-repeater-fields">
+							<a class="mypreview-geo-top-bar-repeater-field-preview" href="#preview" title="<?php esc_attr_e('Preview This', 'mypreview-geo-top-bar'); ?>">
+								<span class="dashicons dashicons-visibility"></span>
+							</a>
 							<?php
 							foreach($fields as $key => $field):
 								$class = isset($field['class']) ? $field['class'] : '';
