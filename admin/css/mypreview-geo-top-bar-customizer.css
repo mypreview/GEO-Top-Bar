@@ -79,7 +79,6 @@
     border: 1px solid #e5e5e5;
     cursor: pointer;
     position: relative;
-    border-bottom: 0;
 }
 .mypreview-geo-top-bar-repeater-field-title:after {
     content: "\f142";
@@ -110,6 +109,20 @@
 }
 .mypreview-geo-top-bar-repeater-field-control.expanded .mypreview-geo-top-bar-repeater-fields {
     display: block;
+}
+.mypreview-geo-top-bar-repeater-fields .mypreview-geo-top-bar-repeater-field-preview {
+    float: right;
+    color: #555d66;
+    padding-top: 15px;
+	outline: none !important;
+	box-shadow: none !important;
+    text-decoration: none;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+.mypreview-geo-top-bar-repeater-fields .mypreview-geo-top-bar-repeater-field-preview:hover {
+    opacity: 0.6;
 }
 .mypreview-geo-top-bar-add-control-field {
     float: right;
@@ -207,8 +220,11 @@
     background: #186EA0;
     right: 0;
 }
-.mypreview-geo-top-bar-fields .switch-on .onoffswitch-inner {
+.mypreview-geo-top-bar-repeater-fields .switch-on .onoffswitch-inner {
     margin-left: 0;
+}
+input[data-customize-setting-link="mypreview_geo_top_bar_message_bars_fake_refresh"] {
+	display: none !important;
 }
 /* Titles */
 #sub-accordion-panel-mypreview_geo_top_bar_pnl h3, 
@@ -596,9 +612,6 @@ input[type=file].mypreview-geo-top-bar-import-file {
 	visibility: hidden;
 	width: 0;
 }
-.button::before {
-	
-}
 .mypreview-geo-top-bar-import-images {
     display: block;
     margin-bottom: 10px;
@@ -607,4 +620,37 @@ input[type=file].mypreview-geo-top-bar-import-file {
     display: none;
     margin: 10px 0;
     padding: 10px;
+}
+/* Reset Button */
+
+.mypreview-geo-top-bar-reset-btn {
+	text-decoration: none;
+    background-color: #eeeeee;
+    color: #555d66;
+    font-size: 13px;
+    box-shadow: 0 4px #d8d8d8;
+    padding: 0 8px 0 5px;
+    border-radius: 3px;
+	margin-top: -2px;
+    float: right;
+    font-weight: 400;
+	-webkit-transition: all 200ms linear;
+    -moz-transition: all 200ms linear;
+    -ms-transition: all 200ms linear;
+    -o-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+.mypreview-geo-top-bar-reset-btn .dashicons {
+	font-size: 12px;
+    vertical-align: middle;
+    width: 15px;
+    height: 15px;
+}
+.mypreview-geo-top-bar-reset-btn:focus,
+.mypreview-geo-top-bar-reset-btn:hover {
+	box-shadow: 0 2px #7e2620;
+	margin-top: 0;
+    border-radius: 3px;
+	color: #FFF;
+	background-color: #c41005;
 }
