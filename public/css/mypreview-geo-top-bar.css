@@ -71,6 +71,9 @@
 	padding: 6px 15px;
 	text-decoration: none;
 }
+#geo-top-bar-wrapper .geo-top-bar-button[disabled="disabled"] {
+	cursor: not-allowed;
+}
 #geo-top-bar-wrapper .geo-top-bar-button:hover {
 	text-decoration: none;
 }
