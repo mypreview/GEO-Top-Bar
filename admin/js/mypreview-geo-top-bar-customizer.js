@@ -91,6 +91,7 @@
                 $this.next('.mypreview-geo-top-bar-repeater-collector').val(JSON.stringify(values)).trigger('change');
             });
             mypreview_geo_top_bar_init_country_flag();
+            mypreview_disable_preview_on_test_mode();
         }
         /**
          * Initialize country flag method - Message Bar(s)
@@ -111,6 +112,33 @@
             });
         }
         mypreview_geo_top_bar_init_country_flag();
+        /**
+         * Bail out, and disable preview if test mode already activated - Message Bar(s)
+         * 
+         * @since 1.0
+         */
+        function mypreview_disable_preview_on_test_mode() {
+            var test_mode_toggle = $('input[data-customize-setting-link=mypreview_geo_top_bar_test_mode_toggle]');
+            if(test_mode_toggle.is(':checked')) {
+                $('a.mypreview-geo-top-bar-repeater-field-preview').prop('disabled', true);
+                $('a.mypreview-geo-top-bar-repeater-field-preview span.dashicons').removeClass('dashicons-visibility');
+                $('a.mypreview-geo-top-bar-repeater-field-preview span.dashicons').addClass('dashicons-hidden');
+            }
+            test_mode_toggle.on('change', function(){
+                if($(this).is(':checked')){
+                    wp.customize.state('saved').set(true);
+                    $('a.mypreview-geo-top-bar-repeater-field-preview').prop('disabled', true);
+                    $('a.mypreview-geo-top-bar-repeater-field-preview span.dashicons').removeClass('dashicons-visibility');
+                    $('a.mypreview-geo-top-bar-repeater-field-preview span.dashicons').addClass('dashicons-hidden');
+                } else {
+                    wp.customize.state('saved').set(true);
+                    $('a.mypreview-geo-top-bar-repeater-field-preview').prop('disabled', false);
+                    $('a.mypreview-geo-top-bar-repeater-field-preview span.dashicons').addClass('dashicons-visibility');
+                    $('a.mypreview-geo-top-bar-repeater-field-preview span.dashicons').removeClass('dashicons-hidden');
+                }
+            });
+        }
+        mypreview_disable_preview_on_test_mode();
         /**
          * Handling accardion click event - Message Bar(s)
          * 
@@ -193,7 +221,7 @@
          * 
          * @since 1.0
          */
-        $('#customize-theme-controls').on('click', '.mypreview-geo-top-bar-repeater-field-preview', function() {
+        $('#customize-theme-controls').on('click', '.mypreview-geo-top-bar-repeater-field-preview', function(event) {
             var country_name = $(this).closest('.mypreview-geo-top-bar-repeater-fields').find('input[data-name=country]').val(),
                 country_code = '',
                 data = '',
