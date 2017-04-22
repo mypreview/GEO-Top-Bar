@@ -49,6 +49,12 @@
     display: inline-block;
 	vertical-align: middle;
 }
+@media (max-width: 480px) {
+	#geo-top-bar-wrapper .geo-top-bar-message > span {
+		display: block;
+		margin: 3px 5px;
+	}
+}
 /* GEO Top Bar Flag */
 #geo-top-bar-wrapper .geo-top-bar-content > a span.flag-icon {
 	margin-right: 5px;
@@ -56,6 +62,19 @@
 #geo-top-bar-wrapper .geo-top-bar-message + a span.flag-icon {
 	margin-left: 5px;
 	margin-right: 0;
+}
+@media (max-width: 480px){
+	#geo-top-bar-wrapper .geo-top-bar-content > a span.flag-icon {
+		margin-right: auto;
+	}
+	#geo-top-bar-wrapper .geo-top-bar-message + a span.flag-icon {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#geo-top-bar-wrapper .geo-top-bar-content > a {
+		display: block;
+		margin: 2px auto;
+	}
 }
 /* GEO Top Bar Button */
 #geo-top-bar-wrapper .geo-top-bar-button {
@@ -85,7 +104,11 @@
 #geo-top-bar-wrapper .geo-top-bar-message > .geo-top-bar-button {
 	margin-right: 40px;
 }
-
+@media (max-width: 480px) {
+	#geo-top-bar-wrapper .geo-top-bar-message > .geo-top-bar-button {
+		margin: 3px auto !important;
+	}
+}
 /* GEO Top Bar Modal */
 .jquery-modal.blocker {
 	z-index:99999;
