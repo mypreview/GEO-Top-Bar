@@ -17,6 +17,9 @@ The maximum width property is used to set the max width of the top bar component
 
 ?> The value of the max-width property overrides width. 
 
+## Horizontal Spacing
+
+The horizontal spacing property sets the left and right padding (space) of the top bar component.
 
 ## Test cases
 
