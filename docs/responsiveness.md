@@ -11,6 +11,13 @@ Breakpoints are the point a which your site's content will respond to provide th
 * ```Visible```:  The **default** value. This option indicates the element will be **visible** in a selected viewport.
 * ```Hidden```: This option indicates the element will be **hidden** in a selected viewport.
 
+## Maximum Width
+
+The maximum width property is used to set the max width of the top bar component. This prevents the value of the width property from becoming larger than max-width.
+
+?> The value of the max-width property overrides width. 
+
+
 ## Test cases
 
 Resize your browser or load on different devices to test the responsive utility classes.
