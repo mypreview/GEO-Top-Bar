@@ -329,6 +329,62 @@
             });
         });
         /**
+         * Large Devices - Responsiveness
+         * 
+         * @since 1.0
+         */
+        wp.customize('mypreview_geo_top_bar_responsiveness_large_devices',function( value ) {
+            value.bind(function(to) {
+                if(to !== ''){
+                    $('#geo-top-bar-wrapper').addClass(to);
+                } else {
+                    $('#geo-top-bar-wrapper').removeClass('hide-large-devices');
+                }
+            });
+        });
+        /**
+         * Medium Devices - Responsiveness
+         * 
+         * @since 1.0
+         */
+        wp.customize('mypreview_geo_top_bar_responsiveness_medium_devices',function( value ) {
+            value.bind(function(to) {
+                if(to !== ''){
+                    $('#geo-top-bar-wrapper').addClass(to);
+                } else {
+                    $('#geo-top-bar-wrapper').removeClass('hide-medium-devices');
+                }
+            });
+        });
+        /**
+         * Small Devices - Responsiveness
+         * 
+         * @since 1.0
+         */
+        wp.customize('mypreview_geo_top_bar_responsiveness_small_devices',function( value ) {
+            value.bind(function(to) {
+                if(to !== ''){
+                    $('#geo-top-bar-wrapper').addClass(to);
+                } else {
+                    $('#geo-top-bar-wrapper').removeClass('hide-small-devices');
+                }
+            });
+        });
+        /**
+         * Extra Small Devices - Responsiveness
+         * 
+         * @since 1.0
+         */
+        wp.customize('mypreview_geo_top_bar_responsiveness_extra_small_devices',function( value ) {
+            value.bind(function(to) {
+                if(to !== ''){
+                    $('#geo-top-bar-wrapper').addClass(to);
+                } else {
+                    $('#geo-top-bar-wrapper').removeClass('hide-extra-small-devices');
+                }
+            });
+        });
+        /**
          * Message Bar(s) - Message Bars
          * 
          * @since 1.0
@@ -350,6 +406,9 @@
                 if (typeof visibility_classes !== 'undefined' && visibility_classes.length > 0) {
                     visibility_classes = $.parseJSON(visibility_classes);
                     visibility_classes = visibility_classes.join(' ');
+                }
+                if (test_mode !== '') {
+                    return;
                 }
                 // Fetch all submitted values
                 obj.forEach(function(item) {
