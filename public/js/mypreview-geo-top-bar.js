@@ -22,7 +22,7 @@
     $(function() {
         'use strict';
         $.MyPreviewGEOTopBar = function(params) {
-                var defaultValues = {
+                var default_values = {
                     message: '',
                     country_code: '',
                     slide_down: '1000',
@@ -34,7 +34,7 @@
                     test_mode: '',
                     visibility_classes: ''
                 };
-                var params = $.extend(defaultValues, params),
+                var params = $.extend(default_values, params),
                     message = params.message,
                     country_code = params.country_code,
                     slide_down = params.slide_down,
@@ -131,8 +131,7 @@
             if (typeof hide_on_scroll !== 'undefined' && hide_on_scroll.length > 0 && hide_on_scroll === 'enabled') {
                 // Hide/Show GEO Top Bar on Scroll event.
                 $(window).scroll(function() {
-                	var top_scroll = $(window).scrollTop();
-                	console.log(top_scroll);
+                    var top_scroll = $(window).scrollTop();
                     if (top_scroll > minimum_scroll) {
                         $('#geo-top-bar-wrapper').slideUp(parseInt(slide_down));
                     } else {
