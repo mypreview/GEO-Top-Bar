@@ -163,7 +163,7 @@ if (class_exists('WP_Customize_Control') && !class_exists('MyPreview_GEO_Top_Bar
 							</div>
 						</div>
 					</li>
-		<?php
+				<?php
 				endforeach;
 			endif;
 		}
