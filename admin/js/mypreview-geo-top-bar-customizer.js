@@ -45,7 +45,7 @@
          *
          * @since 1.0
          */
-        wp.customize('mypreview_geo_top_bar_message_bars_repeater', function (setting) {
+        wp.customize('mypreview_geo_top_bar_message_bars_repeater', function(setting) {
             setting.bind(function(value) {
                 var obj = JSON.parse(value),
                     code = 'empty_message';
@@ -67,46 +67,46 @@
 
         /**
          * Refresh repeater value(s) - Message Bar(s)
-         * 
+         *
          * @since 1.0
          */
         function mypreview_geo_top_bar_refresh_repeater_values() {
-            $(".mypreview-geo-top-bar-repeater-field-control-wrap").each(function() {
+                $(".mypreview-geo-top-bar-repeater-field-control-wrap").each(function() {
 
-                var values = [];
-                var $this = $(this);
+                    var values = [];
+                    var $this = $(this);
 
-                $this.find(".mypreview-geo-top-bar-repeater-field-control").each(function() {
-                    var valueToPush = {};
+                    $this.find(".mypreview-geo-top-bar-repeater-field-control").each(function() {
+                        var valueToPush = {};
 
-                    $(this).find('[data-name]').each(function() {
-                        var dataName = $(this).attr('data-name');
-                        var dataValue = $(this).val();
-                        valueToPush[dataName] = dataValue;
+                        $(this).find('[data-name]').each(function() {
+                            var dataName = $(this).attr('data-name');
+                            var dataValue = $(this).val();
+                            valueToPush[dataName] = dataValue;
+                        });
+
+                        values.push(valueToPush);
                     });
 
-                    values.push(valueToPush);
+                    $this.next('.mypreview-geo-top-bar-repeater-collector').val(JSON.stringify(values)).trigger('change');
                 });
-
-                $this.next('.mypreview-geo-top-bar-repeater-collector').val(JSON.stringify(values)).trigger('change');
-            });
-            mypreview_geo_top_bar_init_country_flag();
-            mypreview_disable_preview_on_test_mode();
-        }
-        /**
-         * Initialize country flag method - Message Bar(s)
-         * 
-         * @since 1.0
-         */
+                mypreview_geo_top_bar_init_country_flag();
+                mypreview_disable_preview_on_test_mode();
+            }
+            /**
+             * Initialize country flag method - Message Bar(s)
+             *
+             * @since 1.0
+             */
         function mypreview_geo_top_bar_init_country_flag() {
             $('#customize-control-mypreview_geo_top_bar_message_bars_repeater_control input[data-name=country]').countrySelect({
-                'preferredCountries' : [],
-                'responsiveDropdown' : true
+                'preferredCountries': [],
+                'responsiveDropdown': true
             });
             // Update message title with country name
-            $('#customize-control-mypreview_geo_top_bar_message_bars_repeater_control input[data-name=country]').each(function(){
+            $('#customize-control-mypreview_geo_top_bar_message_bars_repeater_control input[data-name=country]').each(function() {
                 var countryName = $(this).val();
-                if(countryName !== ''){
+                if (countryName !== '') {
                     $(this).closest('.mypreview-geo-top-bar-repeater-fields').prev('h3.mypreview-geo-top-bar-repeater-field-title').text(countryName);
                 }
             });
@@ -114,18 +114,18 @@
         mypreview_geo_top_bar_init_country_flag();
         /**
          * Bail out, and disable preview if test mode already activated - Message Bar(s)
-         * 
+         *
          * @since 1.0
          */
         function mypreview_disable_preview_on_test_mode() {
             var test_mode_toggle = $('input[data-customize-setting-link=mypreview_geo_top_bar_test_mode_toggle]');
-            if(test_mode_toggle.is(':checked')) {
+            if (test_mode_toggle.is(':checked')) {
                 $('a.mypreview-geo-top-bar-repeater-field-preview').prop('disabled', true);
                 $('a.mypreview-geo-top-bar-repeater-field-preview span.dashicons').removeClass('dashicons-visibility');
                 $('a.mypreview-geo-top-bar-repeater-field-preview span.dashicons').addClass('dashicons-hidden');
             }
-            test_mode_toggle.on('change', function(){
-                if($(this).is(':checked')){
+            test_mode_toggle.on('change', function() {
+                if ($(this).is(':checked')) {
                     wp.customize.state('saved').set(true);
                     $('a.mypreview-geo-top-bar-repeater-field-preview').prop('disabled', true);
                     $('a.mypreview-geo-top-bar-repeater-field-preview span.dashicons').removeClass('dashicons-visibility');
@@ -141,7 +141,7 @@
         mypreview_disable_preview_on_test_mode();
         /**
          * Handling accardion click event - Message Bar(s)
-         * 
+         *
          * @since 1.0
          */
         $('#customize-theme-controls').on('click', '.mypreview-geo-top-bar-repeater-field-title', function() {
@@ -150,7 +150,7 @@
         });
         /**
          * Handling add message click event - Message Bar(s)
-         * 
+         *
          * @since 1.0
          */
         $('body').on('click', '.mypreview-geo-top-bar-add-control-field', function() {
@@ -173,7 +173,7 @@
                         $(this).val(defaultValue);
                     });
 
-                    field.find("select[data-name]").each(function(){
+                    field.find("select[data-name]").each(function() {
                         var defaultValue = $(this).attr('data-default');
                         $(this).val(defaultValue);
                     });
@@ -204,7 +204,7 @@
         });
         /**
          * Handling remove message click event - Message Bar(s)
-         * 
+         *
          * @since 1.0
          */
         $('#customize-theme-controls').on('click', '.mypreview-geo-top-bar-repeater-field-remove', function() {
@@ -218,7 +218,7 @@
         });
         /**
          * Handling preview message click event - Message Bar(s)
-         * 
+         *
          * @since 1.0
          */
         $('#customize-theme-controls').on('click', '.mypreview-geo-top-bar-repeater-field-preview', function(event) {
@@ -227,7 +227,7 @@
                 data = '',
                 country_data = $.fn.countrySelect.getCountryData();
             country_data.forEach(function(item) {
-                if(country_name === item.name) {
+                if (country_name === item.name) {
                     country_code = item.iso2;
                 }
             });
@@ -244,20 +244,20 @@
                     country_code: country_code,
                     security: mypreview_geo_top_bar_customizer_vars.preview_nonce
                 },
-                success: function (result, status){
+                success: function(result, status) {
                     wp.customize.state('saved').set(true);
                 },
-                error: function (xhr, status, strErr){
+                error: function(xhr, status, strErr) {
                     console.log(status);
                 },
                 complete: function(xhr, status) {
-					$('input[data-customize-setting-link=mypreview_geo_top_bar_message_bars_fake_refresh]').trigger('click');
+                    $('input[data-customize-setting-link=mypreview_geo_top_bar_message_bars_fake_refresh]').trigger('click');
                 }
             });
         });
         /**
          * Handling close message click event - Message Bar(s)
-         * 
+         *
          * @since 1.0
          */
         $('#customize-theme-controls').on('click', '.mypreview-geo-top-bar-repeater-field-close', function() {
@@ -266,7 +266,7 @@
         });
         /**
          * Handling on key up message field(s) event - Message Bar(s)
-         * 
+         *
          * @since 1.0
          */
         $('#customize-theme-controls').on('keyup change', '[data-name]', function() {
@@ -341,13 +341,13 @@
          * @since 1.0
          */
         function mypreview_geo_top_bar_reset_button(selector, reset_method) {
-            var reset_button = $('<a href="#" class="mypreview-geo-top-bar-reset-btn" data-reset-method="' + reset_method + '"><span class="dashicons dashicons-image-rotate"></span> ' + mypreview_geo_top_bar_customizer_vars.reset_btn + '</a>');
-            // Append button if not appended yet!
-            if($(selector + ' .customize-section-title > h3 a.geo-top-bar-reset').length === 0) {
-                $(selector + ' .customize-section-title > h3').append(reset_button);
+                var reset_button = $('<a href="#" class="mypreview-geo-top-bar-reset-btn" data-reset-method="' + reset_method + '"><span class="dashicons dashicons-image-rotate"></span> ' + mypreview_geo_top_bar_customizer_vars.reset_btn + '</a>');
+                // Append button if not appended yet!
+                if ($(selector + ' .customize-section-title > h3 a.geo-top-bar-reset').length === 0) {
+                    $(selector + ' .customize-section-title > h3').append(reset_button);
+                }
             }
-        }
-        // Append reset button to layout section
+            // Append reset button to layout section
         mypreview_geo_top_bar_reset_button('ul#sub-accordion-section-mypreview_geo_top_bar_layout_sec', 'mypreview_geo_top_bar_reset_layout');
         // Append reset button to typography section
         mypreview_geo_top_bar_reset_button('ul#sub-accordion-section-mypreview_geo_top_bar_typography_sec', 'mypreview_geo_top_bar_reset_typography');
@@ -360,11 +360,11 @@
         // Append reset button to test mode section
         mypreview_geo_top_bar_reset_button('ul#sub-accordion-section-mypreview_geo_top_bar_test_mode_sec', 'mypreview_geo_top_bar_reset_test_mode');
         // Handling reset button click event
-        $('a.mypreview-geo-top-bar-reset-btn').click(function(event){
+        $('a.mypreview-geo-top-bar-reset-btn').click(function(event) {
             event.preventDefault();
             var response = confirm(mypreview_geo_top_bar_customizer_vars.reset_confirmation),
                 reset_method = $(this).data('reset-method').replace('mypreview_geo_top_bar_', '');
-            if(! response){
+            if (!response) {
                 return;
             }
             $(this).attr('disabled', 'disabled');
@@ -380,10 +380,10 @@
                     action: 'reset_plugin_settings',
                     security: mypreview_geo_top_bar_customizer_vars.reset_nonce
                 },
-                success: function (result, status){
+                success: function(result, status) {
                     wp.customize.state('saved').set(true);
                 },
-                error: function (xhr, status, strErr){
+                error: function(xhr, status, strErr) {
                     console.log(status);
                 },
                 complete: function(xhr, status) {
