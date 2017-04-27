@@ -2,7 +2,7 @@
 
 To download the installable plugin file, first, log into your [Envato](https://codecanyon.net) account.
 
-Navigate to the Downloads section of your profile and find the [**GEO Top Bar Plugin**](https://codecanyon.net/user/mypreview) then click on the **Download** (green) button. This will trigger a dropdown list for you to choose which files you want to download.
+Navigate to the Downloads section of your profile and find the [**GEO Top Bar Plugin**](https://goo.gl/BDahGU) then click on the **Download** (green) button. This will trigger a dropdown list for you to choose which files you want to download.
 
 
 ?> All files and Documentation. This option will download a .zip file which will include the plugin, documentation access, dummy data and the licensing information.
