@@ -9,5 +9,5 @@
 - No third-party connection to IP location database
 
 
-[CodeCanyon](https://codecanyon.net/user/mypreview)
+[Get Plugin](https://goo.gl/BDahGU)
 [Documentation](#geo-top-bar)
