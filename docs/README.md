@@ -44,7 +44,7 @@ Check out the [Live Demo](https://demo.mypreview.one/geo-top-bar/) to visit GEO 
 
 ## Get the Plugin
 
-This is item is only available to purchase from [CodeCanyon](https://codecanyon.net/user/mypreview). :moneybag:
+This is item is only available to purchase from [CodeCanyon](https://goo.gl/BDahGU). :moneybag:
 
 ## Statistics
 
