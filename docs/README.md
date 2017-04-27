@@ -45,3 +45,7 @@ Check out the [Live Demo](https://demo.mypreview.one/geo-top-bar/) to visit GEO 
 ## Get the Plugin
 
 This is item is only available to purchase from [CodeCanyon](https://codecanyon.net/user/mypreview). :moneybag:
+
+## Statistics
+
+<a href="http://info.flagcounter.com/uvO8"><img src="https://s09.flagcounter.com/count2/uvO8/bg_FFFFFF/txt_000000/border_CCCCCC/columns_4/maxflags_26/viewers_0/labels_1/pageviews_1/flags_0/percent_0/" alt="Free counters!" border="0"></a>
