@@ -4,7 +4,7 @@ The font size property specifies the size, or height, of the message bar content
 
 Navigate to **Appearance > Customize > GEO Top Bar > Typography** and here you will be able to locate the **"Message Font Size"** options.
 
-![Message Font Size](http://res.cloudinary.com/mypreview/image/upload/v1492210527/message-font-size_erwnyf.gif)
+![Message Font Size](img/message-font-size_erwnyf.gif)
 
 ### Usage
 
