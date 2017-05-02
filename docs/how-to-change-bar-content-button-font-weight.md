@@ -6,7 +6,7 @@ The font weight property sets the weight, or thickness, of a message bar button 
 
 Navigate to **Appearance > Customize > GEO Top Bar > Typography** and here you will be able to locate the **"Button Font Weight"** option.
 
-![Button Font Weight](http://res.cloudinary.com/mypreview/image/upload/v1492215435/button-font-weight_vgazcg.gif)
+![Button Font Weight](img/button-font-weight_vgazcg.gif)
 
 ### Property Values
 
