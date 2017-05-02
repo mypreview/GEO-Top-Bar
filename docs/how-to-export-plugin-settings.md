@@ -8,4 +8,4 @@ Clicking this button will begin exporting your entire GEO Top Bar plugin setting
 
 After the export process has completed, **your browser will automatically download a .JSON file**. This file can be used to import your exported items onto a new website using the **Import Settings** controller inside the portability section.
 
-![Export Settings](http://res.cloudinary.com/mypreview/image/upload/c_scale,w_350/v1492177979/export-settings_n09gwz.png)
+![Export Settings](img/export-settings_n09gwz.png)
