@@ -15,7 +15,7 @@ Simply navigate to **Appearance > Customize > GEO Top Bar > Layout** and here yo
 The background repeat property sets if/how a background image will be repeated.
 By default, a background image is repeated both vertically and horizontally.
 
-![Background Repeat](http://res.cloudinary.com/mypreview/image/upload/v1492119297/background-repeat_hkygzw.png)
+![Background Repeat](img/background-repeat_hkygzw.png)
 
 ### Property Values
 
@@ -28,7 +28,7 @@ By default, a background image is repeated both vertically and horizontally.
 
 The background size property in CSS is one of the most useful — and most complex — of the background properties.
 
-![Background Size](http://res.cloudinary.com/mypreview/image/upload/v1492119296/background-size_hcupjr.png)
+![Background Size](img/background-size_hcupjr.png)
 
 ### Property Values
 
@@ -42,7 +42,7 @@ The background position property allows you to move a background image around wi
 
 The first value is the **horizontal position** and the second value is the **vertical**. The **top left** corner is **0% 0%**. The **right bottom** corner is **100% 100%**. Default value is: **50% 50%** &mdash; **center center**
 
-![Background Position](http://res.cloudinary.com/mypreview/image/upload/v1492119298/background-position_lcsv9n.png)
+![Background Position](img/background-position_lcsv9n.png)
 
 ### Property Values
 
@@ -61,7 +61,7 @@ The first value is the **horizontal position** and the second value is the **ver
 The background attachment property in CSS specifies how to move the background relative to the viewport.
 Interestingly, you can also configure your background image to **fixed**. This essentially gives your background image a parallax effect.
 
-![Background Attachment](http://res.cloudinary.com/mypreview/image/upload/v1492119298/background-attachment_ug3jlh.png)
+![Background Attachment](img/background-attachment_ug3jlh.png)
 
 ### Property Values
 
