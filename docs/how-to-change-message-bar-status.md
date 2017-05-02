@@ -4,4 +4,4 @@ Changing message status from **ON** to **OFF** will hide the selected message ba
 
 Navigate to **Appearance > Customize > GEO Top Bar > Message Bars** and here you will be able to locate the **"Message Status"** option.
 
-![Toggling Message Status](http://res.cloudinary.com/mypreview/image/upload/v1492391511/toggle-message-bar-status_heputn.gif)
+![Toggling Message Status](img/toggle-message-bar-status_heputn.gif)
