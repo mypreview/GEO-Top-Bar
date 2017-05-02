@@ -6,7 +6,7 @@ The flag size property is used to set the height and width of a country flag ico
 
 Navigate to **Appearance > Customize > GEO Top Bar > Layout** and here you will be able to locate the **"Flag Size"** option.
 
-![Flag Icon Size](http://res.cloudinary.com/mypreview/image/upload/v1492119233/change-flag-icon-size_wktpau.gif)
+![Flag Icon Size](img/change-flag-icon-size_wktpau.gif)
 
 ### Usage
 
