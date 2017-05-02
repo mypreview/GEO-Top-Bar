@@ -8,4 +8,4 @@ Start by typing 3 or more character into the search field or select country from
 
 Navigate to **Appearance > Customize > GEO Top Bar > Message Bars** and here you will be able to locate the **"Country"** option.
 
-![Select a Country](http://res.cloudinary.com/mypreview/image/upload/v1492298672/select-country-message-bar_jlii5t.gif)
+![Select a Country](img/select-country-message-bar_jlii5t.gif)
