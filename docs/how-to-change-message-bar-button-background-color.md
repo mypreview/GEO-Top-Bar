@@ -4,7 +4,7 @@ The button background color property applies solid colors to the message bar and
 
 Navigate to **Appearance > Customize > GEO Top Bar > Color Scheme** and here you will be able to locate the **"Button Background"** option.
 
-![Button Background Color](http://res.cloudinary.com/mypreview/image/upload/v1492228513/button-background-color_w58kq7.gif)
+![Button Background Color](img/button-background-color_w58kq7.gif)
 
 ### How to Change Button Background Hover Color?
 
@@ -12,7 +12,7 @@ The button background hover color property applies solid colors to the message b
 
 Navigate to **Appearance > Customize > GEO Top Bar > Color Scheme** and here you will be able to locate the **"Button Background Hover"** option.
 
-![Button Background Hover Color](http://res.cloudinary.com/mypreview/image/upload/v1492228499/button-background-hover-color_vpcdtk.gif)
+![Button Background Hover Color](img/button-background-hover-color_vpcdtk.gif)
 
 ### Property Values
 
