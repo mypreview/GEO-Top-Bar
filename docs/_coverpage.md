@@ -1,4 +1,4 @@
-![logo](http://res.cloudinary.com/mypreview/image/upload/v1492168317/geo-top-bar_w9i1n4.png)
+![logo](img/geo-top-bar_w9i1n4.png)
 
 # GEO Top Bar <small>1.0</small>
 
