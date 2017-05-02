@@ -4,7 +4,7 @@ Checking Hide GEO Top Bar checkbox lets you quickly remove the top bar component
 
 ?> The functionality can be accessed in the bottom part of every page or post and **needs to be set individually**.
 
-![Hide GEO Top Bar](http://res.cloudinary.com/mypreview/image/upload/v1492433908/hide-geo-top-bar_hurxtj.png)
+![Hide GEO Top Bar](img/hide-geo-top-bar_hurxtj.png)
 
 ### How to Hide GEO Top Bar From Specific page or post?
 
