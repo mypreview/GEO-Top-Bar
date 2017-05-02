@@ -4,7 +4,7 @@ The button text color property applies solid colors to the message bar and defau
 
 Navigate to **Appearance > Customize > GEO Top Bar > Color Scheme** and here you will be able to locate the **"Button Text"** option.
 
-![Button Text Color](http://res.cloudinary.com/mypreview/image/upload/v1492394739/button-text-color_q3zgdv.gif)
+![Button Text Color](img/button-text-color_q3zgdv.gif)
 
 ### How to Change Button Text Hover Color?
 
@@ -12,7 +12,7 @@ The button text hover color property applies solid colors to the message bar and
 
 Navigate to **Appearance > Customize > GEO Top Bar > Color Scheme** and here you will be able to locate the **"Button Text Hover"** option.
 
-![Button Text Hover Color](http://res.cloudinary.com/mypreview/image/upload/v1492226739/button-text-hover-color_dyxakw.gif)
+![Button Text Hover Color](img/button-text-hover-color_dyxakw.gif)
 
 ### Property Values
 
