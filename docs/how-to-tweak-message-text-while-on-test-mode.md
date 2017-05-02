@@ -6,7 +6,7 @@ Optionally enter any custom message, including HTML in the Message text field.
 
 Navigate to **Appearance > Customize > GEO Top Bar > Test Mode** and here you will be able to locate the **"Message"** option.
 
-![Adding Message on Test Mode](http://res.cloudinary.com/mypreview/image/upload/v1492287493/adding-message-on-test-mode_m6ktre.gif)
+![Adding Message on Test Mode](img/adding-message-on-test-mode_m6ktre.gif)
 
 ### Default Country Modal
 
