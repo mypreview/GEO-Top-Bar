@@ -4,7 +4,7 @@ The message alignment property in layout section is used for aligning the inner 
 
 Navigate to **Appearance > Customize > GEO Top Bar > Layout** and here you will be able to locate the **"Message Alignment"** option.
 
-![Message Alignment](http://res.cloudinary.com/mypreview/image/upload/v1492119234/message-bar-alignment_mao4vz.gif)
+![Message Alignment](img/message-bar-alignment_mao4vz.gif)
 
 ### Property Values
 
