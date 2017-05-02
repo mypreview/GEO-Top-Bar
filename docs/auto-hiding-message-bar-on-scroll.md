@@ -5,7 +5,7 @@ This property hides the message bar when the user scrolls down and becomes visib
 
 Navigate to **Appearance > Customize > GEO Top Bar > Layout** and here you will be able to locate the **"Hide Bar On Scroll"** option.
 
-![Button Float](http://res.cloudinary.com/mypreview/image/upload/v1492176327/hide-bar-on-scroll_xtod93.gif)
+![Button Float](img/hide-bar-on-scroll_xtod93.gif)
 
 ### Property Values
 
