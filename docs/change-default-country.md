@@ -4,7 +4,7 @@ You can easily change your location by clicking on the **flag icon** in the top 
 
 !> Message bar content and button will appear to be coming from the country you have chosen.
 
-![Select a Default Country](http://res.cloudinary.com/mypreview/image/upload/v1492445132/select-default-country_znzmtp.gif)
+![Select a Default Country](img/select-default-country_znzmtp.gif)
 
 ## What Are the Cookies?
 
