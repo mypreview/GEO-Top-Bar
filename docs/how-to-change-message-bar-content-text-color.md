@@ -4,7 +4,7 @@ The message text color property applies solid colors to the message bar content 
 
 Navigate to **Appearance > Customize > GEO Top Bar > Color Scheme** and here you will be able to locate the **"Message Text"** option.
 
-![Message Text Color](http://res.cloudinary.com/mypreview/image/upload/v1492223475/message-text-color_x8t4c3.gif)
+![Message Text Color](img/message-text-color_x8t4c3.gif)
 
 ### Property Values
 
