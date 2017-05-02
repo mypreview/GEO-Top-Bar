@@ -4,7 +4,7 @@ The text-transform property controls message bar button text case and capitaliza
 
 Navigate to **Appearance > Customize > GEO Top Bar > Typography** and here you will be able to locate the **"Button Text Transform"** option.
 
-![Button Text Transform](http://res.cloudinary.com/mypreview/image/upload/v1492216126/button-text-transform_v42cvz.gif)
+![Button Text Transform](img/button-text-transform_v42cvz.gif)
 
 ### Property Values
 
