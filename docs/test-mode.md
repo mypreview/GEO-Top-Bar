@@ -2,7 +2,7 @@
 
 GEO Top Bar comes with a **Test Mode** which enables you to test your message bar and customize the appearance of it thoroughly before going live.
 
-![Test Mode](http://res.cloudinary.com/mypreview/image/upload/v1492292278/test-mode-screenshot_z0y4ux.png)
+![Test Mode](img/test-mode-screenshot_z0y4ux.png)
 
 ## User Permission
 
