@@ -6,7 +6,7 @@ The border-radius property is used to add rounded corners to a message bar butto
 
 Navigate to **Appearance > Customize > GEO Top Bar > Layout** and here you will be able to locate the **"Button Border Radius"** options.
 
-![Button Border Radius](http://res.cloudinary.com/mypreview/image/upload/v1492174072/button-border-radius_hzzsxz.gif)
+![Button Border Radius](img/button-border-radius_hzzsxz.gif)
 
 ### Usage
 
