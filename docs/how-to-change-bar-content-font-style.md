@@ -6,7 +6,7 @@ The font style property allows you to make message bar content text appear itali
 
 Navigate to **Appearance > Customize > GEO Top Bar > Typography** and here you will be able to locate the **"Button Font Style"** option.
 
-![Button Font Style](http://res.cloudinary.com/mypreview/image/upload/v1492212315/message-font-style_medo2a.gif)
+![Button Font Style](img/message-font-style_medo2a.gif)
 
 ### Property Values
 
