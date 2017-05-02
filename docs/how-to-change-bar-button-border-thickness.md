@@ -6,7 +6,7 @@ The button border thickness property sets the width of a message bar button bord
 
 Navigate to **Appearance > Customize > GEO Top Bar > Layout** and here you will be able to locate the **"Button Border Thickness"** option.
 
-![Button Border Thickness](http://res.cloudinary.com/mypreview/image/upload/v1492174927/button-border-thickness_qyqfgj.gif)
+![Button Border Thickness](img/button-border-thickness_qyqfgj.gif)
 
 ### Usage
 
