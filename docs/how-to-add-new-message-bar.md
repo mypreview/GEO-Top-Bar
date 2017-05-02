@@ -4,4 +4,4 @@ Message bar repeater control allows you to build repeatable blocks of top bar co
 
 Navigate to **Appearance > Customize > GEO Top Bar > Message Bars** and here you will be able to locate the **"+ Add Message"** option.
 
-![Add a New Message Bar](http://res.cloudinary.com/mypreview/image/upload/v1492392739/add-new-message-bar_sbxbue.gif)
+![Add a New Message Bar](img/add-new-message-bar_sbxbue.gif)
