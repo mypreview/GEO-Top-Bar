@@ -4,7 +4,7 @@ Specifying any text as button text will display a button in the top bar componen
 
 Navigate to **Appearance > Customize > GEO Top Bar > Message Bars** and here you will be able to locate the **"Button Text"** option.
 
-![Appending Button to Message Bar](http://res.cloudinary.com/mypreview/image/upload/v1492390519/message-bar-button-text_wdesk8.gif)
+![Appending Button to Message Bar](img/message-bar-button-text_wdesk8.gif)
 
 ### How to Add a URL to the Button?
 
