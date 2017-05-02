@@ -6,7 +6,7 @@ The font weight property sets the weight, or thickness, of a bar content font an
 
 Navigate to **Appearance > Customize > GEO Top Bar > Typography** and here you will be able to locate the **"Message Font Weight"** option.
 
-![Message Font Weight](http://res.cloudinary.com/mypreview/image/upload/v1492211032/message-font-weight_otisbj.gif)
+![Message Font Weight](img/message-font-weight_otisbj.gif)
 
 ### Property Values
 
