@@ -4,7 +4,7 @@ GEO Top Bar plugin has an option that will reset each section to its default set
 
 !> The reset button in each section resets the settings and controllers to its initial values.
 
-![Reset Plugin Settings](http://res.cloudinary.com/mypreview/image/upload/v1492437863/reset-plugin-settings_oek2tz.gif)
+![Reset Plugin Settings](img/reset-plugin-settings_oek2tz.gif)
 
 ## Uninstall
 
@@ -19,7 +19,7 @@ WordPress will now ask you to confirm that you want to delete the plugin.
 You need to click on **"Yes, delete these files"** button. WordPress will now safely remove the plugin from your web server.
 That’s all you have successfully uninstalled the GEO Top Bar plugin from your WordPress site.
 
-![Uninstall GEO Top Bar Plugin](http://res.cloudinary.com/mypreview/image/upload/v1492438568/uninstall-geo-top-bar_zwwrcu.png)
+![Uninstall GEO Top Bar Plugin](img/uninstall-geo-top-bar_zwwrcu.png)
 
 ## Clean Up Database
 
