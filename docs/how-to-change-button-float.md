@@ -4,7 +4,7 @@ The button float property specifies that the button should be placed along the *
 
 Navigate to **Appearance > Customize > GEO Top Bar > Layout** and here you will be able to locate the **"Button Float"** option.
 
-![Button Float](http://res.cloudinary.com/mypreview/image/upload/v1492119235/button-float_hmdop7.gif)
+![Button Float](img/button-float_hmdop7.gif)
 
 ### Property Values
 
