@@ -4,7 +4,7 @@ The flag position property specifies that the country flag icon *(SVG)* should b
 
 Navigate to **Appearance > Customize > GEO Top Bar > Layout** and here you will be able to locate the **"Flag Position"** option.
 
-![Flag Icon Position](http://res.cloudinary.com/mypreview/image/upload/v1492119235/flag-icon-position_mkbj3j.gif)
+![Flag Icon Position](img/flag-icon-position_mkbj3j.gif)
 
 ### Property Values
 
