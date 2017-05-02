@@ -4,4 +4,4 @@ GEO Top Bar has an extensive portability system that pulls every single setting 
 
 ?> All configured plugin settings are contained in a single **JSON** file. When you import the file to a new website, your uploaded GEO Top Bar configuration will be ready to use!
 
-![Portability](http://res.cloudinary.com/mypreview/image/upload/v1492292928/portability-screenshot_b7l9sy.png)
+![Portability](img/portability-screenshot_b7l9sy.png)
