@@ -4,4 +4,4 @@ Message bar repeater control allows you to remove a repeatable block of top bar 
 
 Navigate to **Appearance > Customize > GEO Top Bar > Message Bars** and here you will be able to locate the **"Delete"** option.
 
-![Delete a Message Bar](http://res.cloudinary.com/mypreview/image/upload/v1492392745/delete-message-bar_iwossn.gif)
+![Delete a Message Bar](img/delete-message-bar_iwossn.gif)
