@@ -6,7 +6,7 @@ The button border color property applies solid colors to the message bar and def
 
 Navigate to **Appearance > Customize > GEO Top Bar > Color Scheme** and here you will be able to locate the **"Button Border"** option.
 
-![Button Border Color](http://res.cloudinary.com/mypreview/image/upload/v1492230037/button-border-color_y1jc4w.gif)
+![Button Border Color](img/button-border-color_y1jc4w.gif)
 
 ### How to Change Button Border Hover Color?
 
@@ -16,7 +16,7 @@ The button border hover color property applies solid colors to the message bar a
 
 Navigate to **Appearance > Customize > GEO Top Bar > Color Scheme** and here you will be able to locate the **"Button Border Hover"** option.
 
-![Button Border Hover Color](http://res.cloudinary.com/mypreview/image/upload/v1492230583/button-border-hover-color_bjlult.gif)
+![Button Border Hover Color](img/button-border-hover-color_bjlult.gif)
 
 ### Property Values
 
