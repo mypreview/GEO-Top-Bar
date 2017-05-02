@@ -4,7 +4,7 @@ The font size property specifies the size, or height, of the message bar button 
 
 Navigate to **Appearance > Customize > GEO Top Bar > Typography** and here you will be able to locate the **"Button Font Size"** options.
 
-![Button Font Size](http://res.cloudinary.com/mypreview/image/upload/v1492214252/button-font-size_rqdjw9.gif)
+![Button Font Size](img/button-font-size_rqdjw9.gif)
 
 ### Usage
 
