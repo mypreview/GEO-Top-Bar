@@ -6,7 +6,7 @@ The example used below (#f9bf3b) is called a hex code, and it is one of the seve
 
 Navigate to **Appearance > Customize > GEO Top Bar > Color Scheme** and here you will be able to locate the **"Bar Background"** option.
 
-![Bar Background Color](http://res.cloudinary.com/mypreview/image/upload/v1492221327/bar-background-color_pfwutv.gif)
+![Bar Background Color](img/bar-background-color_pfwutv.gif)
 
 ### Property Values
 
