@@ -4,7 +4,7 @@ The bar divider color property sets the color of the message bar bottom border.
 
 Navigate to **Appearance > Customize > GEO Top Bar > Color Scheme** and here you will be able to locate the **"Bar Divider"** option.
 
-![Bar Divider Color](http://res.cloudinary.com/mypreview/image/upload/v1492221919/bar-divider-color_hzgwni.gif)
+![Bar Divider Color](img/bar-divider-color_hzgwni.gif)
 
 ### Property Values
 
