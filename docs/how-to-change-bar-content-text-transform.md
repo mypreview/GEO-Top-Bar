@@ -4,7 +4,7 @@ The text-transform property controls message bar content text case and capitaliz
 
 Navigate to **Appearance > Customize > GEO Top Bar > Typography** and here you will be able to locate the **"Message Text Transform"** option.
 
-![Message Text Transform](http://res.cloudinary.com/mypreview/image/upload/v1492213098/message-text-transform_s85nbs.gif)
+![Message Text Transform](img/message-text-transform_s85nbs.gif)
 
 ### Property Values
 
