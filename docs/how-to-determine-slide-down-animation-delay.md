@@ -4,7 +4,7 @@ Content loading with delay often used in many different projects. You can achiev
 
 Navigate to **Appearance > Customize > GEO Top Bar > Layout** and here you will be able to locate the **"Slide Down Speed"** option.
 
-![Slide Down Speed](http://res.cloudinary.com/mypreview/image/upload/v1492173492/slide-down-animation-speed_ddewcj.gif)
+![Slide Down Speed](img/slide-down-animation-speed_ddewcj.gif)
 
 ### Usage
 
