@@ -4,7 +4,7 @@ Navigate to **Appearance > Customize > GEO Top Bar > Test Mode** and here you wi
 
 *Unchecking **Enable Test Mode** checkbox will deactivate test mode.*
 
-![Disable Test Mode](http://res.cloudinary.com/mypreview/image/upload/v1492289067/disable-test-mode_tehpsc.gif)
+![Disable Test Mode](img/disable-test-mode_tehpsc.gif)
 
 ### Default Country Modal
 
