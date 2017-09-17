@@ -56,7 +56,7 @@ The plugin offers a huge list of customization possibilities, and it adds a styl
 
 == Frequently Asked Questions ==
 = Where can I learn more about GEO Top Bar plugin? =
-Please see all documents at -> https://mahdiyazdani.github.io
+Please see all documents at -> https://mahdiyazdani.github.io/geo-top-bar
 
 == Changelog ==
 = 1.0 =
