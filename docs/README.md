@@ -40,7 +40,7 @@ See the [Getting plugin](getting-the-plugin-downloaded-from-envato) for more det
 
 ## Live Demo
 
-Check out the [Live Demo](https://demo.mypreview.one/geo-top-bar/) to visit GEO Top Bar in action.
+Check out the [Live Demo](https://demo.mypreview.one/hypermarket/) to visit GEO Top Bar in action.
 
 ## Get the Plugin
 
